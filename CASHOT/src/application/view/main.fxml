@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
+         <children>
+            <Button layoutX="273.0" layoutY="352.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="254.0" text="ADMINISTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button layoutX="54.0" layoutY="524.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="254.0" text="TRAINING">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button layoutX="490.0" layoutY="524.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="254.0" text="CASHIER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label layoutX="200.0" layoutY="159.0" prefHeight="76.0" prefWidth="401.0" text="Welcome to Payhem" textAlignment="CENTER">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
