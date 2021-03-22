@@ -18,10 +18,10 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			Parent cashierRoot = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
-			Scene cashier = new Scene(root,800,800);
-			cashierRoot.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(cashier);
+//			Parent cashierRoot = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
+//			Scene cashier = new Scene(root,800,800);
+//			cashierRoot.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			primaryStage.setScene(cashier);
 			//
 		} catch(Exception e) {
 			e.printStackTrace();
