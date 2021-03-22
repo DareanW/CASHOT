@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
+         <children>
+            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
+            <VBox layoutX="325.0" layoutY="139.0" prefHeight="601.0" prefWidth="439.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="TOP_CENTER" layoutX="324.0" layoutY="50.0" prefHeight="71.0" prefWidth="439.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="Go BACK" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="TRAINING" />
+                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTER" />
+               </children>
+            </HBox>
+            <HBox layoutX="37.0" layoutY="684.0" prefHeight="54.0" prefWidth="241.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="54.0" text="Total:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea prefHeight="100.0" prefWidth="186.0" promptText="//Total will go here" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</VBox>
