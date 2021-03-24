@@ -6,8 +6,8 @@ public class Employee {
 	private String employeeName;
 	private String userName;
 	private String employeePassword;
-	private int ID;
-	private ArrayList<Order> order;
+	private static int ID;
+	private static ArrayList<Order> order;
 	
 	public Employee(String employeeName, String userName, String employeePassword, int ID){
 		this.employeeName = employeeName;
@@ -36,13 +36,13 @@ public class Employee {
 	public void setEmployeePassword(String employeePassword) {
 		this.employeePassword = employeePassword;
 	}
-	public int getID() {
+	public static int getID() { //changed to static
 		return ID;
 	}
 	public void setID(int iD) {
 		ID = iD;
 	}
-	public ArrayList<Order> getOrder() {
+	public static ArrayList<Order> getOrder() { //changed to static
 		return order;
 	}
 	public void setOrder(ArrayList<Order> order) {

@@ -3,8 +3,8 @@ import java.time.*;
 import java.util.*;
 
 public class Order {
-
-	private LocalDateTime currTimeDate;
+ 
+	private static LocalDateTime currTimeDate; //changed to static
 	private static String employeeName; //changed to static
 	private ArrayList<Item> items;
 	private double total;
@@ -51,7 +51,7 @@ public class Order {
 	}
 
 
-	public LocalDateTime getCurrTimeDate() {
+	public static LocalDateTime getCurrTimeDate() {  //changed to static
 		return currTimeDate;
 	}
 	public void setCurrTimeDate(LocalDateTime currTimeDate) {
