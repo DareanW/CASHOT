@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -69,9 +70,18 @@
 		            </VBox>
 		            <HBox alignment="TOP_CENTER" layoutX="324.0" layoutY="50.0" prefHeight="71.0" prefWidth="439.0" spacing="5.0">
 		               <children>
-		                  <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK" />
-		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="TRAINING" />
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTER" />
+		                  <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="TRAINING">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
 		               </children>
 		            </HBox>
 		            <HBox layoutX="37.0" layoutY="684.0" prefHeight="54.0" prefWidth="241.0">
@@ -81,9 +91,49 @@
 		                        <Font size="14.0" />
 		                     </font>
 		                  </Label>
-		                  <TextArea prefHeight="100.0" prefWidth="186.0" promptText="//Total will go here" />
+		                  <TextArea prefHeight="24.0" prefWidth="186.0" promptText="//Total will go here" />
 		               </children>
 		            </HBox>
+                  <VBox layoutX="16.0" layoutY="139.0" prefHeight="499.0" prefWidth="292.0">
+                     <children>
+                        <HBox prefHeight="71.0" prefWidth="292.0">
+                           <children>
+                              <SplitPane dividerPositions="0.7" prefHeight="71.0" prefWidth="304.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Label layoutX="3.0" layoutY="-1.0" prefHeight="69.0" prefWidth="96.0" text="ITEM/S:">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="2.0" prefHeight="69.0" prefWidth="78.0" text="\$">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </HBox>
+                        <TextArea prefHeight="431.0" prefWidth="292.0" promptText="Temp Text" />
+                     </children>
+                  </VBox>
+                  <HBox layoutX="58.0" layoutY="50.0" prefHeight="71.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="200.0" text="CASHIER MODE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
 		         </children>
 		      </Pane>
 		   </children>
