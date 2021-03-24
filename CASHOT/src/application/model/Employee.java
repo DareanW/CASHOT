@@ -9,7 +9,13 @@ private String employeePassword;
 private int ID;
 private ArrayList<Order> order;
 
-
+public Employee(String employeeName, String userName, String employeePassword, int ID){
+	this.employeeName = employeeName;
+	this.userName = userName;
+	this.employeePassword = employeePassword;
+	this.ID = ID;
+	this.order = new ArrayList<Order>();
+}
 
 
 public String getEmployeeName() {
