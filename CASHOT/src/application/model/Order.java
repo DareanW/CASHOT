@@ -14,7 +14,7 @@ public class Order {
 		this.currTimeDate=currTimeDate;
 		this.employeeName=employeeName;
 		this.items=new ArrayList<Item>();
-		this.total = total();
+		this.total = total;
 	}
 	
 	
