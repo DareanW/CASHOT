@@ -5,7 +5,7 @@ import java.util.*;
 public class Order {
 
 	private LocalDateTime currTimeDate;
-	private String employeeName;
+	private static String employeeName; //changed to static
 	private ArrayList<Item> items;
 	
 	public Order(LocalDateTime currTimeDate,String employeeName){
@@ -22,7 +22,7 @@ public class Order {
 	public void setCurrTimeDate(LocalDateTime currTimeDate) {
 		this.currTimeDate = currTimeDate;
 	}
-	public String getEmployeeName() {
+	public static String getEmployeeName() { //changed to static
 		return employeeName;
 	}
 	public void setEmployeeName(String employeeName) {

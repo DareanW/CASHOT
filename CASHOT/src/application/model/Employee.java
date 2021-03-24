@@ -36,7 +36,7 @@ public String getEmployeePassword() {
 public void setEmployeePassword(String employeePassword) {
 	this.employeePassword = employeePassword;
 }
-public int getID() {
+public static int getID() {   //changed to static
 	return ID;
 }
 public void setID(int iD) {
