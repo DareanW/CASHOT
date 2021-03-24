@@ -17,6 +17,19 @@ public class Order {
 		this.total = total;
 	}
 	
+	public String toString(){
+		String temp = "";
+		
+		temp = temp + currTimeDate + " " + employeeName + " " + total;
+		
+		
+		for(int i=0;i<items.size(); i++) 
+		{
+			temp = temp + items.get(i);											
+		}
+	
+		return temp;
+	}
 	
 	public double total(){
 		double cost = 0.00;
