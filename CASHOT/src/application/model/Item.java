@@ -1,8 +1,8 @@
 package application.model;
 
 public class Item {
-	private String itemName;
-	private int itemPrice;
+	public String itemName;
+	public int itemPrice;
 	
 	public Item( String name, int price){
 		this.itemName = name;
