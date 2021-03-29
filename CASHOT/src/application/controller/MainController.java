@@ -41,7 +41,7 @@ public class MainController implements EventHandler {
 	}
 	
 	public void loadAdminister(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administer.fxml"));
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	public void loadTraining(Event event) throws IOException {
