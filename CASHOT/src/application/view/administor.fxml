@@ -14,11 +14,8 @@
 		   <children>
 		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #e82e15;">
                <children>
-                  <TextArea fx:id="adminTextArea" layoutX="45.0" layoutY="191.0" prefHeight="542.0" prefWidth="306.0" />
-                  <Button layoutX="45.0" layoutY="40.0" mnemonicParsing="false" onAction="#viewEmployees" prefHeight="45.0" prefWidth="134.0" text="View Employees" />
-                  <Button layoutX="494.0" layoutY="127.0" mnemonicParsing="false" onAction="#viewEmployees" prefHeight="45.0" prefWidth="155.0" text="Change Items" />
-                  <Button layoutX="217.0" layoutY="40.0" mnemonicParsing="false" onAction="#viewEmployees" prefHeight="45.0" prefWidth="134.0" text="Add Employee" />
-                  <TextArea editable="false" layoutX="45.0" layoutY="167.0" prefHeight="24.0" prefWidth="306.0" text="Sales History" wrapText="true" />
+                  <TextArea fx:id="adminTextArea" layoutX="45.0" layoutY="200.0" prefHeight="533.0" prefWidth="306.0" />
+                  <TextArea editable="false" layoutX="45.0" layoutY="167.0" prefHeight="26.0" prefWidth="306.0" text="Sales History" wrapText="true" />
                   <TextField layoutX="45.0" layoutY="95.0" prefHeight="64.0" prefWidth="306.0" promptText="Find: " />
                   <VBox layoutX="374.0" layoutY="189.0" prefHeight="542.0" prefWidth="395.0" spacing="5.0">
                      <children>
@@ -76,21 +73,33 @@
                      <children>
                         <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font>
                         </Button>
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="TRAINING">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font>
                         </Button>
                         <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
+                  <HBox alignment="TOP_CENTER" layoutX="366.0" layoutY="120.0" prefHeight="35.0" prefWidth="412.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
+                     </children>
+                  </HBox>
+                  <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
                </children></Pane>
 		   </children>
 		</VBox>

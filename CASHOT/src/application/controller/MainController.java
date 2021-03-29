@@ -44,7 +44,10 @@ public class MainController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administer.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+	public void loadTraining(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
+		content.getChildren().setAll(pane);
+	}		
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);
