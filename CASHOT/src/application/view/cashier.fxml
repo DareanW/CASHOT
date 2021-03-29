@@ -72,15 +72,15 @@
 		               <children>
 		                  <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font></Button>
 		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="TRAINING">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTER">
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font></Button>
 		               </children>
 		            </HBox>
@@ -129,7 +129,7 @@
                      <children>
                         <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="200.0" text="CASHIER MODE">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font>
                         </Button>
                      </children>
