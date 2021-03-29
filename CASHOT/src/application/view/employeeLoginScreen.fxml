@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+	<children>
+		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+		   <children>
+		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
+		         <children>
+		            <Label layoutX="50.0" layoutY="41.0" prefHeight="76.0" prefWidth="701.0" text="Please enter your login information:" textAlignment="CENTER">
+		               <font>
+		                  <Font size="44.0" />
+		               </font>
+		            </Label>
+		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
+                  <Label layoutX="300.0" layoutY="117.0" prefHeight="76.0" prefWidth="201.0" text="example: employee">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="326.0" layoutY="207.0" prefHeight="69.0" prefWidth="149.0" text="Username:" />
+                  <TextField layoutX="326.0" layoutY="413.0" prefHeight="69.0" prefWidth="149.0" text="Password:" />
+                  <Label layoutX="307.0" layoutY="324.0" prefHeight="76.0" prefWidth="201.0" text="example: password" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+		         </children>
+		      </Pane>
+		   </children>
+		</VBox>
+	</children>
+</AnchorPane>
