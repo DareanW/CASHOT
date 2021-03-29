@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class CashotSystem {
 	
 	private int ID;
+	private String admin;
 //	private ArrayList<Receipt> receipt;
 	private static ArrayList<Employee> employees;
 	
@@ -15,13 +16,13 @@ public class CashotSystem {
 	}
 	
 	public void loadEmployees() throws IOException {
-		//String employeeName, String userName, String employeePassword, int ID
+		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
 		String row;
 		
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
-			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]));
+			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4]);
 			addEmployee(tempEmployee);
 			
 		}

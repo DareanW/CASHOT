@@ -18,13 +18,15 @@ private String userName;
 private String employeePassword;
 private static int ID;
 private static ArrayList<Order> order;
+private String admin;
 
-public Employee(String employeeName, String userName, String employeePassword, int ID){
+public Employee(String employeeName, String userName, String employeePassword, int ID, String admin){
 	this.employeeName = employeeName;
 	this.userName = userName;
 	this.employeePassword = employeePassword;
 	this.ID = ID;
 	this.order = new ArrayList<Order>();
+	this.admin = admin;
 }
 
 
@@ -66,8 +68,8 @@ public static int hashNum(String userName){
 	num*=522;
 	num*=3;
     num*=768546547;
-	System.out.println(num);
-    System.out.println(num % 100000000);
+   // System.out.println(num);
+   // System.out.println(num % 100000000);
     if(num % 100000000 < 9999999)
     num += 10000000;
 	return (int)(num % 100000000);
@@ -79,5 +81,15 @@ public void add(ArrayList<Employee> employee) {
 }
 	public String toString(){
 		return this.ID + " " + this.employeeName + " " + this.userName;
+	}
+
+
+	public String isAdmin() {
+		return admin;
+	}
+
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
 	}
 }
