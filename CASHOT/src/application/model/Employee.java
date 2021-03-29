@@ -1,3 +1,4 @@
+
 package application.model;
 import java.util.ArrayList;
 import java.util.Date;
@@ -76,4 +77,7 @@ public void add(ArrayList<Employee> employee) {
  
 	
 }
+	public String toString(){
+		return this.ID + " " + this.employeeName + " " + this.userName;
+	}
 }
