@@ -57,12 +57,22 @@ public static ArrayList<Order> getOrder() {
 public void setOrder(ArrayList<Order> order) {
 	this.order = order;
 }
-public static int hashNum(String user){
-	int num;
-	return (num);
+public static int hashNum(String userName){
+	long num = 0;
+	for(int i = 0; i < userName.length(); i++)
+		num+=userName.codePointAt(i);
+	num*=7;
+	num*=522;
+	num*=3;
+    num*=768546547;
+	System.out.println(num);
+    System.out.println(num % 100000000);
+    if(num % 100000000 < 9999999)
+    num += 10000000;
+	return (int)(num % 100000000);
 }
 
-public void add(Employee employee) {
+public void add(ArrayList<Employee> employee) {
  
 	
 }
