@@ -2,14 +2,22 @@ package application.model;
 
 public class Item {
 	public String itemName;
-	public int itemPrice;
+	double itemPrice;
+	public int row;
+	public int column;
 	
-	public Item( String name, int price){
+	public Item( String name, double price, int row, int column){
 		this.itemName = name;
 		this.itemPrice = price;
+		this.row = row;
+		this.column = column;
 	}
 	
-	public int getPrice(){
+	public Item(){
+		
+	}
+	
+	public double getPrice(){
 		return this.itemPrice;
 	}
 	
@@ -29,6 +37,14 @@ public class Item {
 	public String toString() {
 		String str = this.itemName + " : $" + this.itemPrice;
 		return str;
+	}
+	
+	public int getRow() {
+		return row;
+	}
+	
+	public int getColumn() {
+		return column;
 	}
 	
 }

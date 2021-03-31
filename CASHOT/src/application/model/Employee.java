@@ -58,7 +58,7 @@ public void setOrder(ArrayList<Order> order) {
 	this.order = order;
 }
 public static int hashNum(String user){
-	int num;
+	int num = 0;
 	return (num);
 }
 
