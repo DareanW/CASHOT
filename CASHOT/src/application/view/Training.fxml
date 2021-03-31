@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -84,45 +85,27 @@
                            </font></Button>
 		               </children>
 		            </HBox>
-		            <HBox layoutX="37.0" layoutY="684.0" prefHeight="54.0" prefWidth="241.0">
-		               <children>
-		                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="54.0" text="Total:">
-		                     <font>
-		                        <Font size="14.0" />
-		                     </font>
-		                  </Label>
-		                  <TextArea prefHeight="24.0" prefWidth="186.0" promptText="//Total will go here" />
-		               </children>
-		            </HBox>
-                  <VBox layoutX="16.0" layoutY="139.0" prefHeight="499.0" prefWidth="292.0">
+                  <VBox layoutX="16.0" layoutY="139.0" prefHeight="520.0" prefWidth="292.0">
                      <children>
                         <HBox prefHeight="71.0" prefWidth="292.0">
                            <children>
-                              <SplitPane dividerPositions="0.7" prefHeight="71.0" prefWidth="304.0">
-                                <items>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <Label layoutX="3.0" layoutY="-1.0" prefHeight="69.0" prefWidth="96.0" text="ITEM/S:">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="2.0" prefHeight="69.0" prefWidth="78.0" text="\$">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                </items>
-                              </SplitPane>
+                              <Pane prefHeight="46.0" prefWidth="292.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="241.0" layoutY="18.0" prefHeight="35.0" prefWidth="37.0" text="\$" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="18.0" prefHeight="31.0" prefWidth="96.0" text="ITEM/S:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
                            </children>
                         </HBox>
-                        <TextArea prefHeight="431.0" prefWidth="292.0" promptText="Temp Text" />
+                        <TextArea prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
                      </children>
                   </VBox>
                   <HBox layoutX="58.0" layoutY="50.0" prefHeight="71.0" prefWidth="200.0">
@@ -132,6 +115,17 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
+                     </children>
+                  </HBox>
+                  <Button layoutX="16.0" layoutY="667.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
+                  <HBox layoutX="158.0" layoutY="667.0" prefHeight="54.0" prefWidth="180.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="54.0" text="Total:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
                      </children>
                   </HBox>
 		         </children>
