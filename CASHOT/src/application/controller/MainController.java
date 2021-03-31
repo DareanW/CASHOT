@@ -8,7 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 public class MainController implements EventHandler {
@@ -22,7 +22,12 @@ public class MainController implements EventHandler {
 	
 	@FXML private AnchorPane content;
 	@FXML private TextArea adminTextArea;
-	
+	//For admin login screen
+	@FXML private TextField adminUsrName;
+	@FXML private TextField adminUsrPw;
+	//For Employee login screen
+	@FXML private TextField employeeUsrName;
+	@FXML private TextField employeeUsrPw;
 	
 	@Override
 	public void handle(Event event) {
