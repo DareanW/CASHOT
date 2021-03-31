@@ -24,8 +24,8 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="326.0" layoutY="207.0" prefHeight="69.0" prefWidth="149.0" promptText="Username:" />
-                  <TextField layoutX="326.0" layoutY="413.0" prefHeight="69.0" prefWidth="149.0" promptText="Password:" />
+                  <TextField fx:id="employeeUsrName" layoutX="326.0" layoutY="207.0" prefHeight="69.0" prefWidth="149.0" promptText="Username:" />
+                  <TextField fx:id="employeeUsrPw" layoutX="326.0" layoutY="413.0" prefHeight="69.0" prefWidth="149.0" promptText="Password:" />
                   <Label layoutX="307.0" layoutY="324.0" prefHeight="76.0" prefWidth="201.0" text="example: password" textAlignment="CENTER">
                      <font>
                         <Font size="22.0" />
