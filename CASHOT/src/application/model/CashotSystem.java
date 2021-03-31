@@ -31,7 +31,7 @@ public class CashotSystem {
 	
 	}
 	
-	private void addEmployee(Employee employee) {
+	public static void addEmployee(Employee employee) {
 		employees.add(employee);
 	}
 	
