@@ -21,50 +21,50 @@
 		               <children>
 		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		               </children>
@@ -75,7 +75,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadEmployeeLogin" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
