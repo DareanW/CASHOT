@@ -22,6 +22,7 @@ public class MainController implements EventHandler {
 	
 	@FXML private AnchorPane content;
 	@FXML private TextArea adminTextArea;
+	@FXML private Button btnLogin;
 	//For admin login screen
 	@FXML private TextField adminUsrName;
 	@FXML private TextField adminUsrPw;
