@@ -11,7 +11,7 @@
 	<children>
 		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 		   <children>
-		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
+		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #f0f8ff;">
 		         <children>
 		            <Label layoutX="50.0" layoutY="41.0" prefHeight="76.0" prefWidth="701.0" text="Please enter your login information:" textAlignment="CENTER">
 		               <font>

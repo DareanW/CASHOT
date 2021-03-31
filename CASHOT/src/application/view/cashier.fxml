@@ -13,7 +13,7 @@
 	<children>
 		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 		   <children>
-		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
+		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #f0f8ff;">
 		         <children>
 		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
 		            <VBox layoutX="325.0" layoutY="139.0" prefHeight="601.0" prefWidth="439.0" spacing="5.0">
@@ -78,7 +78,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
                            <font>
                               <Font size="14.0" />
                            </font></Button>

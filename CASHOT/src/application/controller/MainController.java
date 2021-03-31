@@ -47,7 +47,18 @@ public class MainController implements EventHandler {
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
-	}		
+	}	
+	public void loadAdminLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	public void loadEmployeeLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
+	
+	
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);
