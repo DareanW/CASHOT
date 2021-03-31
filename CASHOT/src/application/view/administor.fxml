@@ -92,7 +92,7 @@
                      <children>
                         <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
-                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
                      </children>
                   </HBox>
                   <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
