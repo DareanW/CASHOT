@@ -18,7 +18,7 @@
 		                  <Font size="28.0" />
 		               </font>
 		            </Button>
-		            <Button layoutX="54.0" layoutY="524.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="254.0" text="TRAINING">
+		            <Button layoutX="54.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadTraining" prefHeight="96.0" prefWidth="254.0" text="TRAINING">
 		               <font>
 		                  <Font size="28.0" />
 		               </font>
