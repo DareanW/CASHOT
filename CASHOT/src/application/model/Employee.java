@@ -1,3 +1,4 @@
+
 package application.model;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,13 +18,15 @@ private String userName;
 private String employeePassword;
 private static int ID;
 private static ArrayList<Order> order;
+private String admin;
 
-public Employee(String employeeName, String userName, String employeePassword, int ID){
+public Employee(String employeeName, String userName, String employeePassword, int ID, String admin){
 	this.employeeName = employeeName;
 	this.userName = userName;
 	this.employeePassword = employeePassword;
 	this.ID = ID;
 	this.order = new ArrayList<Order>();
+	this.admin = admin;
 }
 
 
@@ -57,13 +60,36 @@ public static ArrayList<Order> getOrder() {
 public void setOrder(ArrayList<Order> order) {
 	this.order = order;
 }
-public static int hashNum(String user){
-	int num = 0;
-	return (num);
+public static int hashNum(String userName){
+	long num = 0;
+	for(int i = 0; i < userName.length(); i++)
+		num+=userName.codePointAt(i);
+	num*=7;
+	num*=522;
+	num*=3;
+    num*=768546547;
+   // System.out.println(num);
+   // System.out.println(num % 100000000);
+    if(num % 100000000 < 9999999)
+    num += 10000000;
+	return (int)(num % 100000000);
 }
 
-public void add(Employee employee) {
+public void add(ArrayList<Employee> employee) {
  
 	
 }
+	public String toString(){
+		return this.ID + " " + this.employeeName + " " + this.userName;
+	}
+
+
+	public String isAdmin() {
+		return admin;
+	}
+
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
 }
