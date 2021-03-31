@@ -31,7 +31,7 @@
                         <Font size="22.0" />
                      </font>
                      </Label>
-                  <Button layoutX="363.0" layoutY="631.0" mnemonicParsing="false" text="Go Back" />
+                  <Button layoutX="363.0" layoutY="631.0" mnemonicParsing="false" onAction="#loadMain" text="Go Back" />
 		         </children>
 		      </Pane>
 		   </children>
