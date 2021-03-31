@@ -84,14 +84,14 @@
                            </font></Button>
 		               </children>
 		            </HBox>
-		            <HBox layoutX="37.0" layoutY="684.0" prefHeight="54.0" prefWidth="241.0">
+		            <HBox layoutX="152.0" layoutY="661.0" prefHeight="54.0" prefWidth="180.0">
 		               <children>
 		                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="54.0" text="Total:">
 		                     <font>
 		                        <Font size="14.0" />
 		                     </font>
 		                  </Label>
-		                  <TextArea prefHeight="24.0" prefWidth="186.0" promptText="//Total will go here" />
+		                  <TextArea prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
 		               </children>
 		            </HBox>
                   <VBox layoutX="16.0" layoutY="139.0" prefHeight="499.0" prefWidth="292.0">
@@ -134,6 +134,7 @@
                         </Button>
                      </children>
                   </HBox>
+                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
 		         </children>
 		      </Pane>
 		   </children>
