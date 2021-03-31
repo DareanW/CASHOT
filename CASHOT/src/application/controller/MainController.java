@@ -3,6 +3,7 @@ package application.controller;
 import java.io.IOException;
 
 import application.model.CashotSystem;
+import application.model.Employee;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -29,11 +30,15 @@ public class MainController implements EventHandler {
 	//For Employee login screen
 	@FXML private TextField employeeUsrName;
 	@FXML private TextField employeeUsrPw;
+	//For Employees
+	@FXML private TextField inputField;
+	@FXML private TextArea outputField;
 	
 	@Override
 	public void handle(Event event) {
-		// TODO Auto-generated method stub
-		// Handle button click
+String userName = adminUsrName.getText();
+String password = adminUsrPw.getText();
+
 	}
 	
 	public void loadCashier(Event event) throws IOException {
@@ -63,7 +68,12 @@ public class MainController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	
+	public void addEmployeeFromAdmin(Event event) throws IOException{
+		int ID = 
+		String userName = inputField.getText();
+		Employee newEmployee = new Employee(, data[1], data[2], Integer.parseInt(data[3]), data[4]);
+		CashotSystem.addEmployee(newEmployee);
+	}
 	
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
@@ -73,3 +83,6 @@ public class MainController implements EventHandler {
 	
 	
 }
+
+
+

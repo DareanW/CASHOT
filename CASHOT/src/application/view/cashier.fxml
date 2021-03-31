@@ -29,9 +29,9 @@
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
 		                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="No Item | $0.00" />
+		                        <Button layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="No Item | $0.00" />
+		                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="No Item | $0.00" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
