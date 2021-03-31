@@ -74,7 +74,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadEmployeeLogin" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
