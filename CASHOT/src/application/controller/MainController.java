@@ -3,6 +3,8 @@ package application.controller;
 import java.io.IOException;
 
 import application.model.CashotSystem;
+
+import application.model.Item;
 import application.model.Employee;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -11,16 +13,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class MainController implements EventHandler {
 	
 	
+
+	
+	@FXML private AnchorPane content;
+	@FXML private TextArea adminTextArea;
+	
+	@FXML Button cBtn;
+	
 	public void initialize( ) throws IOException{
 		//Load items ?
 		CashotSystem system = new CashotSystem();
+		system.setController(this);
+		
 		system.loadEmployees();
+		
 	}
 	
+
 	@FXML private AnchorPane content;
 	@FXML private TextArea adminTextArea;
 	@FXML private Button btnLogin;
@@ -33,7 +47,7 @@ public class MainController implements EventHandler {
 	//For Employees
 	@FXML private TextField inputField;
 	@FXML private TextArea outputField;
-	
+
 	@Override
 	public void handle(Event event) {
 String userName = adminUsrName.getText();
@@ -43,7 +57,7 @@ String password = adminUsrPw.getText();
 	
 	public void loadCashier(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
-		content.getChildren().setAll(pane);
+		content.getChildren().setAll(pane);		
 	}
 	
 	public void loadMain(Event event) throws IOException {
@@ -78,10 +92,7 @@ String password = adminUsrPw.getText();
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);
-	}
-	
-	
-	
+	}	
 }
 
 
