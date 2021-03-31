@@ -81,6 +81,16 @@ public class CashierController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
+	public void loadTraining(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
+	public void loadAdminLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}

@@ -17,11 +17,7 @@ import javafx.stage.Stage;
 
 public class MainController implements EventHandler {
 	
-	
 
-	
-	@FXML private AnchorPane content;
-	@FXML private TextArea adminTextArea;
 	
 	@FXML Button cBtn;
 	
@@ -82,12 +78,12 @@ String password = adminUsrPw.getText();
 		content.getChildren().setAll(pane);
 	}
 	
-	public void addEmployeeFromAdmin(Event event) throws IOException{
-		int ID = 
-		String userName = inputField.getText();
-		Employee newEmployee = new Employee(, data[1], data[2], Integer.parseInt(data[3]), data[4]);
-		CashotSystem.addEmployee(newEmployee);
-	}
+//	public void addEmployeeFromAdmin(Event event) throws IOException{
+//		int ID = 
+//		String userName = inputField.getText();
+//		Employee newEmployee = new Employee(, data[1], data[2], Integer.parseInt(data[3]), data[4]);
+//		CashotSystem.addEmployee(newEmployee);
+//	}
 	
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
