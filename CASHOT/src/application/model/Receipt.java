@@ -28,5 +28,5 @@ public class Receipt{
 		rWriter.flush();
 		rWriter.close();
 	
-}
+	}
 }
