@@ -20,52 +20,52 @@
 		               <children>
 		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="Button" textAlignment="CENTER" />
-		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" textAlignment="CENTER" />
+		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
 
-		                        <Button fx:id="button10" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button10" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button20" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button20" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button30" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button30" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button40" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button40" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button50" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-		                        <Button fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+		                        <Button fx:id="button50" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		               </children>
