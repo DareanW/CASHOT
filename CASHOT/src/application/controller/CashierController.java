@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 import application.model.CashotSystem;
 import application.model.Item;
@@ -52,6 +53,8 @@ public class CashierController implements EventHandler {
 	
 	Button cashierButtons[][];
 	
+	ArrayList<Item> itemsInOrder;
+	
 	@FXML private AnchorPane content;
 	CashotSystem system = new CashotSystem();
 	
@@ -70,6 +73,9 @@ public class CashierController implements EventHandler {
 		} catch (Error e) {
 			e.printStackTrace();
 		}
+		
+		system.newOrder();
+		itemsInOrder = new ArrayList<Item>();
 				
 	}
 
@@ -78,8 +84,8 @@ public class CashierController implements EventHandler {
 		for (int i = 0; i < 6; i++){
 			for (int j = 0; j < 4; j++){
 				if (cashierButtons[i][j] == event.getSource()){
-					Item item = system.addItemToReceipt(i,j);
-					receiptList.setText(item.getName());
+					itemsInOrder = system.addItemToOrder(i,j);
+					receiptList.setText(itemsInOrder.toString()); // incorporate receipt/order class
 				}
 			}
 		}

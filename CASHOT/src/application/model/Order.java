@@ -14,7 +14,15 @@ public class Order {
 		this.currTimeDate=currTimeDate;
 		this.employeeName=employeeName;
 		this.items=new ArrayList<Item>();
-		this.total = total;
+//		this.total = total;
+	}
+	
+	public Order(){ //constructor test to get cashier to add stuff
+		
+		this.currTimeDate= LocalDateTime.now();
+		this.employeeName= "" ;
+		this.items=new ArrayList<Item>();
+		this.total = 0;
 	}
 	
 	public String toString(){
@@ -48,6 +56,11 @@ public class Order {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+	
+	public ArrayList<Item> addItemToOrder(Item item){
+		items.add(item);
+		return items;
 	}
 
 

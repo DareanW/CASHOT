@@ -23,6 +23,8 @@ public class CashotSystem {
 	private TrainingController tController;
 	private AdminController aController;
 	
+	private Order order;
+	
 	public CashotSystem(){
 		employees = new ArrayList<Employee>();
 	}
@@ -42,6 +44,12 @@ public class CashotSystem {
 	public void setController(AdminController controller){
 		this.aController = controller;
 	}
+	
+	public void newOrder() {
+		order = new Order();
+		
+	}
+	
 	
 	public void loadEmployees() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
@@ -97,9 +105,13 @@ public class CashotSystem {
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
 	}
 
-	public Item addItemToReceipt(int i, int j) {
-		return itemMatrix[i][j];
+	public ArrayList<Item> addItemToOrder(int i, int j) {
+		ArrayList<Item> items = order.addItemToOrder(itemMatrix[i][j]);
+		return items;
+		
 		
 	}
+
+	
 	
 }
