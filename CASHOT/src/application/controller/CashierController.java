@@ -67,7 +67,7 @@ public class CashierController implements EventHandler {
 		} catch (Error e) {
 			e.printStackTrace();
 		}
-		
+				
 	}
 
 	@Override
@@ -107,6 +107,8 @@ public class CashierController implements EventHandler {
 			
 		}
 		csvReader.close();
+		
+		hideUnimplementedButtons();
 	}
 	
 	public void addItem(Item item){
@@ -119,6 +121,18 @@ public class CashierController implements EventHandler {
 		String moneyString = formatter.format(price);
 		
 		button.setText(item.getName() + "\n" + moneyString);
+		
+	}
+	
+	public void hideUnimplementedButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				Button button = cashierButtons[i][j];
+				if (button.getText().equals("")){
+					button.setVisible(false);
+				}
+			}
+		}
 	}
 		
 	
