@@ -47,6 +47,9 @@ public class CashierController implements EventHandler {
 	@FXML Button button52;
 	@FXML Button button53;
 	
+	@FXML TextArea receiptList;
+	@FXML TextArea receiptTotal;
+	
 	Button cashierButtons[][];
 	
 	@FXML private AnchorPane content;
@@ -63,7 +66,7 @@ public class CashierController implements EventHandler {
 		buttonToMatrix();
 		
 		try {
-			loadItems();
+			system.loadItems();
 		} catch (Error e) {
 			e.printStackTrace();
 		}
@@ -72,8 +75,14 @@ public class CashierController implements EventHandler {
 
 	@Override
 	public void handle(Event event) {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (cashierButtons[i][j] == event.getSource()){
+					Item item = system.addItemToReceipt(i,j);
+					receiptList.setText(item.getName());
+				}
+			}
+		}
 	}
 	
 	public void loadMain(Event event) throws IOException {
@@ -165,7 +174,12 @@ public class CashierController implements EventHandler {
 	}
 
 	public void setButton(Item item) {
-		// TODO Auto-generated method stub
+		Button button = cashierButtons[item.getRow()][item.getColumn()];
+		double price = item.getPrice();
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String moneyString = formatter.format(price);
+		
+		button.setText(item.getName() + "\n" + moneyString);
 		
 	}
 

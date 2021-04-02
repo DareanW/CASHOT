@@ -21,9 +21,9 @@
 		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
 		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" textAlignment="CENTER" />
-		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
@@ -93,7 +93,7 @@
 		                        <Font size="14.0" />
 		                     </font>
 		                  </Label>
-		                  <TextArea prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
+		                  <TextArea fx:id="receiptTotal" prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
 		               </children>
 		            </HBox>
                   <HBox layoutX="58.0" layoutY="50.0" prefHeight="71.0" prefWidth="200.0">
@@ -126,7 +126,7 @@
                               </Pane>
                            </children>
                         </HBox>
-                        <TextArea prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
+                        <TextArea fx:id="receiptList" prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
                      </children>
                   </VBox>
 		         </children>
