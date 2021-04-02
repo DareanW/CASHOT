@@ -4,8 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import application.controller.AdminController;
 import application.controller.CashierController;
 import application.controller.MainController;
+import application.controller.TrainingController;
 
 
 public class CashotSystem {
@@ -18,6 +20,8 @@ public class CashotSystem {
 	
 	private MainController controller;
 	private CashierController cController;
+	private TrainingController tController;
+	private AdminController aController;
 	
 	public CashotSystem(){
 		employees = new ArrayList<Employee>();
@@ -29,6 +33,14 @@ public class CashotSystem {
 	
 	public void setController(CashierController controller){
 		this.cController = controller;
+	}
+	
+	public void setController(TrainingController controller){
+		this.tController = controller;
+	}
+	
+	public void setController(AdminController controller){
+		this.aController = controller;
 	}
 	
 	public void loadEmployees() throws IOException {
