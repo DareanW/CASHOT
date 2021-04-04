@@ -89,6 +89,8 @@ String password = adminUsrPw.getText();
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);
 	}	
+	
+
 }
 
 
