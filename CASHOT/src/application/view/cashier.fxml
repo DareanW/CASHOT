@@ -126,7 +126,7 @@
                               </Pane>
                            </children>
                         </HBox>
-                        <TextArea prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
+                        <TextArea fx:id="outputField" prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
                      </children>
                   </VBox>
 		         </children>

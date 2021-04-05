@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminController">
 	<children>
 		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 		   <children>
@@ -81,7 +81,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashierLogin" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -91,8 +91,8 @@
                   <HBox alignment="TOP_CENTER" layoutX="366.0" layoutY="120.0" prefHeight="35.0" prefWidth="412.0" spacing="5.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
-                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#addEmployeeFromAdmin" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
+                        <Button fx:id="loadEmployees" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
+                        <Button fx:id="addEmployees" layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
                      </children>
                   </HBox>
                   <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">

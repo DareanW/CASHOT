@@ -86,7 +86,7 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadAdminLogin(Event event) throws IOException {
+	public void loadCashierLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
@@ -118,7 +118,7 @@ public class AdminController implements EventHandler {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
 		
-		button.setText(item.getName() + "\n" + moneyString);
+		//button.setText(item.getName() + "\n" + moneyString);
 	}
 		
 	
