@@ -87,7 +87,7 @@ public class AdminController implements EventHandler {
 	}
 	
 	public void loadCashierLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
