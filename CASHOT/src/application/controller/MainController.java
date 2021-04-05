@@ -45,9 +45,11 @@ public class MainController implements EventHandler {
 	@FXML private TextArea outputField;
 
 	@Override
+
 	public void handle(Event event) {/*
 String userName = adminUsrName.getText();
 String password = adminUsrPw.getText();*/
+
 
 	}
 	
