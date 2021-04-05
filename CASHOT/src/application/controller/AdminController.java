@@ -91,6 +91,18 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
+	//work in progress
+	public void loadEmployees(Event event){
+		
+	}
+	
+	public void addEmployees(Event event){
+		
+	}
+	
+	public void editItems(Event event){
+		
+	}
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}

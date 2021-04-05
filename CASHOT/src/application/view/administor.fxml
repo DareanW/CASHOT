@@ -90,9 +90,9 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" layoutX="366.0" layoutY="120.0" prefHeight="35.0" prefWidth="412.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
-                        <Button fx:id="loadEmployees" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
-                        <Button fx:id="addEmployees" layoutX="67.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
+                        <Button mnemonicParsing="false" onAction="#editItems" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadEmployees" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#addEmployees" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
                      </children>
                   </HBox>
                   <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="143.0" text="ADMINISTRATOR">
