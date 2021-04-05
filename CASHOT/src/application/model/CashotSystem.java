@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import application.controller.AdminController;
+import application.controller.AdminLoginController;
 import application.controller.CashierController;
+import application.controller.CashierLoginController;
 import application.controller.MainController;
 import application.controller.TrainingController;
 
@@ -22,6 +24,8 @@ public class CashotSystem {
 	private CashierController cController;
 	private TrainingController tController;
 	private AdminController aController;
+	private AdminLoginController aLController;
+	private CashierLoginController cLController;
 	
 	private Order order;
 	
@@ -70,12 +74,31 @@ public class CashotSystem {
 		employees.add(employee);
 	}
 	
+	
+	public static ArrayList<Employee> getEmployees() {
+		return employees;
+	}
+
+	public static void setEmployees(ArrayList<Employee> employees) {
+		CashotSystem.employees = employees;
+	}
+
 	public static String generateEmployeeString(){
 		String str = "";
 		for (Employee employee: employees){
 			str += employee + "\n";
 		}
 		return str;
+	}
+
+	public void setController(CashierLoginController cashierLoginController) throws IOException {
+		this.cLController = cashierLoginController;
+		loadEmployees();
+		
+	}
+	public void setController(AdminLoginController adminLoginController) throws IOException {
+		this.aLController = adminLoginController;
+		loadEmployees();
 	}
 	
 	public void loadItems() throws IOException {

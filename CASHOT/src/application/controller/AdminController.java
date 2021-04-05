@@ -86,11 +86,23 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadAdminLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
+	public void loadCashierLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
+	//work in progress
+	public void loadEmployees(Event event){
+		
+	}
+	
+	public void addEmployees(Event event){
+		
+	}
+	
+	public void editItems(Event event){
+		
+	}
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}
@@ -118,7 +130,7 @@ public class AdminController implements EventHandler {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
 		
-		button.setText(item.getName() + "\n" + moneyString);
+		//button.setText(item.getName() + "\n" + moneyString);
 	}
 		
 	

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CashierLoginController">
 	<children>
 		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
          <children>
@@ -21,8 +21,8 @@
                   <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
                   <VBox layoutX="249.0" layoutY="245.0" prefHeight="147.0" prefWidth="274.0" spacing="10.0">
                      <children>
-                        <TextField fx:id="adminUsrName" prefHeight="41.0" prefWidth="274.0" promptText="Username: employee" />
-                        <TextField fx:id="adminUsrPw" prefHeight="41.0" prefWidth="274.0" promptText="Password: password" />
+                        <TextField fx:id="cashierUsername" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Username: employee" />
+                        <TextField fx:id="cashierPassword" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Password: password" />
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="25.0" prefWidth="80.0" text="Go Back" />

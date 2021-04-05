@@ -45,9 +45,11 @@ public class MainController implements EventHandler {
 	@FXML private TextArea outputField;
 
 	@Override
-	public void handle(Event event) {
-		String userName = adminUsrName.getText();
-		String password = adminUsrPw.getText();
+
+	public void handle(Event event) {/*
+String userName = adminUsrName.getText();
+String password = adminUsrPw.getText();*/
+
 
 	}
 	
@@ -89,6 +91,8 @@ public class MainController implements EventHandler {
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);
 	}	
+	
+
 }
 
 

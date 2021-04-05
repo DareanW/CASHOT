@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 
 public class CashierController implements EventHandler {
-	
+
 	@FXML Button button00;
 	@FXML Button button01;
 	@FXML Button button02;
