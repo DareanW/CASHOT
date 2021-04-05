@@ -126,7 +126,12 @@
                               </Pane>
                            </children>
                         </HBox>
-                        <TextArea fx:id="receiptList" prefHeight="439.0" prefWidth="292.0" promptText="Temp Text" />
+                        <HBox prefHeight="464.0" prefWidth="292.0">
+                           <children>
+                              <TextArea id="disableScrollBar" fx:id="receiptNames" prefHeight="457.0" prefWidth="208.0" />
+                              <TextArea fx:id="receiptPrices" prefHeight="457.0" prefWidth="90.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
 		         </children>

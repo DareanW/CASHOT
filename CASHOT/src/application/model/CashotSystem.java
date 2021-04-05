@@ -106,10 +106,12 @@ public class CashotSystem {
 	}
 
 	public ArrayList<Item> addItemToOrder(int i, int j) {
-		ArrayList<Item> items = order.addItemToOrder(itemMatrix[i][j]);
-		return items;
-		
-		
+		ArrayList<Item> orderItems = order.addItemToOrder(itemMatrix[i][j]);
+		return orderItems;
+	}
+	
+	public double getOrderTotal(){
+		return order.total();
 	}
 
 	

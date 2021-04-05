@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -48,7 +49,8 @@ public class CashierController implements EventHandler {
 	@FXML Button button52;
 	@FXML Button button53;
 	
-	@FXML TextArea receiptList;
+	@FXML TextArea receiptNames;
+	@FXML TextArea receiptPrices;
 	@FXML TextArea receiptTotal;
 	
 	Button cashierButtons[][];
@@ -76,7 +78,14 @@ public class CashierController implements EventHandler {
 		
 		system.newOrder();
 		itemsInOrder = new ArrayList<Item>();
-				
+		
+		receiptNames.addEventFilter(ScrollEvent.ANY, (x) -> {
+		    receiptPrices.setScrollTop(receiptNames.getScrollTop());
+		});
+		
+		receiptPrices.addEventFilter(ScrollEvent.ANY, (x) -> {
+			receiptNames.setScrollTop(receiptPrices.getScrollTop());
+		});
 	}
 
 	@Override
@@ -85,11 +94,43 @@ public class CashierController implements EventHandler {
 			for (int j = 0; j < 4; j++){
 				if (cashierButtons[i][j] == event.getSource()){
 					itemsInOrder = system.addItemToOrder(i,j);
-					receiptList.setText(itemsInOrder.toString()); // incorporate receipt/order class
+//					receiptList.setText(itemsInOrder.toString());
+					String strName = "";
+					String strPrice = "";
+					String strTotal = "";
+					double price = 0;
+					NumberFormat formatter = NumberFormat.getCurrencyInstance();
+					String moneyString = "";
+					for (Item item: itemsInOrder){
+						price = item.getPrice();
+						moneyString = formatter.format(price);
+//						str += String.format("%-50s %15s\n", item.getName(), moneyString);
+						strName += item.getName() + "\n";
+						strPrice += moneyString + "\n";
+//						System.out.printf("%-50s %15s\n", item.getName(), moneyString);
+//						System.out.print(str);
+//						receiptList.setText(str);
+					}
+					double total;
+					receiptNames.setText(strName);
+					receiptPrices.setText(strPrice);
+					total = system.getOrderTotal();
+					strTotal = formatter.format(total);
+					receiptTotal.setText(strTotal);
 				}
 			}
 		}
 	}
+	
+//	public void nameScroll(Event event){
+//		receiptPrices.setScrollTop(receiptNames.getScrollTop());
+//	}
+//	
+//	public void priceScroll(Event event){
+//		receiptNames.setScrollTop(receiptPrices.getScrollTop());
+//	}
+	
+	
 	
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
