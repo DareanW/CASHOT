@@ -18,7 +18,7 @@ public class CashotSystem {
 	private String admin;
 //	private ArrayList<Receipt> receipt;
 	private static ArrayList<Employee> employees;
-	Item [][] itemMatrix = new Item[4][6];
+	Item [][] itemMatrix = new Item[6][4];
 	
 	private MainController controller;
 	private CashierController cController;
@@ -26,6 +26,8 @@ public class CashotSystem {
 	private AdminController aController;
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
+	
+	private Order order;
 	
 	public CashotSystem(){
 		employees = new ArrayList<Employee>();
@@ -46,6 +48,12 @@ public class CashotSystem {
 	public void setController(AdminController controller){
 		this.aController = controller;
 	}
+	
+	public void newOrder() {
+		order = new Order();
+		
+	}
+	
 	
 	public void loadEmployees() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
@@ -93,29 +101,42 @@ public class CashotSystem {
 		loadEmployees();
 	}
 	
-//	public void loadItems() throws IOException {
-//		//String employeeName, String userName, String employeePassword, int ID
-//		String row;
-//		
-//		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
-//		while ((row = csvReader.readLine()) != null) {
-//			String[] data = row.split(",");
-//			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
-//			addItem(tempItem);
-//			
-//		}
-//		
-//		csvReader.close();
-//	}
+	public void loadItems() throws IOException {
+		//String employeeName, String userName, String employeePassword, int ID
+		String row;
+		
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
+		while ((row = csvReader.readLine()) != null) {
+			String[] data = row.split(",");
+			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
+			addItem(tempItem);
+			
+		}
+		
+		csvReader.close();
+		
+		cController.hideUnimplementedButtons();
+	}
 	
-//	public void addItem(Item item){
-//		itemMatrix[item.getRow()][item.getColumn()] = item;
-//		cController.setButton(item);
+	public void addItem(Item item){
+		itemMatrix[item.getRow()][item.getColumn()] = item;
+		cController.setButton(item);
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-////		controller.testMethod();
-////		System.out.print(item.getRow());
-////		System.out.println(item.getColumn() + " ");
-////		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-//	}
+//		controller.testMethod();
+//		System.out.print(item.getRow());
+//		System.out.println(item.getColumn() + " ");
+//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+	}
+
+	public ArrayList<Item> addItemToOrder(int i, int j) {
+		ArrayList<Item> orderItems = order.addItemToOrder(itemMatrix[i][j]);
+		return orderItems;
+	}
+	
+	public double getOrderTotal(){
+		return order.total();
+	}
+
+	
 	
 }
