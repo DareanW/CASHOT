@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 
 
 public class CashierController implements EventHandler {
-	
+
 	@FXML Button button00;
 	@FXML Button button01;
 	@FXML Button button02;
@@ -72,7 +72,7 @@ public class CashierController implements EventHandler {
 
 	@Override
 	public void handle(Event event) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
