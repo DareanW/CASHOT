@@ -47,26 +47,29 @@ public class AdminController implements EventHandler {
 	@FXML Button button52;
 	@FXML Button button53;
 	
-	Button cashierButtons[][];
+	Button adminButtons[][];
 	
 	@FXML private AnchorPane content;
-	CashotSystem system = CashotSystem.getInstance();
+	CashotSystem system;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
+		system = CashotSystem.getInstance();
 		system.setController(this);
 		
 		system.loadEmployees();
 		
 		
-		cashierButtons = new Button[6][4];
+		adminButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		try {
-			loadItems();
-		} catch (Error e) {
-			e.printStackTrace();
-		}
+		system.getItemsInAdminButtons();
+		
+//		try {
+//			loadItems();
+//		} catch (Error e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 
@@ -129,7 +132,7 @@ public class AdminController implements EventHandler {
 //		itemMatrix[item.getRow()][item.getColumn()] = item;
 //		controller.setButton(item);
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-		Button button = cashierButtons[item.getRow()][item.getColumn()];
+		Button button = adminButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
@@ -139,35 +142,39 @@ public class AdminController implements EventHandler {
 		
 	
 	public void buttonToMatrix(){
-		cashierButtons[0][0] = button00;
-		cashierButtons[0][1] = button01;
-		cashierButtons[0][2] = button02;
-		cashierButtons[0][3] = button03;
-		cashierButtons[1][0] = button10;
-		cashierButtons[1][1] = button11;
-		cashierButtons[1][2] = button12;
-		cashierButtons[1][3] = button13;
-		cashierButtons[2][0] = button20;
-		cashierButtons[2][1] = button21;
-		cashierButtons[2][2] = button22;
-		cashierButtons[2][3] = button23;
-		cashierButtons[3][0] = button30;
-		cashierButtons[3][1] = button31;
-		cashierButtons[3][2] = button32;
-		cashierButtons[3][3] = button33;
-		cashierButtons[4][0] = button40;
-		cashierButtons[4][1] = button41;
-		cashierButtons[4][2] = button42;
-		cashierButtons[4][3] = button43;
-		cashierButtons[5][0] = button50;
-		cashierButtons[5][1] = button51;
-		cashierButtons[5][2] = button52;
-		cashierButtons[5][3] = button53;
+		adminButtons[0][0] = button00;
+		adminButtons[0][1] = button01;
+		adminButtons[0][2] = button02;
+		adminButtons[0][3] = button03;
+		adminButtons[1][0] = button10;
+		adminButtons[1][1] = button11;
+		adminButtons[1][2] = button12;
+		adminButtons[1][3] = button13;
+		adminButtons[2][0] = button20;
+		adminButtons[2][1] = button21;
+		adminButtons[2][2] = button22;
+		adminButtons[2][3] = button23;
+		adminButtons[3][0] = button30;
+		adminButtons[3][1] = button31;
+		adminButtons[3][2] = button32;
+		adminButtons[3][3] = button33;
+		adminButtons[4][0] = button40;
+		adminButtons[4][1] = button41;
+		adminButtons[4][2] = button42;
+		adminButtons[4][3] = button43;
+		adminButtons[5][0] = button50;
+		adminButtons[5][1] = button51;
+		adminButtons[5][2] = button52;
+		adminButtons[5][3] = button53;
 				
 	}
 
 	public void setButton(Item item) {
-		// TODO Auto-generated method stub
+		Button button = adminButtons[item.getRow()][item.getColumn()];
+		double price = item.getPrice();
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String moneyString = formatter.format(price);
+		button.setText(item.getName() + "\n" + moneyString);
 		
 	}
 

@@ -231,7 +231,7 @@ public class CashierController implements EventHandler {
 		String moneyString = formatter.format(price);
 		
 		button.setText(item.getName() + "\n" + moneyString);
-		
+		System.out.println(button);
 	}
 
 }
