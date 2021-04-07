@@ -16,14 +16,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class MainController implements EventHandler {
-	
+	CashotSystem system = CashotSystem.getInstance();
 
 	
 	@FXML Button cBtn;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
-		CashotSystem system = CashotSystem.getInstance();
 		system.setController(this);
 		
 		system.loadItems();
@@ -55,6 +54,25 @@ String password = adminUsrPw.getText();*/
 	}
 	
 	public void loadCashier(Event event) throws IOException {
+		System.out.println("Hello");
+		try {
+			if (system.getSignedIn() != null){
+				byPassEmployeeLogin(event);
+			}
+			else {
+				loadEmployeeLogin(event);
+			}
+		} catch(Error e) {
+			loadEmployeeLogin(event);
+		}
+	}
+	
+	public void loadEmployeeLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
+	}
+
+	public void byPassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);		
 	}
@@ -72,12 +90,12 @@ String password = adminUsrPw.getText();*/
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}	
+	
+	
+	
 	public void loadAdminLogin(Event event) throws IOException {
+		
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
-		content.getChildren().setAll(pane);
-	}
-	public void loadEmployeeLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	

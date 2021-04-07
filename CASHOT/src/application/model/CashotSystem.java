@@ -20,6 +20,8 @@ public final class CashotSystem {
 	private static ArrayList<Employee> employees;
 	Item [][] itemMatrix = new Item[6][4];
 	
+	private Employee signedIn;
+	
 	private MainController controller;
 	private CashierController cController;
 	private TrainingController tController;
@@ -145,6 +147,16 @@ public final class CashotSystem {
 		}
 		cController.hideUnimplementedButtons();
 	}
+	
+	public void getItemsInAdminButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (itemMatrix[i][j] != null){
+					aController.setButton(itemMatrix[i][j]);
+				}
+			}
+		}
+	}
 
 	public ArrayList<Item> addItemToOrder(int i, int j) {
 		ArrayList<Item> orderItems = order.addItemToOrder(itemMatrix[i][j]);
@@ -155,6 +167,14 @@ public final class CashotSystem {
 		return order.total();
 	}
 
+	
+	public void setSignedIn(Employee employee) {
+		signedIn = employee;
+	}
+	
+	public Employee getSignedIn(){
+		return signedIn;
+	}
 	
 	
 }
