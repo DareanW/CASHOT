@@ -29,7 +29,7 @@ public class AdminLoginController implements EventHandler{
 	String inputPW;
 	@FXML private AnchorPane content;
 	
-CashotSystem system = new CashotSystem();
+CashotSystem system = CashotSystem.getInstance();
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
