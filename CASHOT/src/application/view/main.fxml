@@ -23,7 +23,7 @@
 		                  <Font size="28.0" />
 		               </font>
 		            </Button>														
-		            <Button layoutX="490.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadEmployeeLogin" prefHeight="96.0" prefWidth="254.0" text="CASHIER" fx:id="cBtn">
+		            <Button layoutX="490.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="96.0" prefWidth="254.0" text="CASHIER" fx:id="cBtn">
 
 		               <font>
 		                  <Font size="28.0" />
