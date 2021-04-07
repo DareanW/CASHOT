@@ -32,10 +32,10 @@ public class AdminLoginController implements EventHandler{
 CashotSystem system = CashotSystem.getInstance();
 	
 	public void initialize( ) throws IOException{
-		//Load items ?
+		
 		system.setController(this);
 		
-		system.getEmployees();
+//		system.getEmployees();
 		
 
 }
@@ -59,6 +59,7 @@ CashotSystem system = CashotSystem.getInstance();
 			//System.out.println("test2");
 			if(employee.getUserName().equals(inputUN) && employee.getEmployeePassword().equals(inputPW) && employee.isAdmin().equals("TRUE")){
 				try {
+					system.setSignedIn(employee);
 					loadAdminister(event);
 				} catch (IOException e) {
 					
