@@ -12,7 +12,7 @@ import application.controller.MainController;
 import application.controller.TrainingController;
 
 
-public class CashotSystem {
+public final class CashotSystem {
 	
 	private int ID;
 	private String admin;
@@ -27,11 +27,18 @@ public class CashotSystem {
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
 	
+	private final static CashotSystem INSTANCE = new CashotSystem();
+	
 	private Order order;
 	
-	public CashotSystem(){
+	private CashotSystem(){
 		employees = new ArrayList<Employee>();
 	}
+	
+	public static CashotSystem getInstance() {
+		return INSTANCE;
+	}
+	
 	
 	public void setController(MainController controller){
 		this.controller = controller;
@@ -115,17 +122,28 @@ public class CashotSystem {
 		
 		csvReader.close();
 		
-		cController.hideUnimplementedButtons();
+//		cController.hideUnimplementedButtons();
 	}
 	
 	public void addItem(Item item){
 		itemMatrix[item.getRow()][item.getColumn()] = item;
-		cController.setButton(item);
+//		cController.setButton(item);
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
 //		controller.testMethod();
 //		System.out.print(item.getRow());
 //		System.out.println(item.getColumn() + " ");
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+	}
+	
+	public void getItemsInButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (itemMatrix[i][j] != null){
+					cController.setButton(itemMatrix[i][j]);
+				}
+			}
+		}
+		cController.hideUnimplementedButtons();
 	}
 
 	public ArrayList<Item> addItemToOrder(int i, int j) {

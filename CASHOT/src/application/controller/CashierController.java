@@ -58,10 +58,12 @@ public class CashierController implements EventHandler {
 	ArrayList<Item> itemsInOrder;
 	
 	@FXML private AnchorPane content;
-	CashotSystem system = new CashotSystem();
+	CashotSystem system;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
+		system = CashotSystem.getInstance();
+		
 		system.setController(this);
 		
 		system.loadEmployees();
@@ -70,11 +72,13 @@ public class CashierController implements EventHandler {
 		cashierButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		try {
-			system.loadItems();
-		} catch (Error e) {
-			e.printStackTrace();
-		}
+//		try {
+//			system.loadItems();
+//		} catch (Error e) {
+//			e.printStackTrace();
+//		}
+		
+		system.getItemsInButtons();
 		
 		system.newOrder();
 		itemsInOrder = new ArrayList<Item>();

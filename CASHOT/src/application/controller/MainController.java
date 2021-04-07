@@ -23,9 +23,10 @@ public class MainController implements EventHandler {
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
-		CashotSystem system = new CashotSystem();
+		CashotSystem system = CashotSystem.getInstance();
 		system.setController(this);
 		
+		system.loadItems();
 		system.loadEmployees();
 		
 	}
