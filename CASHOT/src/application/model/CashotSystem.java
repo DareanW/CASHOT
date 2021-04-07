@@ -10,6 +10,7 @@ import application.controller.CashierController;
 import application.controller.CashierLoginController;
 import application.controller.MainController;
 import application.controller.TrainingController;
+import application.controller.addEmployeeFromAdminController;
 
 
 public final class CashotSystem {
@@ -26,6 +27,7 @@ public final class CashotSystem {
 	private AdminController aController;
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
+	private addEmployeeFromAdminController aEFAController; 
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
@@ -42,6 +44,9 @@ public final class CashotSystem {
 	
 	public void setController(MainController controller){
 		this.controller = controller;
+	}
+	public void setController(addEmployeeFromAdminController controller){
+		this.aEFAController = controller;
 	}
 	
 	public void setController(CashierController controller){
