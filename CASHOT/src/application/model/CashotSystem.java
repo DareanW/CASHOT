@@ -10,8 +10,10 @@ import application.controller.AdminController;
 import application.controller.AdminLoginController;
 import application.controller.CashierController;
 import application.controller.CashierLoginController;
+import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
+import application.controller.ViewDeleteEmployeesController;
 import application.controller.addEmployeeFromAdminController;
 
 
@@ -31,7 +33,9 @@ public final class CashotSystem {
 	private AdminController aController;
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
-	private addEmployeeFromAdminController aEFAController; 
+	private addEmployeeFromAdminController aEFAController;
+	private ViewDeleteEmployeesController vdeController;
+	private EditItemsController EIController;
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
@@ -49,6 +53,9 @@ public final class CashotSystem {
 	public void setController(MainController controller){
 		this.controller = controller;
 	}
+	public void setController(EditItemsController controller){
+		this.EIController = controller;
+	}
 	public void setController(addEmployeeFromAdminController controller){
 		this.aEFAController = controller;
 	}
@@ -63,6 +70,10 @@ public final class CashotSystem {
 	
 	public void setController(AdminController controller){
 		this.aController = controller;
+	}
+	
+	public void setController(ViewDeleteEmployeesController controller){
+		this.vdeController = controller;
 	}
 	
 	public void newOrder() {
