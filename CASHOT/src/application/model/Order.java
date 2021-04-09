@@ -8,6 +8,8 @@ public class Order {
 	private static String employeeName; //changed to static
 	private ArrayList<Item> items;
 	private double total;
+	private int id;
+	private static Employee employee;
 	
 	public Order(LocalDateTime currTimeDate,String employeeName){
 		
@@ -17,12 +19,13 @@ public class Order {
 //		this.total = total;
 	}
 	
-	public Order(){ //constructor test to get cashier to add stuff
+	public Order(Employee employee){ //constructor test to get cashier to add stuff
 		
 		this.currTimeDate= LocalDateTime.now();
 		this.employeeName= "" ;
 		this.items=new ArrayList<Item>();
 		this.total = 0;
+		this.employee = employee;
 	}
 	
 	public String toString(){
@@ -39,6 +42,10 @@ public class Order {
 		return temp;
 	}
 	
+	public Employee getEmployee(){
+		return this.employee;
+	}
+	
 	public double total(){
 		double cost = 0.00;
 		
@@ -50,7 +57,7 @@ public class Order {
 	}
 	
 	public double getTotal() {
-		return total;
+		return total();
 	}
 
 
@@ -71,7 +78,7 @@ public class Order {
 		this.currTimeDate = currTimeDate;
 	}
 	public static String getEmployeeName() { //changed to static
-		return employeeName;
+		return employee.getEmployeeName();
 	}
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;

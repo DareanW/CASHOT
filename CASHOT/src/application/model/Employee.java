@@ -17,7 +17,7 @@ private String employeeName;
 private String userName;
 private String employeePassword;
 private static int ID;
-private static ArrayList<Order> order;
+private static ArrayList<Order> orders;
 private String admin;
 private String trainiee;
 private String cashier;	
@@ -27,7 +27,7 @@ public Employee(String employeeName, String userName, String employeePassword, i
 	this.userName = userName;
 	this.employeePassword = employeePassword;
 	this.ID = ID;
-	this.order = new ArrayList<Order>();
+	this.orders = new ArrayList<Order>();
 	this.admin = admin;
 	this.trainiee = trainiee;
 	this.cashier = cashier;
@@ -59,11 +59,16 @@ public void setID(int iD) {
 	ID = iD;
 }
 public static ArrayList<Order> getOrder() {
-	return order;
+	return orders;
 }
 public void setOrder(ArrayList<Order> order) {
-	this.order = order;
+	this.orders = order;
 }
+
+public void addOrder(Order order){
+	orders.add(order);
+}
+
 public static int hashNum(String userName){
 	long num = 0;
 	for(int i = 0; i < userName.length(); i++)

@@ -103,11 +103,10 @@ public class CashierController implements EventHandler {
 					String strPrice = "";
 					String strTotal = "";
 					double price = 0;
-					NumberFormat formatter = NumberFormat.getCurrencyInstance();
 					String moneyString = "";
 					for (Item item: itemsInOrder){
 						price = item.getPrice();
-						moneyString = formatter.format(price);
+						moneyString = CashotSystem.dblToMoneyString((price));
 //						str += String.format("%-50s %15s\n", item.getName(), moneyString);
 						strName += item.getName() + "\n";
 						strPrice += moneyString + "\n";
@@ -119,7 +118,7 @@ public class CashierController implements EventHandler {
 					receiptNames.setText(strName);
 					receiptPrices.setText(strPrice);
 					total = system.getOrderTotal();
-					strTotal = formatter.format(total);
+					strTotal = CashotSystem.dblToMoneyString((total));
 					receiptTotal.setText(strTotal);
 				}
 			}
@@ -177,11 +176,18 @@ public class CashierController implements EventHandler {
 //		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
 		Button button = cashierButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		String moneyString = formatter.format(price);
+		String moneyString = CashotSystem.dblToMoneyString(price);
 		
 		button.setText(item.getName() + "\n" + moneyString);
 		
+	}
+	
+	public void ringUpOrder() throws IOException{
+		system.ringUp();
+		system.newOrder();
+		receiptNames.setText("");
+		receiptPrices.setText("");
+		receiptTotal.setText("");
 	}
 	
 	public void hideUnimplementedButtons() {
@@ -227,8 +233,7 @@ public class CashierController implements EventHandler {
 	public void setButton(Item item) {
 		Button button = cashierButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		String moneyString = formatter.format(price);
+		String moneyString = CashotSystem.dblToMoneyString((price));
 		
 		button.setText(item.getName() + "\n" + moneyString);
 		System.out.println(button);
