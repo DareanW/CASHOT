@@ -1,8 +1,6 @@
 package application.model;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -86,28 +84,11 @@ public final class CashotSystem {
 		csvReader.close();
 	}
 	
-	public static void addEmployee(Employee employee) throws IOException{
+	public static void addEmployee(Employee employee) {
 		employees.add(employee);
 	}
 	
-	public static void newEmployee(Employee employee) throws IOException{
-		for(Employee tempEmployee: getEmployees()){
-			if(tempEmployee.getUserName().equals(employee))
-				return;
-		}
-		employees.add(employee);
-		BufferedWriter writer = new BufferedWriter(new FileWriter("data/employees.csv", true));
-		String str = "";
-		//writer.write(str);
-		//for(Employee employeeList: employees){
-			
-		str += employee.getEmployeeName() + "," + employee.getUserName() + "," + employee.getEmployeePassword() + "," + Employee.hashNum(employee.getUserName()) + "," + employee.isAdmin() + "\n";
-		
-		writer.write(str);
-		writer.close();
 	
-	}
-
 	public static ArrayList<Employee> getEmployees() {
 		return employees;
 	}
