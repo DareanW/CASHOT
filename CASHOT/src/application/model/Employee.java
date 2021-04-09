@@ -81,7 +81,17 @@ public static int hashNum(String userName){
    // System.out.println(num % 100000000);
     if(num % 100000000 < 9999999)
     num += 10000000;
-	return (int)(num % 100000000);
+	int returnNum = (int)(num % 100000000);
+	for(Employee employee: CashotSystem.getEmployees()){
+		if(returnNum == employee.getID()){
+			if(returnNum == 99999999)
+			returnNum = 10000000;
+			else returnNum++;
+		}
+		if(returnNum == employee.getID())
+			returnNum++;
+	}
+	return returnNum;
 }
 
 public void add(ArrayList<Employee> employee) {
