@@ -76,7 +76,7 @@ public final class CashotSystem {
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
-			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4]);
+			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4],data[5],data[6]);
 			addEmployee(tempEmployee);
 			
 		}
