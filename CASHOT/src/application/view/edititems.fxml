@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" layoutX="112.0" layoutY="31.0" prefHeight="508.0" prefWidth="577.0" spacing="30.0">
+         <children>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="508.0" prefWidth="149.0" spacing="100.0">
+               <children>
+                  <TextField fx:id="addName" focusTraversable="false" promptText="Name" />
+                  <TextField fx:id="addPrice" focusTraversable="false" layoutX="10.0" layoutY="10.0" promptText="Price" />
+                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="151.0" text="Add Item" />
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" layoutX="135.0" layoutY="10.0" prefHeight="508.0" prefWidth="149.0" spacing="100.0">
+               <children>
+                  <TextField fx:id="deleteName" focusTraversable="false" promptText="Name" />
+                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="151.0" text="Delete Item" />
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" layoutX="45.0" layoutY="10.0" prefHeight="508.0" prefWidth="149.0" spacing="100.0">
+               <children>
+                  <TextField fx:id="editCurrName" focusTraversable="false" promptText="Current Name" />
+                  <TextField fx:id="editNewName" focusTraversable="false" layoutX="10.0" layoutY="10.0" promptText="New Name" />
+                  <TextField fx:id="editNewPrice" focusTraversable="false" layoutX="10.0" layoutY="141.0" promptText="New Price" />
+                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="151.0" text="Edit Item" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TextField focusTraversable="false" layoutX="145.0" layoutY="583.0" prefHeight="196.0" prefWidth="510.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadAdmin" prefHeight="64.0" prefWidth="87.0" text="Back" />
+   </children>
+</Pane>
