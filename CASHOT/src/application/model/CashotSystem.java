@@ -1,6 +1,8 @@
 package application.model;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -70,7 +72,7 @@ public final class CashotSystem {
 	
 	
 	public void loadEmployees() throws IOException {
-		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
+		//String employeeName, String userName, String employeePassword, int ID, String Admin, String Trainee, String Cashier
 		String row;
 		
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
@@ -88,6 +90,23 @@ public final class CashotSystem {
 		employees.add(employee);
 	}
 	
+	public static void newEmployee(Employee employee) throws IOException{
+		for(Employee tempEmployee: getEmployees()){
+			if(tempEmployee.getUserName().equals(employee))
+				return;
+		}
+		employees.add(employee);
+		BufferedWriter writer = new BufferedWriter(new FileWriter("data/employees.csv", true));
+		String str = "";
+		//writer.write(str);
+		//for(Employee employeeList: employees){
+
+		str += employee.getEmployeeName() + "," + employee.getUserName() + "," + employee.getEmployeePassword() + "," + Employee.hashNum(employee.getUserName()) + "," + employee.isAdmin() + "," + employee.getTrainiee() + "," + employee.getCashier() +"\n";
+
+		writer.write(str);
+		writer.close();
+
+	}
 	
 	public static ArrayList<Employee> getEmployees() {
 		return employees;
