@@ -112,8 +112,9 @@ public class AdminController implements EventHandler {
 		
 	}
 	
-	public void editItems(Event event){
-		
+	public void editItems(Event event) throws IOException{
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/edititems.fxml"));
+		content.getChildren().setAll(pane);
 	}
 //	public void loadItems() throws IOException{
 //		system.loadItems();
