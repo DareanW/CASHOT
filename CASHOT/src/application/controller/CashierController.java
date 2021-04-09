@@ -236,7 +236,7 @@ public class CashierController implements EventHandler {
 		String moneyString = CashotSystem.dblToMoneyString((price));
 		
 		button.setText(item.getName() + "\n" + moneyString);
-		System.out.println(button);
+		//System.out.println(button);
 	}
 
 }
