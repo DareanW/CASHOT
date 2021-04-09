@@ -28,15 +28,28 @@ public class addEmployeeFromAdminController {
 		String newUsername = addUsrName.getText();
 		String newEmployeeName = employeeName.getText();
 		String newPassword = addUsrPw.getText();
+		String newTrainee, newCashier;
+		if((!adminStatus.isSelected()) && trainee.isSelected()){
+			newTrainee = "TRUE";
+			newCashier = "FALSE";
+		}
+		else if((!adminStatus.isSelected()) && (!trainee.isSelected())){
+			newTrainee = "FALSE";
+			newCashier = "TRUE";
+		}
+		else{
+			newTrainee = "FALSE";
+			newCashier = "FALSE";
+		}
 		for(Employee employee: CashotSystem.getEmployees()){
 			if(newUsername.equals(employee.getUserName())){
 				System.out.println("User exists. Could not add.");
 				return;
 			}
 		}
-		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
-		Employee newEmployee = new Employee(newEmployeeName, newUsername, newPassword, Employee.hashNum(newUsername), isAdmin);
-		CashotSystem.addEmployee(newEmployee);
+		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, String Trainee
+		Employee newEmployee = new Employee(newEmployeeName, newUsername, newPassword, Employee.hashNum(newUsername), isAdmin, newTrainee, newCashier);
+		CashotSystem.newEmployee(newEmployee);
 	}
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));

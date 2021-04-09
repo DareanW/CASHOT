@@ -103,6 +103,11 @@ public class AdminController implements EventHandler {
 		
 	}
 	
+	public void loadAdminister(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
 	public void addEmployees(Event event){
 		
 	}
