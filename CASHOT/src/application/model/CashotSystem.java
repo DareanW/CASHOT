@@ -1,6 +1,8 @@
 package application.model;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ import application.controller.CashierController;
 import application.controller.CashierLoginController;
 import application.controller.MainController;
 import application.controller.TrainingController;
+import application.controller.addEmployeeFromAdminController;
 
 
 public final class CashotSystem {
@@ -28,6 +31,7 @@ public final class CashotSystem {
 	private AdminController aController;
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
+	private addEmployeeFromAdminController aEFAController; 
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
@@ -44,6 +48,9 @@ public final class CashotSystem {
 	
 	public void setController(MainController controller){
 		this.controller = controller;
+	}
+	public void setController(addEmployeeFromAdminController controller){
+		this.aEFAController = controller;
 	}
 	
 	public void setController(CashierController controller){
@@ -65,13 +72,13 @@ public final class CashotSystem {
 	
 	
 	public void loadEmployees() throws IOException {
-		//String employeeName, String userName, String employeePassword, int ID, boolean Admin
+		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, 
 		String row;
 		
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
-			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4]);
+			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4],data[5],data[6]);
 			addEmployee(tempEmployee);
 			
 		}
@@ -176,5 +183,21 @@ public final class CashotSystem {
 		return signedIn;
 	}
 	
-	
+public static void newEmployee(Employee employee) throws IOException{
+	for(Employee tempEmployee: getEmployees()){
+		if(tempEmployee.getUserName().equals(employee))
+			return;
+	}
+	employees.add(employee);
+	BufferedWriter writer = new BufferedWriter(new FileWriter("data/employees.csv", true));
+	String str = "";
+	//writer.write(str);
+	//for(Employee employeeList: employees){
+
+	str += employee.getEmployeeName() + "," + employee.getUserName() + "," + employee.getEmployeePassword() + "," + Employee.hashNum(employee.getUserName()) + "," + employee.isAdmin() + "," + employee.getTrainiee() + "," + employee.getCashier() +"\n";
+
+	writer.write(str);
+	writer.close();
+
+}
 }
