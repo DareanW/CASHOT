@@ -35,7 +35,9 @@ public final class CashotSystem {
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
 	private ViewDeleteEmployeesController vdeController;
+
 	private EditItemsController EIController;
+
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
