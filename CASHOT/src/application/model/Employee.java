@@ -19,14 +19,18 @@ private String employeePassword;
 private static int ID;
 private static ArrayList<Order> order;
 private String admin;
+private String trainiee;
+private String cashier;	
 
-public Employee(String employeeName, String userName, String employeePassword, int ID, String admin){
+public Employee(String employeeName, String userName, String employeePassword, int ID, String admin,String trainiee,String cashier){
 	this.employeeName = employeeName;
 	this.userName = userName;
 	this.employeePassword = employeePassword;
 	this.ID = ID;
 	this.order = new ArrayList<Order>();
 	this.admin = admin;
+	this.trainiee = trainiee;
+	this.cashier = cashier;
 }
 
 
