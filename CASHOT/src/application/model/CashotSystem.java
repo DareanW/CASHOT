@@ -2,6 +2,7 @@ package application.model;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import application.controller.AdminController;
@@ -64,8 +65,15 @@ public final class CashotSystem {
 	}
 	
 	public void newOrder() {
-		order = new Order();
+		order = new Order(signedIn);
+//		System.out.println(order);
+//		System.out.println(signedIn);
+		signedIn.addOrder(order);
 		
+	}
+	
+	public void ringUp() throws IOException {
+		Receipt.printReceipt(order, signedIn);
 	}
 	
 	
@@ -179,6 +187,12 @@ public final class CashotSystem {
 	
 	public Employee getSignedIn(){
 		return signedIn;
+	}
+	
+	public static String dblToMoneyString(double price){
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String moneyString = formatter.format(price);
+		return moneyString;
 	}
 	
 	

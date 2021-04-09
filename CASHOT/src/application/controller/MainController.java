@@ -54,7 +54,6 @@ String password = adminUsrPw.getText();*/
 	}
 	
 	public void loadCashier(Event event) throws IOException {
-		System.out.println("Hello");
 		try {
 			if (system.getSignedIn() != null){
 				byPassEmployeeLogin(event);
