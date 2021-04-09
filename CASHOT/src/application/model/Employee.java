@@ -92,4 +92,43 @@ public void add(ArrayList<Employee> employee) {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
+	public String getTrainiee() {
+		return trainiee;
+	}
+
+
+	public void setTrainiee(String trainiee) {
+		this.trainiee = trainiee;
+	}
+
+
+	public String getCashier() {
+		return cashier;
+	}
+
+
+	public void setCashier(String cashier) {
+		this.cashier = cashier;
+	}
+
+	public void changeEmployeeStat(Employee name)throws IOException{
+		
+		try{
+			BufferedWriter csvWriter =new BufferedWriter(new FileWriter("data/employees.csv",false));
+
+			for(Employee i: CashotSystem.getEmployees()){
+
+				if(i.getEmployeeName().equals(name)){
+					i.trainiee="False";
+					i.cashier="True";
+				}
+
+				csvWriter.write(i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.admin+","+i.getTrainiee()+","+i.getCashier());
+			}
+			csvWriter.close();
+			
+		}catch(IOException e){
+				e.printStackTrace();
+			}
+}
 }
