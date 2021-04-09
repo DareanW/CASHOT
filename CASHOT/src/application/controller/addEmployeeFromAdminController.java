@@ -49,7 +49,7 @@ public class addEmployeeFromAdminController {
 		}
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, String Trainee
 		Employee newEmployee = new Employee(newEmployeeName, newUsername, newPassword, Employee.hashNum(newUsername), isAdmin, newTrainee, newCashier);
-		CashotSystem.addEmployee(newEmployee);
+		CashotSystem.newEmployee(newEmployee);
 	}
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
