@@ -45,8 +45,8 @@ public class Receipt{
 //		File recFile = new File("Receipts/" + year + "/" + month + "/" + day + "receipts.csv");
 		
 		FileWriter rWriter= new FileWriter(recFile);
-		
-		String str = String.format("%27s \n \n", order.getCurrTimeDate().toString());
+		String str = String.format("\n=================================\n\n");
+		 str += String.format("%27s \n \n", order.getCurrTimeDate().toString());
 		str += String.format("%15s %10s \n \n", employee.getID(), employee.getEmployeeName());
 										
 		str += String.format("%28s \n", "________________________");
@@ -58,15 +58,15 @@ public class Receipt{
 		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
 		
 		str += String.format("\n\n %15s %5s", "Total:", moneyString);
-	
+			
+		//rWriter.write("\n\n=================================\n\n");
+		str += String.format("\n\n=================================\n\n\n");
 		rWriter.write(str);
-
-	
-		rWriter.flush();
-		rWriter.close();
-		
+		//rWriter.write("\n\n=================================\n\n");
 		updateLog(str);
-	
+		rWriter.flush();
+		System.out.println(str);
+		rWriter.close();
 	}
 
 	private static void updateLog(String str) throws IOException {
@@ -80,10 +80,7 @@ public class Receipt{
 		}
 		
 		BufferedWriter logWriter = new BufferedWriter(new FileWriter(recLog, true));
-		
-		logWriter.write("\n\n=================================\n\n");
 		logWriter.write(str);
-		logWriter.write("\n\n=================================\n\n");
 		logWriter.flush();
 		logWriter.close();
 
