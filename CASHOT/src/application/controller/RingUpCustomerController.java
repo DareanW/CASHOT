@@ -195,4 +195,76 @@ public class RingUpCustomerController implements EventHandler {
 			}
 		}
 	}
+	public void add1(){
+		
+	}
+	public void add5(){
+		
+	}
+	public void add10(){
+		
+	}
+	public void add25(){
+		
+	}
+	public void add50(){
+		
+	}
+	public void add100(){
+		
+	}
+	public void add200(){
+		
+	}
+	public void add500(){
+		
+	}
+	public void add1000(){
+		
+	}
+	public void add2000(){
+		
+	}
+	public void add5000(){
+		
+	}
+	public void add10000(){
+		
+	}
+	public void minus1(){
+		
+	}
+	public void minus5(){
+		
+	}
+	public void minus10(){
+		
+	}
+	public void minus25(){
+		
+	}
+	public void minus50(){
+		
+	}
+	public void minus100(){
+		
+	}
+	public void minus200(){
+		
+	}
+	public void minus500(){
+		
+	}
+	public void minus1000(){
+		
+	}
+	public void minus2500(){
+		
+	}
+	public void minus5000(){
+		
+	}
+	public void minus10000(){
+		
+	}
 }
