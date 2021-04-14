@@ -58,7 +58,7 @@ public class CashierController implements EventHandler {
 	ArrayList<Item> itemsInOrder;
 	
 	@FXML private AnchorPane content;
-	CashotSystem system;
+	static CashotSystem system;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -150,6 +150,12 @@ public class CashierController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
+	public void loadRingUpCustomer(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/ringUpCustomer.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
+	
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}
@@ -183,11 +189,7 @@ public class CashierController implements EventHandler {
 	}
 	
 	public void ringUpOrder() throws IOException{
-		system.ringUp();
-		system.newOrder();
-		receiptNames.setText("");
-		receiptPrices.setText("");
-		receiptTotal.setText("");
+		
 	}
 	
 	public void hideUnimplementedButtons() {
