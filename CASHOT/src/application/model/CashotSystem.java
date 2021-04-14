@@ -14,7 +14,6 @@ import application.controller.CashierLoginController;
 import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
-import application.controller.ViewDeleteEmployeesController;
 import application.controller.addEmployeeFromAdminController;
 
 
@@ -35,7 +34,7 @@ public final class CashotSystem {
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
-	private ViewDeleteEmployeesController vdeController;
+	
 
 	private EditItemsController EIController;
 
@@ -75,9 +74,7 @@ public final class CashotSystem {
 		this.aController = controller;
 	}
 	
-	public void setController(ViewDeleteEmployeesController controller){
-		this.vdeController = controller;
-	}
+
 	
 	public void newOrder() {
 		order = new Order(signedIn);
