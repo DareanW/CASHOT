@@ -58,6 +58,7 @@ CashotSystem system = CashotSystem.getInstance();
 			//System.out.println("test2");
 			if(employee.getUserName().equals(inputUN) && employee.getEmployeePassword().equals(inputPW) && employee.getCashier().equals("TRUE")){
 				try {
+					system.setSignedIn(employee);
 					loadCashier(event);
 				} catch (IOException e) {
 					
