@@ -80,7 +80,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
                            <font>
                               <Font size="14.0" />
                            </font></Button>

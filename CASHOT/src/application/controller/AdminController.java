@@ -93,9 +93,16 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadCashierLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
-		content.getChildren().setAll(pane);
+	public void loadCashier(Event event) throws IOException {
+
+		if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
+			bypassEmployeeLogin(event);
+		}	
+	}
+
+	public void bypassEmployeeLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
+		content.getChildren().setAll(pane);		
 	}
 	
 	//work in progress
