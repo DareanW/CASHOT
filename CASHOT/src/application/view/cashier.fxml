@@ -80,7 +80,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
@@ -105,7 +105,9 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button layoutX="14.0" layoutY="661.0" onAction="#ringUpOrder" mnemonicParsing="false" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
+
+                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#loadRingUpCustomer" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
+
                   <VBox layoutX="14.0" layoutY="130.0" prefHeight="520.0" prefWidth="292.0">
                      <children>
                         <HBox prefHeight="71.0" prefWidth="292.0">
@@ -136,6 +138,7 @@
 
                      </children>
                   </VBox>
+                  <Button layoutX="14.0" layoutY="748.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="125.0" text="Log Out" />
 		         </children>
 		      </Pane>
 		   </children>

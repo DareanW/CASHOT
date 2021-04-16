@@ -81,7 +81,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashierLogin" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -100,6 +100,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
+                  <Button layoutX="45.0" layoutY="751.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="125.0" text="Log Out" />
                </children></Pane>
 		   </children>
 		</VBox>

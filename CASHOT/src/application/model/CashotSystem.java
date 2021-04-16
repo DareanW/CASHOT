@@ -14,9 +14,8 @@ import application.controller.CashierLoginController;
 import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
-import application.controller.ViewDeleteEmployeesController;
 import application.controller.addEmployeeFromAdminController;
-
+import application.controller.RingUpCustomerController;
 
 public final class CashotSystem {
 	
@@ -35,7 +34,8 @@ public final class CashotSystem {
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
-	private ViewDeleteEmployeesController vdeController;
+	private RingUpCustomerController ringUpCustomerController;
+	
 
 	private EditItemsController EIController;
 
@@ -75,9 +75,7 @@ public final class CashotSystem {
 		this.aController = controller;
 	}
 	
-	public void setController(ViewDeleteEmployeesController controller){
-		this.vdeController = controller;
-	}
+
 	
 	public void newOrder() {
 		order = new Order(signedIn);
@@ -156,34 +154,41 @@ public final class CashotSystem {
 	}
 	
 	public void addItem(Item item){
-		itemMatrix[item.getRow()][item.getColumn()] = item;
-//		cController.setButton(item);
-//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-//		controller.testMethod();
-//		System.out.print(item.getRow());
-//		System.out.println(item.getColumn() + " ");
-//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+		itemMatrix[item.getRow()][item.getColumn()] = item;;
 	}
 	
-	public void getItemsInButtons() {
-		for (int i = 0; i < 6; i++){
-			for (int j = 0; j < 4; j++){
-				if (itemMatrix[i][j] != null){
-					cController.setButton(itemMatrix[i][j]);
+	public void getItemsInButtons(String mode) {
+		if (mode.equals("cashier")){
+			for (int i = 0; i < 6; i++){
+				for (int j = 0; j < 4; j++){
+					if (itemMatrix[i][j] != null){
+						cController.setButton(itemMatrix[i][j]);
+					}
+				}
+			}
+			cController.hideUnimplementedButtons();
+		}
+		
+		else if (mode.equals("admin")){
+			for (int i = 0; i < 6; i++){
+				for (int j = 0; j < 4; j++){
+					if (itemMatrix[i][j] != null){
+						aController.setButton(itemMatrix[i][j]);
+					}
 				}
 			}
 		}
-		cController.hideUnimplementedButtons();
-	}
-	
-	public void getItemsInAdminButtons() {
-		for (int i = 0; i < 6; i++){
-			for (int j = 0; j < 4; j++){
-				if (itemMatrix[i][j] != null){
-					aController.setButton(itemMatrix[i][j]);
+		
+		else if (mode.equals("training")){
+			for (int i = 0; i < 6; i++){
+				for (int j = 0; j < 4; j++){
+					if (itemMatrix[i][j] != null){
+						tController.setButton(itemMatrix[i][j]);
+					}
 				}
 			}
 		}
+		
 	}
 
 	public ArrayList<Item> addItemToOrder(int i, int j) {
@@ -200,10 +205,15 @@ public final class CashotSystem {
 		signedIn = employee;
 	}
 	
+	
 	public Employee getSignedIn(){
 		return signedIn;
 	}
 	
+	public void logOut(){
+		signedIn = null;
+	}
+
 	public static String dblToMoneyString(double price){
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
@@ -226,5 +236,10 @@ public static void newEmployee(Employee employee) throws IOException{
 	writer.write(str);
 	writer.close();
 
+}
+
+public void setController(RingUpCustomerController ringUpCustomerController) {
+	this.ringUpCustomerController = ringUpCustomerController;
+	
 }
 }
