@@ -258,7 +258,7 @@ public class RingUpCustomerController implements EventHandler {
 	public void minus1000(){
 		
 	}
-	public void minus2500(){
+	public void minus2000(){
 		
 	}
 	public void minus5000(){
