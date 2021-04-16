@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RingUpCustomerController">
+	<children>
+		<VBox maxHeight="800.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+		   <children>
+		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #f0f8ff;">
+		         <children>
+		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
+		            <VBox layoutX="325.0" layoutY="139.0" prefHeight="601.0" prefWidth="439.0" spacing="5.0">
+		               <children>
+		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#add1" prefHeight="100.0" prefWidth="109.0" text="\$0.01" textAlignment="CENTER" />
+		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5" prefHeight="100.0" prefWidth="109.0" text="\$0.05" />
+		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10" prefHeight="100.0" prefWidth="109.0" text="\$0.10" />
+		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add25" prefHeight="100.0" prefWidth="109.0" text="\$0.25" />
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+
+		                        <Button fx:id="button10" mnemonicParsing="false" onAction="#add50" prefHeight="100.0" prefWidth="109.0" text="\$0.50" />
+		                        <Button fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add100" prefHeight="100.0" prefWidth="109.0" text="\$1.00" />
+		                        <Button fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add200" prefHeight="100.0" prefWidth="109.0" text="\$2.00" />
+		                        <Button fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add500" prefHeight="100.0" prefWidth="109.0" text="\$5.00" />
+
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button20" mnemonicParsing="false" onAction="#add1000" prefHeight="100.0" prefWidth="109.0" text="\$10.00" />
+		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add2000" prefHeight="100.0" prefWidth="109.0" text="\$20.00" />
+		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5000" prefHeight="100.0" prefWidth="109.0" text="\$50.00" />
+		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10000" prefHeight="100.0" prefWidth="109.0" text="\$100.00" />
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button30" mnemonicParsing="false" onAction="#minus1" prefHeight="100.0" prefWidth="109.0" text="-$0.01" textFill="RED" />
+		                        <Button fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5" prefHeight="100.0" prefWidth="109.0" text="-$0.05" textFill="RED" />
+		                        <Button fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10" prefHeight="100.0" prefWidth="109.0" text="-$0.10" textFill="RED" />
+		                        <Button fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus25" prefHeight="100.0" prefWidth="109.0" text="-$0.25" textFill="RED" />
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button40" mnemonicParsing="false" onAction="#minus50" prefHeight="100.0" prefWidth="109.0" text="-$0.50" textFill="RED" />
+		                        <Button fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus100" prefHeight="100.0" prefWidth="109.0" text="-$1.00" textFill="RED" />
+		                        <Button fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus200" prefHeight="100.0" prefWidth="109.0" text="-$2.00" textFill="RED" />
+		                        <Button fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus500" prefHeight="100.0" prefWidth="109.0" text="-$5.00" textFill="RED" />
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button50" mnemonicParsing="false" onAction="#minus1000" prefHeight="100.0" prefWidth="109.0" text="-$10.00" textFill="RED" />
+		                        <Button fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus2000" prefHeight="100.0" prefWidth="109.0" text="-$20.00" textFill="RED" />
+		                        <Button fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5000" prefHeight="100.0" prefWidth="109.0" text="-$50.00" textFill="RED" />
+		                        <Button fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10000" prefHeight="100.0" prefWidth="109.0" text="-$100.00" textFill="RED" />
+		                     </children>
+		                  </HBox>
+		               </children>
+		            </VBox>
+		            <HBox alignment="TOP_CENTER" layoutX="324.0" layoutY="50.0" prefHeight="71.0" prefWidth="439.0" spacing="5.0">
+		               <children>
+		                  <Button mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+		               </children>
+		            </HBox>
+		            <HBox layoutX="152.0" layoutY="661.0" prefHeight="54.0" prefWidth="180.0">
+		               <children>
+		                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="54.0" text="Total:">
+		                     <font>
+		                        <Font size="14.0" />
+		                     </font>
+		                  </Label>
+		                  <TextArea fx:id="receiptTotal" editable="false" prefHeight="54.0" prefWidth="100.0" text="Amount to Pay Customer:" wrapText="true" />
+		               </children>
+		            </HBox>
+                  <HBox layoutX="58.0" layoutY="50.0" prefHeight="71.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="200.0" text="CASHIER MODE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#ringUpOrder" prefHeight="54.0" prefWidth="143.0" text="Finish Transaction" />
+                  <VBox layoutX="14.0" layoutY="130.0" prefHeight="520.0" prefWidth="292.0">
+                     <children>
+                        <HBox prefHeight="71.0" prefWidth="292.0">
+                           <children>
+                              <Pane prefHeight="46.0" prefWidth="292.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="18.0" prefHeight="35.0" prefWidth="264.0" text="Total With Tax:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+
+                        <HBox prefHeight="464.0" prefWidth="292.0">
+                           <children>
+                              <TextArea id="disableScrollBar" fx:id="moneyToCollect" editable="false" prefHeight="457.0" prefWidth="300.0" />
+                           </children>
+                        </HBox>
+
+                     </children>
+                  </VBox>
+		         </children>
+		      </Pane>
+		   </children>
+		</VBox>
+	</children>
+</AnchorPane>

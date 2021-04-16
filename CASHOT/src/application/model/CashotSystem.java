@@ -14,9 +14,8 @@ import application.controller.CashierLoginController;
 import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
-import application.controller.ViewDeleteEmployeesController;
 import application.controller.addEmployeeFromAdminController;
-
+import application.controller.RingUpCustomerController;
 
 public final class CashotSystem {
 	
@@ -35,7 +34,8 @@ public final class CashotSystem {
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
-	private ViewDeleteEmployeesController vdeController;
+	private RingUpCustomerController ringUpCustomerController;
+	
 
 	private EditItemsController EIController;
 
@@ -75,9 +75,7 @@ public final class CashotSystem {
 		this.aController = controller;
 	}
 	
-	public void setController(ViewDeleteEmployeesController controller){
-		this.vdeController = controller;
-	}
+
 	
 	public void newOrder() {
 		order = new Order(signedIn);
@@ -238,5 +236,10 @@ public static void newEmployee(Employee employee) throws IOException{
 	writer.write(str);
 	writer.close();
 
+}
+
+public void setController(RingUpCustomerController ringUpCustomerController) {
+	this.ringUpCustomerController = ringUpCustomerController;
+	
 }
 }

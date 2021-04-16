@@ -105,7 +105,8 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#ringUpOrder" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
+
+                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#loadRingUpCustomer" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
                   <VBox layoutX="14.0" layoutY="130.0" prefHeight="520.0" prefWidth="292.0">
                      <children>
                         <HBox prefHeight="71.0" prefWidth="292.0">
