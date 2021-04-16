@@ -142,7 +142,7 @@ public final class CashotSystem {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
 		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
 			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
