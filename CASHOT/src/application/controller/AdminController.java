@@ -63,7 +63,7 @@ public class AdminController implements EventHandler {
 		adminButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		system.getItemsInAdminButtons();
+		system.getItemsInButtons("admin");
 		
 //		try {
 //			loadItems();
@@ -93,9 +93,16 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadCashierLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
-		content.getChildren().setAll(pane);
+	public void loadCashier(Event event) throws IOException {
+
+		if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
+			bypassEmployeeLogin(event);
+		}	
+	}
+
+	public void bypassEmployeeLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
+		content.getChildren().setAll(pane);		
 	}
 	
 	//work in progress
@@ -110,6 +117,11 @@ public class AdminController implements EventHandler {
 	
 	public void addEmployees(Event event){
 		
+	}
+	
+	public void logOut(Event event) throws IOException {
+		system.logOut();
+		loadMain(event);
 	}
 	
 	public void editItems(Event event) throws IOException{

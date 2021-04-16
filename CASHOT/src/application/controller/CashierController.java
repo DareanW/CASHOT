@@ -78,7 +78,7 @@ public class CashierController implements EventHandler {
 //			e.printStackTrace();
 //		}
 		
-		system.getItemsInButtons();
+		system.getItemsInButtons("cashier");
 		
 		system.newOrder();
 		itemsInOrder = new ArrayList<Item>();
@@ -145,17 +145,43 @@ public class CashierController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
+	public void loadAdminister(Event event) throws IOException {
+		try {
+			if (system.getSignedIn().isAdmin().equals("TRUE")){
+				bypassAdminLogin(event);
+			}
+			else {
+				loadAdminLogin(event);
+			}
+		} catch(Exception e) {
+			loadAdminLogin(event);
+		}
+	}
+	
+	public void bypassAdminLogin (Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
+
+	public void logOut(Event event) throws IOException {
+		system.logOut();
+		loadMain(event);
+	}
+	
+
 	public void loadRingUpCustomer(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/ringUpCustomer.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
 	
+
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}

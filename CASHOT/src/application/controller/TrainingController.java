@@ -47,7 +47,7 @@ public class TrainingController implements EventHandler {
 	@FXML Button button52;
 	@FXML Button button53;
 	
-	Button cashierButtons[][];
+	Button trainingButtons[][];
 	
 	@FXML private AnchorPane content;
 	CashotSystem system = CashotSystem.getInstance();
@@ -59,14 +59,11 @@ public class TrainingController implements EventHandler {
 		system.loadEmployees();
 		
 		
-		cashierButtons = new Button[6][4];
+		trainingButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		try {
-			loadItems();
-		} catch (Error e) {
-			e.printStackTrace();
-		}
+		system.getItemsInButtons("training");
+
 		
 	}
 
@@ -95,64 +92,68 @@ public class TrainingController implements EventHandler {
 //		system.loadItems();
 //	}
 	
-	public void loadItems() throws IOException {
-		//String employeeName, String userName, String employeePassword, int ID
-		String row;
-		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
-		while ((row = csvReader.readLine()) != null) {
-			String[] data = row.split(",");
-			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
-			addItem(tempItem);
-			
-		}
-		csvReader.close();
-	}
+//	public void loadItems() throws IOException {
+//		//String employeeName, String userName, String employeePassword, int ID
+//		String row;
+//		
+//		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
+//		while ((row = csvReader.readLine()) != null) {
+//			String[] data = row.split(",");
+//			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
+//			addItem(tempItem);
+//			
+//		}
+//		csvReader.close();
+//	}
 	
-	public void addItem(Item item){
-//		itemMatrix[item.getRow()][item.getColumn()] = item;
-//		controller.setButton(item);
-//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-		Button button = cashierButtons[item.getRow()][item.getColumn()];
-		double price = item.getPrice();
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		String moneyString = formatter.format(price);
-		
-		button.setText(item.getName() + "\n" + moneyString);
-	}
+//	public void addItem(Item item){
+////		itemMatrix[item.getRow()][item.getColumn()] = item;
+////		controller.setButton(item);
+////		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+//		Button button = trainingButtons[item.getRow()][item.getColumn()];
+//		double price = item.getPrice();
+//		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+//		String moneyString = formatter.format(price);
+//		
+//		button.setText(item.getName() + "\n" + moneyString);
+//	}
 		
 	
 	public void buttonToMatrix(){
-		cashierButtons[0][0] = button00;
-		cashierButtons[0][1] = button01;
-		cashierButtons[0][2] = button02;
-		cashierButtons[0][3] = button03;
-		cashierButtons[1][0] = button10;
-		cashierButtons[1][1] = button11;
-		cashierButtons[1][2] = button12;
-		cashierButtons[1][3] = button13;
-		cashierButtons[2][0] = button20;
-		cashierButtons[2][1] = button21;
-		cashierButtons[2][2] = button22;
-		cashierButtons[2][3] = button23;
-		cashierButtons[3][0] = button30;
-		cashierButtons[3][1] = button31;
-		cashierButtons[3][2] = button32;
-		cashierButtons[3][3] = button33;
-		cashierButtons[4][0] = button40;
-		cashierButtons[4][1] = button41;
-		cashierButtons[4][2] = button42;
-		cashierButtons[4][3] = button43;
-		cashierButtons[5][0] = button50;
-		cashierButtons[5][1] = button51;
-		cashierButtons[5][2] = button52;
-		cashierButtons[5][3] = button53;
+		trainingButtons[0][0] = button00;
+		trainingButtons[0][1] = button01;
+		trainingButtons[0][2] = button02;
+		trainingButtons[0][3] = button03;
+		trainingButtons[1][0] = button10;
+		trainingButtons[1][1] = button11;
+		trainingButtons[1][2] = button12;
+		trainingButtons[1][3] = button13;
+		trainingButtons[2][0] = button20;
+		trainingButtons[2][1] = button21;
+		trainingButtons[2][2] = button22;
+		trainingButtons[2][3] = button23;
+		trainingButtons[3][0] = button30;
+		trainingButtons[3][1] = button31;
+		trainingButtons[3][2] = button32;
+		trainingButtons[3][3] = button33;
+		trainingButtons[4][0] = button40;
+		trainingButtons[4][1] = button41;
+		trainingButtons[4][2] = button42;
+		trainingButtons[4][3] = button43;
+		trainingButtons[5][0] = button50;
+		trainingButtons[5][1] = button51;
+		trainingButtons[5][2] = button52;
+		trainingButtons[5][3] = button53;
 				
 	}
 
 	public void setButton(Item item) {
-		// TODO Auto-generated method stub
+		Button button = trainingButtons[item.getRow()][item.getColumn()];
+		double price = item.getPrice();
+		String moneyString = CashotSystem.dblToMoneyString((price));
 		
+		button.setText(item.getName() + "\n" + moneyString);
+		//System.out.println(button);
 	}
 
 }

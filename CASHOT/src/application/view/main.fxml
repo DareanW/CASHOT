@@ -13,7 +13,7 @@
 		   <children>
 		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #fffaf0;">
 		         <children>
-		            <Button layoutX="273.0" layoutY="352.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="96.0" prefWidth="254.0" text="ADMIN">
+		            <Button layoutX="273.0" layoutY="352.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="96.0" prefWidth="254.0" text="ADMIN">
 		               <font>
 		                  <Font size="28.0" />
 		               </font>
