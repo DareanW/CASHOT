@@ -78,7 +78,7 @@ public class CashierController implements EventHandler {
 //			e.printStackTrace();
 //		}
 		
-		system.getItemsInButtons();
+		system.getItemsInButtons("cashier");
 		
 		system.newOrder();
 		itemsInOrder = new ArrayList<Item>();
@@ -166,6 +166,11 @@ public class CashierController implements EventHandler {
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
+	}
+	
+	public void logOut(Event event) throws IOException {
+		system.logOut();
+		loadMain(event);
 	}
 	
 //	public void loadItems() throws IOException{

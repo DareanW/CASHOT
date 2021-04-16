@@ -63,7 +63,7 @@ public class AdminController implements EventHandler {
 		adminButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		system.getItemsInAdminButtons();
+		system.getItemsInButtons("admin");
 		
 //		try {
 //			loadItems();
@@ -117,6 +117,11 @@ public class AdminController implements EventHandler {
 	
 	public void addEmployees(Event event){
 		
+	}
+	
+	public void logOut(Event event) throws IOException {
+		system.logOut();
+		loadMain(event);
 	}
 	
 	public void editItems(Event event) throws IOException{
