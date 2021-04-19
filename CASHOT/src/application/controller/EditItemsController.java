@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import application.model.CashotSystem;
+import application.model.Employee;
 import application.model.Item;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -43,7 +44,7 @@ public class EditItemsController implements EventHandler {
 		String name = addName.getText();
 		String price = addPrice.getText();
 		
-		for (Item items : CashotSystem.getItems()){
+		for (Item items : Item.getItems()){
 			Item temp = new Item(name, price, );
 		
 		}
