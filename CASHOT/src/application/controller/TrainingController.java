@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 import application.model.CashotSystem;
 import application.model.Item;
@@ -47,30 +48,64 @@ public class TrainingController implements EventHandler {
 	@FXML Button button52;
 	@FXML Button button53;
 	
+	@FXML TextArea receiptNames;
+	@FXML TextArea receiptPrices;
+	@FXML TextArea receiptTotal;
+	
 	Button trainingButtons[][];
 	
+	ArrayList<Item> itemsInOrder;
+	
 	@FXML private AnchorPane content;
-	CashotSystem system = CashotSystem.getInstance();
+	CashotSystem system;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
-		system.setController(this);
-		
-		system.loadEmployees();
-		
+		system = CashotSystem.getInstance();
+
+		system.setController(this);		
 		
 		trainingButtons = new Button[6][4];
 		buttonToMatrix();
-		
+		System.out.println(button00);
+
 		system.getItemsInButtons("training");
+		system.newOrder("training");
 
 		
 	}
 
 	@Override
 	public void handle(Event event) {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (trainingButtons[i][j] == event.getSource()){
+					itemsInOrder = system.addItemToOrder(i,j);
+//					receiptList.setText(itemsInOrder.toString());
+					String strName = "";
+					String strPrice = "";
+					String strTotal = "";
+					double price = 0;
+					String moneyString = "";
+					for (Item item: itemsInOrder){
+						price = item.getPrice();
+						moneyString = CashotSystem.dblToMoneyString((price));
+//						str += String.format("%-50s %15s\n", item.getName(), moneyString);
+						strName += item.getName() + "\n";
+						strPrice += moneyString + "\n";
+//						System.out.printf("%-50s %15s\n", item.getName(), moneyString);
+//						System.out.print(str);
+//						receiptList.setText(str);
+					}
+					double total;
+					receiptNames.setText(strName);
+					receiptPrices.setText(strPrice);
+					total = system.getOrderTotal();
+					strTotal = CashotSystem.dblToMoneyString((total));
+					receiptTotal.setText(strTotal);
+				}
+			}
+		}
 	}
 	
 	public void loadMain(Event event) throws IOException {
@@ -79,8 +114,26 @@ public class TrainingController implements EventHandler {
 	}
 	
 	public void loadCashier(Event event) throws IOException {
+		try {
+			if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
+				bypassEmployeeLogin(event);
+			}
+			else {
+				loadEmployeeLogin(event);
+			}
+		} catch(Exception e) {
+			loadEmployeeLogin(event);
+		}
+	}
+	
+	public void loadEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
+	}
+
+	public void bypassEmployeeLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
+		content.getChildren().setAll(pane);		
 	}
 	
 	public void loadAdminLogin(Event event) throws IOException {
@@ -88,38 +141,21 @@ public class TrainingController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-//	public void loadItems() throws IOException{
-//		system.loadItems();
-//	}
 	
-//	public void loadItems() throws IOException {
-//		//String employeeName, String userName, String employeePassword, int ID
-//		String row;
-//		
-//		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
-//		while ((row = csvReader.readLine()) != null) {
-//			String[] data = row.split(",");
-//			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
-//			addItem(tempItem);
-//			
-//		}
-//		csvReader.close();
-//	}
-	
-//	public void addItem(Item item){
-////		itemMatrix[item.getRow()][item.getColumn()] = item;
-////		controller.setButton(item);
-////		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
-//		Button button = trainingButtons[item.getRow()][item.getColumn()];
-//		double price = item.getPrice();
-//		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-//		String moneyString = formatter.format(price);
-//		
-//		button.setText(item.getName() + "\n" + moneyString);
-//	}
+	public void hideUnimplementedButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				Button button = trainingButtons[i][j];
+				if (button.getText().equals("")){
+					button.setVisible(false);
+				}
+			}
+		}
+	}
 		
 	
 	public void buttonToMatrix(){
+		
 		trainingButtons[0][0] = button00;
 		trainingButtons[0][1] = button01;
 		trainingButtons[0][2] = button02;
@@ -144,16 +180,16 @@ public class TrainingController implements EventHandler {
 		trainingButtons[5][1] = button51;
 		trainingButtons[5][2] = button52;
 		trainingButtons[5][3] = button53;
-				
+		
 	}
 
 	public void setButton(Item item) {
 		Button button = trainingButtons[item.getRow()][item.getColumn()];
+		System.out.println(button);
 		double price = item.getPrice();
 		String moneyString = CashotSystem.dblToMoneyString((price));
 		
 		button.setText(item.getName() + "\n" + moneyString);
-		//System.out.println(button);
-	}
-
+		
+		}
 }
