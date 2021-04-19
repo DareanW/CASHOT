@@ -3,11 +3,14 @@ package application.controller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import application.model.CashotSystem;
+import application.model.Employee;
 import application.model.Item;
+import application.model.Order;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -52,13 +55,18 @@ public class RingUpCustomerController implements EventHandler {
 	@FXML TextArea receiptNames;
 	@FXML TextArea receiptPrices;
 	@FXML TextArea receiptTotal;
+	@FXML TextArea moneyToCollect;
 	
 	Button cashierButtons[][];
 	
 	ArrayList<Item> itemsInOrder;
+	double moneyToCalculate = 0;
+	
 	
 	@FXML private AnchorPane content;
 	CashotSystem system;
+	String moneyString = "";
+	double total = 0.00;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -77,44 +85,57 @@ public class RingUpCustomerController implements EventHandler {
 //			e.printStackTrace();
 //		}
 		
-		system.getItemsInButtons();
+		//system.getItemsInButtons();
 		
-		system.newOrder();
+		//system.newOrder();
 		itemsInOrder = new ArrayList<Item>();
+		String strName = "";
+		String strPrice = "";
+		String strTotal = "";
+		double tax = 0.00;
+		double price = 0.00;
+		
+		for (Item item: CashierController.itemsInOrder){
+			price = item.getPrice();
+			tax = Math.round(item.getPrice() * 100.00) / 100.00;
+			tax = (0.0825 * tax);
+			tax = Double.parseDouble(String.format("%.02f", tax));
+			moneyString += "$" + String.format("%.02f", item.getPrice()) + " - " + item.getName() + " + $" + String.format("%.02f", tax) + " tax\n";
+			//System.out.println("Test");
+//			str += String.format("%-50s %15s\n", item.getName(), moneyString);
+			//strName += item.getName() + "\n";
+			//strPrice += moneyString + "\n";
+//			System.out.printf("%-50s %15s\n", item.getName(), moneyString);
+//			System.out.print(str);
+//			receiptList.setText(str);
+			total += item.getPrice() + tax;
+		}
+		moneyString += "-------------------\n" + "\t\t\t\t$" + String.format("%.02f", total) + "\n";
+		moneyToCollect.setText(moneyString);
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", total));
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
+		
+		 moneyToCalculate =  Double.parseDouble(String.format("%.02f", total));
+		
+		//receiptNames.setText(strName);
+		//receiptPrices.setText(strPrice);
+		//total = system.getOrderTotal();
+		//strTotal = CashotSystem.dblToMoneyString((total));
+		//receiptTotal.setText(strTotal);
+	
 	}
 
 	@Override
 	public void handle(Event event) {
-		for (int i = 0; i < 6; i++){
-			for (int j = 0; j < 4; j++){
-				if (cashierButtons[i][j] == event.getSource()){
-					itemsInOrder = system.addItemToOrder(i,j);
+		//for (int i = 0; i < 6; i++){
+			//for (int j = 0; j < 4; j++){
+				//if (cashierButtons[i][j] == event.getSource()){
+					//itemsInOrder = system.addItemToOrder(i,j);
 //					receiptList.setText(itemsInOrder.toString());
-					String strName = "";
-					String strPrice = "";
-					String strTotal = "";
-					double price = 0;
-					String moneyString = "";
-					for (Item item: itemsInOrder){
-						price = item.getPrice();
-						moneyString = CashotSystem.dblToMoneyString((price));
-//						str += String.format("%-50s %15s\n", item.getName(), moneyString);
-						strName += item.getName() + "\n";
-						strPrice += moneyString + "\n";
-//						System.out.printf("%-50s %15s\n", item.getName(), moneyString);
-//						System.out.print(str);
-//						receiptList.setText(str);
-					}
-					double total;
-					receiptNames.setText(strName);
-					receiptPrices.setText(strPrice);
-					total = system.getOrderTotal();
-					strTotal = CashotSystem.dblToMoneyString((total));
-					receiptTotal.setText(strTotal);
-				}
+					
 			}
-		}
-	}
+		//}
+	//}
 	
 //	public void nameScroll(Event event){
 //		receiptPrices.setScrollTop(receiptNames.getScrollTop());
@@ -126,7 +147,7 @@ public class RingUpCustomerController implements EventHandler {
 	
 	
 	
-	public void loadMain(Event event) throws IOException {
+	/*public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
@@ -140,12 +161,12 @@ public class RingUpCustomerController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+	*/
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}
 	
-	public void loadItems() throws IOException {
+	/*public void loadItems() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
 		
@@ -160,7 +181,7 @@ public class RingUpCustomerController implements EventHandler {
 		
 		hideUnimplementedButtons();
 	}
-	
+	*//*
 	public void addItem(Item item){
 //		itemMatrix[item.getRow()][item.getColumn()] = item;
 //		controller.setButton(item);
@@ -171,18 +192,16 @@ public class RingUpCustomerController implements EventHandler {
 		
 		button.setText(item.getName() + "\n" + moneyString);
 		
-	}
+	}*/
 	public void loadCashier(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
 	public void ringUpOrder() throws IOException{
-		CashierController.system.ringUp();
-		CashierController.system.newOrder();
-		receiptNames.setText("");
-		receiptPrices.setText("");
-		receiptTotal.setText("");
+		//CashierController.system.ringUp();
+		//CashierController.system.newOrder();
+		//receiptTotal.setText("");
 	}
 	
 	public void hideUnimplementedButtons() {
@@ -232,39 +251,87 @@ public class RingUpCustomerController implements EventHandler {
 		
 	}
 	public void minus1(){
-		
+		moneyToCalculate -= 0.01;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $0.01:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus5(){
-		
+		moneyToCalculate -= 0.05;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $0.05:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus10(){
-		
+		moneyToCalculate -= 0.10;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $0.10:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus25(){
-		
+		moneyToCalculate -= 0.25;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $0.25:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus50(){
-		
+		moneyToCalculate -= 0.50;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $0.50:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus100(){
-		
+		moneyToCalculate -= 1.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $1.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus200(){
-		
+		moneyToCalculate -= 2.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $2.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus500(){
-		
+		moneyToCalculate -= 5.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $5.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus1000(){
-		
+		moneyToCalculate -= 10.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $10.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus2000(){
-		
+		moneyToCalculate -= 20.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $20.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus5000(){
-		
+		moneyToCalculate -= 50.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $50.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus10000(){
-		
+		moneyToCalculate -= 100.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Paid $100.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 }

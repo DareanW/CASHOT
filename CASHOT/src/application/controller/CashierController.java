@@ -218,7 +218,7 @@ public class CashierController implements EventHandler {
 	
 	public void ringUpOrder() throws IOException{
 		system.ringUp();
-		system.newOrder();
+		system.newOrder("cashier");
 		receiptNames.setText("");
 		receiptPrices.setText("");
 		receiptTotal.setText("");
