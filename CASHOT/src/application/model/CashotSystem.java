@@ -248,4 +248,24 @@ public void setController(RingUpCustomerController ringUpCustomerController) {
 	this.ringUpCustomerController = ringUpCustomerController;
 	
 }
+
+public ArrayList<Item> getItems() {
+	ArrayList<Item> items = new ArrayList<Item>();
+	
+	for (int i = 0; i < 6; i++){
+		for (int j = 0; j < 4; j++){
+			if(itemMatrix[i][j] != null){
+				items.add(itemMatrix[i][j]);
+			}
+		}
+	}
+	return items;
+}
+
+public void updateItemsCsv(Item item) throws IOException{
+	
+	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",true));
+	csvWriter.write(item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
+	csvWriter.close();
+}
 }
