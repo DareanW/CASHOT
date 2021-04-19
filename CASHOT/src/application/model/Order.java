@@ -28,6 +28,13 @@ public class Order {
 		this.employee = employee;
 	}
 	
+	public Order() {
+		this.currTimeDate= LocalDateTime.now();
+		this.employeeName= "" ;
+		this.items=new ArrayList<Item>();
+		this.total = 0;
+	}
+	
 	public String toString(){
 		String temp = "";
 		
