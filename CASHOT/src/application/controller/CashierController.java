@@ -96,6 +96,8 @@ public class CashierController implements EventHandler {
 
 	@Override
 	public void handle(Event event) {
+		//System.out.println(cashierButtons[1][0]);
+		//System.out.println(event.getSource());
 		for (int i = 0; i < 6; i++){
 			for (int j = 0; j < 4; j++){
 				if (cashierButtons[i][j] == event.getSource()){
