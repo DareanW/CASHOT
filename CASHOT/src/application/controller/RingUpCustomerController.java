@@ -202,6 +202,14 @@ public class RingUpCustomerController implements EventHandler {
 		//CashierController.system.ringUp();
 		//CashierController.system.newOrder();
 		//receiptTotal.setText("");
+		if(moneyToCalculate > 0.00){
+			moneyString += "Not enough money paid. Please pay total amount.\n";
+			moneyToCollect.setText(moneyString);
+		}
+		else{
+			//Put complete transaction calls here.
+		}
+		
 	}
 	
 	public void hideUnimplementedButtons() {
@@ -215,40 +223,88 @@ public class RingUpCustomerController implements EventHandler {
 		}
 	}
 	public void add1(){
-		
+		moneyToCalculate += 0.01;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $0.01:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add5(){
-		
+		moneyToCalculate += 0.05;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $0.05:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add10(){
-		
+		moneyToCalculate += 0.10;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $0.10:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add25(){
-		
+		moneyToCalculate += 0.25;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $0.25:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add50(){
-		
+		moneyToCalculate += 0.50;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $0.50:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add100(){
-		
+		moneyToCalculate += 1.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $1.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add200(){
-		
+		moneyToCalculate += 2.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $2.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add500(){
-		
+		moneyToCalculate += 5.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $5.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add1000(){
-		
+		moneyToCalculate += 10.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $10.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add2000(){
-		
+		moneyToCalculate += 20.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $20.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add5000(){
-		
+		moneyToCalculate += 50.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $50.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add10000(){
-		
+		moneyToCalculate += 100.00;
+		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
+		moneyString += "Added $100.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
+		moneyToCollect.setText(moneyString);
+		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus1(){
 		moneyToCalculate -= 0.01;
