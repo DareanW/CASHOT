@@ -55,7 +55,7 @@ public class CashierController implements EventHandler {
 	
 	Button cashierButtons[][];
 	
-	ArrayList<Item> itemsInOrder;
+	static ArrayList<Item> itemsInOrder;
 	
 	@FXML private AnchorPane content;
 	static CashotSystem system;
