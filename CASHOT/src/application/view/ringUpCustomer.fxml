@@ -18,54 +18,54 @@
 		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
 		            <VBox layoutX="325.0" layoutY="139.0" prefHeight="601.0" prefWidth="439.0" spacing="5.0">
 		               <children>
-		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
-		                     <children>
-		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#add1" prefHeight="100.0" prefWidth="109.0" text="\$0.01" textAlignment="CENTER" />
-		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5" prefHeight="100.0" prefWidth="109.0" text="\$0.05" />
-		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10" prefHeight="100.0" prefWidth="109.0" text="\$0.10" />
-		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add25" prefHeight="100.0" prefWidth="109.0" text="\$0.25" />
-		                     </children>
-		                  </HBox>
-		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
-		                     <children>
-
-		                        <Button fx:id="button10" mnemonicParsing="false" onAction="#add50" prefHeight="100.0" prefWidth="109.0" text="\$0.50" />
-		                        <Button fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add100" prefHeight="100.0" prefWidth="109.0" text="\$1.00" />
-		                        <Button fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add200" prefHeight="100.0" prefWidth="109.0" text="\$2.00" />
-		                        <Button fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add500" prefHeight="100.0" prefWidth="109.0" text="\$5.00" />
-
-		                     </children>
-		                  </HBox>
-		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
-		                     <children>
-		                        <Button fx:id="button20" mnemonicParsing="false" onAction="#add1000" prefHeight="100.0" prefWidth="109.0" text="\$10.00" />
-		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add2000" prefHeight="100.0" prefWidth="109.0" text="\$20.00" />
-		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5000" prefHeight="100.0" prefWidth="109.0" text="\$50.00" />
-		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10000" prefHeight="100.0" prefWidth="109.0" text="\$100.00" />
-		                     </children>
-		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button30" mnemonicParsing="false" onAction="#minus1" prefHeight="100.0" prefWidth="109.0" text="-$0.01" textFill="RED" />
-		                        <Button fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5" prefHeight="100.0" prefWidth="109.0" text="-$0.05" textFill="RED" />
-		                        <Button fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10" prefHeight="100.0" prefWidth="109.0" text="-$0.10" textFill="RED" />
-		                        <Button fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus25" prefHeight="100.0" prefWidth="109.0" text="-$0.25" textFill="RED" />
+		                        <Button fx:id="button30" mnemonicParsing="false" onAction="#minus1" prefHeight="100.0" prefWidth="109.0" text="-$0.01" />
+		                        <Button fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5" prefHeight="100.0" prefWidth="109.0" text="-$0.05" />
+		                        <Button fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10" prefHeight="100.0" prefWidth="109.0" text="-$0.10" />
+		                        <Button fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus25" prefHeight="100.0" prefWidth="109.0" text="-$0.25" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button40" mnemonicParsing="false" onAction="#minus50" prefHeight="100.0" prefWidth="109.0" text="-$0.50" textFill="RED" />
-		                        <Button fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus100" prefHeight="100.0" prefWidth="109.0" text="-$1.00" textFill="RED" />
-		                        <Button fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus200" prefHeight="100.0" prefWidth="109.0" text="-$2.00" textFill="RED" />
-		                        <Button fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus500" prefHeight="100.0" prefWidth="109.0" text="-$5.00" textFill="RED" />
+		                        <Button fx:id="button40" mnemonicParsing="false" onAction="#minus50" prefHeight="100.0" prefWidth="109.0" text="-$0.50" />
+		                        <Button fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus100" prefHeight="100.0" prefWidth="109.0" text="-$1.00" />
+		                        <Button fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus200" prefHeight="100.0" prefWidth="109.0" text="-$2.00" />
+		                        <Button fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus500" prefHeight="100.0" prefWidth="109.0" text="-$5.00" />
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button fx:id="button50" mnemonicParsing="false" onAction="#minus1000" prefHeight="100.0" prefWidth="109.0" text="-$10.00" textFill="RED" />
-		                        <Button fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus2000" prefHeight="100.0" prefWidth="109.0" text="-$20.00" textFill="RED" />
-		                        <Button fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5000" prefHeight="100.0" prefWidth="109.0" text="-$50.00" textFill="RED" />
-		                        <Button fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10000" prefHeight="100.0" prefWidth="109.0" text="-$100.00" textFill="RED" />
+		                        <Button fx:id="button50" mnemonicParsing="false" onAction="#minus1000" prefHeight="100.0" prefWidth="109.0" text="-$10.00" />
+		                        <Button fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus2000" prefHeight="100.0" prefWidth="109.0" text="-$20.00" />
+		                        <Button fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus5000" prefHeight="100.0" prefWidth="109.0" text="-$50.00" />
+		                        <Button fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#minus10000" prefHeight="100.0" prefWidth="109.0" text="-$100.00" />
+		                     </children>
+		                  </HBox>
+		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button00" mnemonicParsing="false" onAction="#add1" prefHeight="100.0" prefWidth="109.0" text="+$0.01" textAlignment="CENTER" textFill="RED" />
+		                        <Button fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5" prefHeight="100.0" prefWidth="109.0" text="+$0.05" textFill="RED" />
+		                        <Button fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10" prefHeight="100.0" prefWidth="109.0" text="+$0.10" textFill="RED" />
+		                        <Button fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add25" prefHeight="100.0" prefWidth="109.0" text="+$0.25" textFill="RED" />
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+
+		                        <Button fx:id="button10" mnemonicParsing="false" onAction="#add50" prefHeight="100.0" prefWidth="109.0" text="+$0.50" textFill="RED" />
+		                        <Button fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add100" prefHeight="100.0" prefWidth="109.0" text="+$1.00" textFill="RED" />
+		                        <Button fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add200" prefHeight="100.0" prefWidth="109.0" text="+$2.00" textFill="RED" />
+		                        <Button fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add500" prefHeight="100.0" prefWidth="109.0" text="+$5.00" textFill="RED" />
+
+		                     </children>
+		                  </HBox>
+		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
+		                     <children>
+		                        <Button fx:id="button20" mnemonicParsing="false" onAction="#add1000" prefHeight="100.0" prefWidth="109.0" text="+$10.00" textFill="RED" />
+		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#add2000" prefHeight="100.0" prefWidth="109.0" text="+$20.00" textFill="RED" />
+		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#add5000" prefHeight="100.0" prefWidth="109.0" text="+$50.00" textFill="RED" />
+		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#add10000" prefHeight="100.0" prefWidth="109.0" text="+$100.00" textFill="RED" />
 		                     </children>
 		                  </HBox>
 		               </children>
@@ -104,7 +104,7 @@
                            <children>
                               <Pane prefHeight="46.0" prefWidth="292.0" style="-fx-background-color: lightgray;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="18.0" prefHeight="35.0" prefWidth="264.0" text="Total With Tax:">
+                                    <Label layoutX="14.0" layoutY="18.0" prefHeight="35.0" prefWidth="264.0" text="Total to Pay:">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -116,7 +116,7 @@
 
                         <HBox prefHeight="464.0" prefWidth="292.0">
                            <children>
-                              <TextArea id="disableScrollBar" fx:id="moneyToCollect" editable="false" prefHeight="457.0" prefWidth="300.0" />
+                              <TextArea fx:id="moneyToCollect" editable="false" prefHeight="457.0" prefWidth="300.0" />
                            </children>
                         </HBox>
 
