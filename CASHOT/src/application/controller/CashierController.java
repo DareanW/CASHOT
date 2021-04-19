@@ -80,7 +80,7 @@ public class CashierController implements EventHandler {
 		
 		system.getItemsInButtons("cashier");
 		
-		system.newOrder();
+		system.newOrder("cashier");
 		itemsInOrder = new ArrayList<Item>();
 		
 		receiptNames.addEventFilter(ScrollEvent.ANY, (x) -> {
@@ -90,6 +90,8 @@ public class CashierController implements EventHandler {
 		receiptPrices.addEventFilter(ScrollEvent.ANY, (x) -> {
 			receiptNames.setScrollTop(receiptPrices.getScrollTop());
 		});
+		
+		
 	}
 
 	@Override

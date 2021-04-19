@@ -77,11 +77,15 @@ public final class CashotSystem {
 	
 
 	
-	public void newOrder() {
-		order = new Order(signedIn);
-//		System.out.println(order);
-//		System.out.println(signedIn);
-		signedIn.addOrder(order);
+	public void newOrder(String mode) {
+		
+		if (mode.equals("cashier")){
+			order = new Order(signedIn);
+			signedIn.addOrder(order);			
+		}
+		if (mode.equals("training")){
+			order = new Order();
+		}
 		
 	}
 	
@@ -187,6 +191,8 @@ public final class CashotSystem {
 					}
 				}
 			}
+			tController.hideUnimplementedButtons();
+
 		}
 		
 	}
