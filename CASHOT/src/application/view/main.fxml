@@ -13,17 +13,17 @@
 		   <children>
 		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #fffaf0;">
 		         <children>
-		            <Button layoutX="273.0" layoutY="352.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="96.0" prefWidth="254.0" text="ADMIN">
+		            <Button layoutX="273.0" layoutY="352.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="96.0" prefWidth="254.0" text="ADMIN" id="adminButton">
 		               <font>
 		                  <Font size="28.0" />
 		               </font>
 		            </Button>
-		            <Button layoutX="54.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadTraining" prefHeight="96.0" prefWidth="254.0" text="TRAINING">
+		            <Button layoutX="54.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadTraining" prefHeight="96.0" prefWidth="254.0" text="TRAINING" id="trainingButton">
 		               <font>
 		                  <Font size="28.0" />
 		               </font>
 		            </Button>														
-		            <Button fx:id="cBtn" layoutX="490.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="96.0" prefWidth="254.0" text="CASHIER">
+		            <Button fx:id="cBtn" layoutX="490.0" layoutY="524.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="96.0" prefWidth="254.0" text="CASHIER" id="cashierButton">
 
 		               <font>
 		                  <Font size="28.0" />

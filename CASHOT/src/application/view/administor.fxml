@@ -71,17 +71,17 @@
                   </VBox>
                   <HBox alignment="TOP_CENTER" layoutX="366.0" layoutY="29.0" prefHeight="67.0" prefWidth="412.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
+                        <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK" id="goBack">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadTraining" prefHeight="73.0" prefWidth="143.0" text="TRAINING">
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadTraining" prefHeight="73.0" prefWidth="143.0" text="TRAINING" id="trainingButton">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+                        <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER" id="cashierButton">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -100,7 +100,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="45.0" layoutY="751.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="125.0" text="Log Out" />
+                  <Button layoutX="45.0" layoutY="751.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="125.0" text="Log Out" id="logOut" />
                </children></Pane>
 		   </children>
 		</VBox>

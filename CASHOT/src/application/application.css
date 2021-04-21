@@ -5,3 +5,71 @@
     -fx-opacity: 0;
 }
 
+#itemButtons {
+    -fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+
+#adminButton {
+	-fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+#adminButton:hover {
+	-fx-background-color: linear-gradient(#fc7a3a, #c7422a);
+}
+
+#cashierButton {
+    -fx-background-color: linear-gradient(#53eaf5, #10b8c4);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-padding: 10 20 10 20;
+}
+
+#cashierButton:hover {
+    -fx-background-color: linear-gradient(#4eb8bf, #0f8d96);
+}
+
+#trainingButton {
+    -fx-background-color: linear-gradient(#ffd65b, #e68400);        
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-padding: 10 20 10 20;
+}
+
+#trainingButton:hover {
+    -fx-background-color: linear-gradient(#d4b24e, #bf7613);
+}
+
+#goBack{
+	-fx-background-color: linear-gradient(#eef2d3, #e5f099);        
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-padding: 10 20 10 20;
+}
+
+#goBack:hover {
+    -fx-background-color: linear-gradient(#c4c99f, #b9c94d);
+}
+
+#ringUpButton {
+    -fx-background-radius: 8;
+    -fx-background-color: #f77614;
+
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+
+#logOut {
+	-fx-background-color: #ff5400;
+}

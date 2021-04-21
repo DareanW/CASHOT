@@ -73,15 +73,15 @@
 		            </VBox>
 		            <HBox alignment="TOP_CENTER" layoutX="324.0" layoutY="50.0" prefHeight="71.0" prefWidth="439.0" spacing="5.0">
 		               <children>
-		                  <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK">
+		                  <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="73.0" prefWidth="143.0" text="Go BACK" id="goBack">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER">
+		                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadCashier" prefHeight="73.0" prefWidth="143.0" text="CASHIER" id="cashierButton">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
+		                  <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMIN" id="adminButton">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
