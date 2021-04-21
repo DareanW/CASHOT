@@ -61,12 +61,14 @@ public class RingUpCustomerController implements EventHandler {
 	Button cashierButtons[][];
 	
 	ArrayList<Item> itemsInOrder;
+  
 	public static double moneyToCalculate = 0;
 	
 	
 	@FXML private AnchorPane content;
 	CashotSystem system;
 	String moneyString = "";
+
 	public static double total = 0.00;
 	public static double customerPaid = 0.00;
 	
@@ -96,7 +98,6 @@ public class RingUpCustomerController implements EventHandler {
 		String strTotal = "";
 		double tax = 0.00;
 		double price = 0.00;
-		
 		
 		for (Item item: CashierController.itemsInOrder){
 			price = item.getPrice();
@@ -364,6 +365,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus100(){
+
 		customerPaid += 1.00;
 		moneyToCalculate -= 1.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
