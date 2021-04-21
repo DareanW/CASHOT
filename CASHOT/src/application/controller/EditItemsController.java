@@ -110,7 +110,7 @@ public class EditItemsController implements EventHandler {
 			Item temp = new Item(newName, newPrice, newRow, newColumn);
 			
 			for (Item items : system.getItems()){
-				if(items.getName() == name){
+				if(items.getName().equals(name)){
 					wasMatched = true;
 				}
 			}

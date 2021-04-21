@@ -212,6 +212,8 @@ public class RingUpCustomerController implements EventHandler {
 		}
 		else{
 			system.ringUp();
+			customerPaid = 0.00;
+			total = 0.00;
 			loadCashier(null);
 			//Put complete transaction calls here.
 		}
