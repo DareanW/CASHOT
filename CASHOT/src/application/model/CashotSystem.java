@@ -263,9 +263,34 @@ public ArrayList<Item> getItems() {
 }
 
 public void updateItemsCsv(Item item) throws IOException{
-	
 	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",true));
 	csvWriter.write(item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
 	csvWriter.close();
+}
+
+public void editItemsCsv(Item item, String name) throws IOException{
+	BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
+	
+	StringBuffer buf = new StringBuffer();
+	String line;
+	
+	while((line = csvReader.readLine()) != null){
+		if(line.contains(name)){
+			String newLine = item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn()+"\n";
+			buf.append(newLine);
+		}else{
+			buf.append(line);
+			buf.append('\n');
+		}
+	}
+	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
+	
+	String output = buf.toString();
+	csvWriter.write(output);
+	
+	csvReader.close();
+	csvWriter.close();
+	
+	
 }
 }
