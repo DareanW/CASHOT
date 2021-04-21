@@ -50,6 +50,8 @@ public class AdminController implements EventHandler {
 	Button adminButtons[][];
 	
 	@FXML private AnchorPane content;
+	@FXML TextArea adminTextArea;
+	
 	CashotSystem system;
 	
 	public void initialize( ) throws IOException{
@@ -64,6 +66,15 @@ public class AdminController implements EventHandler {
 		buttonToMatrix();
 		
 		system.getItemsInButtons("admin");
+		String str = "";
+		String line = "";
+		
+		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
+		while ((line = reader.readLine()) != null) {
+		    str += line + "\n";
+		}
+		reader.close();
+		adminTextArea.setText(str);
 		
 //		try {
 //			loadItems();

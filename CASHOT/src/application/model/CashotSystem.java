@@ -264,7 +264,7 @@ public ArrayList<Item> getItems() {
 
 public void updateItemsCsv(Item item) throws IOException{
 	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",true));
-	csvWriter.write(item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
+	csvWriter.write("\n"+item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
 	csvWriter.close();
 }
 
