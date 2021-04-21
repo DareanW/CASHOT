@@ -93,12 +93,35 @@ public class EditItemsController implements EventHandler {
 		}
 	}
 	
-	public void deleteItem(Item item){
+	public void deleteItem(Event event){
 		
 	}
 	
-	public void editItem(Item item){
+	public void editItem(Event event){
 		
+		try{
+			String name = editCurrName.getText();
+			String newName = editNewName.getText();
+			double newPrice = Double.parseDouble(editNewPrice.getText());
+			int newRow = Integer.parseInt(editNewRow.getText());
+			int newColumn = Integer.parseInt(editNewColumn.getText());
+			boolean wasMatched = false;
+			
+			Item temp = new Item(newName, newPrice, newRow, newColumn);
+			
+			for (Item items : system.getItems()){
+				if(items.getName() == name){
+					wasMatched = true;
+				}
+			}
+			if(!wasMatched){
+				system.addItem(temp);
+				system.editItemsCsv(temp, name);
+			}
+			//System.out.println("Bob yo or sup dog");
+			}catch(Exception e) {
+				resultOutput.setText("You need to enter all fields with information.");
+			}
 	}
 	
 	public void loadAdmin (Event event) throws IOException {
