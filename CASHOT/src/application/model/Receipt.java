@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 
+import application.controller.RingUpCustomerController;
 import application.model.Employee;
 
 public class Receipt{
@@ -57,7 +58,16 @@ public class Receipt{
 		
 		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
 		
-		str += String.format("\n\n %15s %5s", "Total:", moneyString);
+		str += String.format("\n %15s  %5s", "Total:", moneyString);
+		
+		str += String.format("\n %15s  $%5s", "Total + tax:", String.format("%.02f", (RingUpCustomerController.total)));
+		
+		str += String.format("\n %15s  $%5s", "Customer paid:", String.format("%.02f", (RingUpCustomerController.customerPaid)));
+		
+		if(RingUpCustomerController.moneyToCalculate != 0.00)
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (RingUpCustomerController.moneyToCalculate)*-1.00)));
+		else
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (RingUpCustomerController.moneyToCalculate))));
 			
 		//rWriter.write("\n\n=================================\n\n");
 		str += String.format("\n\n=================================\n\n\n");

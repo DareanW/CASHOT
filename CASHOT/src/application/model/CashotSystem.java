@@ -90,7 +90,7 @@ public final class CashotSystem {
 	}
 	
 	public void ringUp() throws IOException {
-		Receipt.printReceipt(order, signedIn);
+		Receipt.printReceipt(order, order.getEmployee());
 	}
 	
 	
