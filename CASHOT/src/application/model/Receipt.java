@@ -53,7 +53,7 @@ public class Receipt{
 		str += String.format("%28s \n", "________________________");
 		
 		for (Item item: order.getItems()){
-			str += String.format("%15s %7s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
+			str += String.format("%15s  %5s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
 		}
 		
 		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
