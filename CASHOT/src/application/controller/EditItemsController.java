@@ -92,7 +92,8 @@ public class EditItemsController implements EventHandler {
 			if(!wasMatched){
 				system.addItem(temp);
 				system.updateItemsCsv(temp);
-		}
+				resultOutput.setText(name + " has been added!");
+			}
 		//System.out.println("Bob yo or sup dog");
 		}catch(Exception e) {
 			resultOutput.setText("You need to enter all fields with information.");
@@ -120,9 +121,10 @@ public class EditItemsController implements EventHandler {
 					wasMatched = true;
 				}
 			}
-			if(!wasMatched){
+			if(wasMatched){
 				system.addItem(temp);
 				system.editItemsCsv(temp, name);
+				resultOutput.setText(name + " has been successfully updated to the contents of " + newName);
 			}
 			//System.out.println("Bob yo or sup dog");
 			}catch(Exception e) {
