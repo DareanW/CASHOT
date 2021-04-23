@@ -198,6 +198,7 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		
 	}*/
 	public void loadTrainingController(Event event) throws IOException {
+		total = 0.00;
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}

@@ -23,7 +23,7 @@ public final class CashotSystem {
 	private int ID;
 	private String admin;
 //	private ArrayList<Receipt> receipt;
-	private static ArrayList<Employee> employees;
+	public static ArrayList<Employee> employees;
 	Item [][] itemMatrix = new Item[6][4];
 	
 	private Employee signedIn;

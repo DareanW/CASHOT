@@ -198,6 +198,7 @@ public class RingUpCustomerController implements EventHandler {
 		
 	}*/
 	public void loadCashier(Event event) throws IOException {
+	total = 0.00;
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}

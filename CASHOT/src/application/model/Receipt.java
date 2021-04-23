@@ -1,5 +1,6 @@
 package application.model;
 
+import javafx.scene.media.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -16,6 +17,8 @@ import application.model.Employee;
 
 public class Receipt{
 
+   
+	
 	/*
 	public String toString(){
 		String receiptTicket = "";
@@ -26,6 +29,9 @@ public class Receipt{
 	}*/
 	
 	public static void TraineePrintReceipt(Order order, String Trainee){
+	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
+	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
 		LocalDateTime dateTime = Order.getCurrTimeDate();
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
@@ -62,6 +68,10 @@ public class Receipt{
 	}
 	
 	public static void printReceipt(Order order, Employee employee)throws IOException {
+		//String ChaChing = "data/ChaChing.wav";
+	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
+	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
 		LocalDateTime dateTime = Order.getCurrTimeDate();
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
