@@ -94,7 +94,7 @@
                      <children>
 
                         <Button mnemonicParsing="false" onAction="#editItems" prefHeight="73.0" prefWidth="143.0" text="Edit Items" />
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadEditEmpScreen" prefHeight="73.0" prefWidth="143.0" text="Edit Employees" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadEmployees" prefHeight="73.0" prefWidth="143.0" text="View Employees" />
                         <Button layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddEmployee" prefHeight="73.0" prefWidth="143.0" text="Add Employee" />
 
                      </children>
