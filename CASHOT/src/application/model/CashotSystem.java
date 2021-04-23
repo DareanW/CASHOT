@@ -14,6 +14,7 @@ import application.controller.CashierLoginController;
 import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
+import application.controller.TrainingRingUpCustomerController;
 import application.controller.addEmployeeFromAdminController;
 import application.controller.RingUpCustomerController;
 
@@ -35,14 +36,14 @@ public final class CashotSystem {
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
 	private RingUpCustomerController ringUpCustomerController;
-	
+	private TrainingRingUpCustomerController trainingRingUpCustomerController;
 
 	private EditItemsController EIController;
 
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
-	private Order order;
+	public static Order order;
 	
 	private CashotSystem(){
 		employees = new ArrayList<Employee>();
@@ -62,7 +63,9 @@ public final class CashotSystem {
 	public void setController(addEmployeeFromAdminController controller){
 		this.aEFAController = controller;
 	}
-	
+	public void setController(TrainingRingUpCustomerController controller){
+		this.trainingRingUpCustomerController = controller;
+	}
 	public void setController(CashierController controller){
 		this.cController = controller;
 	}
@@ -92,7 +95,6 @@ public final class CashotSystem {
 	public void ringUp() throws IOException {
 		Receipt.printReceipt(order, order.getEmployee());
 	}
-	
 	
 	public void loadEmployees() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, 
