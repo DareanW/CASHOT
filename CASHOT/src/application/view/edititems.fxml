@@ -33,7 +33,7 @@
                         <TextField fx:id="editNewPrice" focusTraversable="false" layoutX="10.0" layoutY="141.0" promptText="New Price" />
                         <TextField fx:id="editNewRow" focusTraversable="false" layoutX="10.0" layoutY="363.0" promptText="New Row" />
                         <TextField fx:id="editNewColumn" focusTraversable="false" layoutX="10.0" layoutY="232.0" promptText="New Column" />
-                        <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="151.0" text="Edit Item" />
+                        <Button mnemonicParsing="false" onAction="#editItem" prefHeight="71.0" prefWidth="151.0" text="Edit Item" />
                      </children>
                   </VBox>
                </children>

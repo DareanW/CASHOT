@@ -11,6 +11,7 @@ import application.model.CashotSystem;
 import application.model.Employee;
 import application.model.Item;
 import application.model.Order;
+import application.model.Receipt;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -60,13 +61,16 @@ public class RingUpCustomerController implements EventHandler {
 	Button cashierButtons[][];
 	
 	ArrayList<Item> itemsInOrder;
-	double moneyToCalculate = 0;
+  
+	public static double moneyToCalculate = 0;
 	
 	
 	@FXML private AnchorPane content;
 	CashotSystem system;
 	String moneyString = "";
-	double total = 0.00;
+
+	public static double total = 0.00;
+	public static double customerPaid = 0.00;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -207,6 +211,10 @@ public class RingUpCustomerController implements EventHandler {
 			moneyToCollect.setText(moneyString);
 		}
 		else{
+			system.ringUp();
+			customerPaid = 0.00;
+			total = 0.00;
+			loadCashier(null);
 			//Put complete transaction calls here.
 		}
 		
@@ -223,6 +231,7 @@ public class RingUpCustomerController implements EventHandler {
 		}
 	}
 	public void add1(){
+		customerPaid -= 0.01;
 		moneyToCalculate += 0.01;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $0.01:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -230,6 +239,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add5(){
+		customerPaid -= 0.05;
 		moneyToCalculate += 0.05;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $0.05:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -237,6 +247,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add10(){
+		customerPaid -= 0.10;
 		moneyToCalculate += 0.10;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $0.10:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -244,6 +255,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add25(){
+		customerPaid -= 0.25;
 		moneyToCalculate += 0.25;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $0.25:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -251,6 +263,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add50(){
+		customerPaid -= 0.50;
 		moneyToCalculate += 0.50;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $0.50:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -258,6 +271,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add100(){
+		customerPaid -= 1.00;
 		moneyToCalculate += 1.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $1.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -265,6 +279,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add200(){
+		customerPaid -= 2.00;
 		moneyToCalculate += 2.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $2.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -272,6 +287,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add500(){
+		customerPaid -= 5.00;
 		moneyToCalculate += 5.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $5.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -279,6 +295,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add1000(){
+		customerPaid -= 10.00;
 		moneyToCalculate += 10.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $10.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -286,6 +303,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add2000(){
+		customerPaid -= 20.00;
 		moneyToCalculate += 20.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $20.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -293,6 +311,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add5000(){
+		customerPaid -= 50.00;
 		moneyToCalculate += 50.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $50.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -300,6 +319,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void add10000(){
+		customerPaid -= 100.00;
 		moneyToCalculate += 100.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Added $100.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -307,6 +327,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus1(){
+		customerPaid += 0.01;
 		moneyToCalculate -= 0.01;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $0.01:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -314,6 +335,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus5(){
+		customerPaid += 0.05;
 		moneyToCalculate -= 0.05;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $0.05:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -321,6 +343,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus10(){
+		customerPaid += 0.10;
 		moneyToCalculate -= 0.10;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $0.10:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -328,6 +351,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus25(){
+		customerPaid += 0.25;
 		moneyToCalculate -= 0.25;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $0.25:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -335,6 +359,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus50(){
+		customerPaid += 0.50;
 		moneyToCalculate -= 0.50;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $0.50:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -342,6 +367,8 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus100(){
+
+		customerPaid += 1.00;
 		moneyToCalculate -= 1.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $1.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -349,6 +376,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus200(){
+		customerPaid += 2.00;
 		moneyToCalculate -= 2.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $2.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -356,6 +384,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus500(){
+		customerPaid += 5.00;
 		moneyToCalculate -= 5.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $5.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -363,6 +392,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus1000(){
+		customerPaid += 10.00;
 		moneyToCalculate -= 10.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $10.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -370,6 +400,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus2000(){
+		customerPaid += 20.00;
 		moneyToCalculate -= 20.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $20.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -377,6 +408,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus5000(){
+		customerPaid += 50.00;
 		moneyToCalculate -= 50.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $50.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
@@ -384,6 +416,7 @@ public class RingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 	public void minus10000(){
+		customerPaid += 100.00;
 		moneyToCalculate -= 100.00;
 		moneyToCalculate = Double.parseDouble(String.format("%.02f", moneyToCalculate));
 		moneyString += "Paid $100.00:\t\t$" + String.format("%.02f", moneyToCalculate) + "\n";
