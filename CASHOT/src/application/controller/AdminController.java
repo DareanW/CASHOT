@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 
 import application.model.CashotSystem;
+import application.model.Employee;
 import application.model.Item;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -53,6 +54,7 @@ public class AdminController implements EventHandler {
 	@FXML TextArea adminTextArea;
 	
 	CashotSystem system;
+	String str = "";
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -66,7 +68,7 @@ public class AdminController implements EventHandler {
 		buttonToMatrix();
 		
 		system.getItemsInButtons("admin");
-		String str = "";
+		
 		String line = "";
 		
 		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
@@ -118,6 +120,10 @@ public class AdminController implements EventHandler {
 	
 	//work in progress
 	public void loadEmployees(Event event){
+		for(Employee employee: CashotSystem.getEmployees()){
+			str += "\nID: " + employee.getID() + " - Name: " + employee.getEmployeeName() + " - Username: " + employee.getUserName();
+		}
+		adminTextArea.setText(str);
 		
 	}
 	

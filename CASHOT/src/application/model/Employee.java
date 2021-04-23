@@ -16,7 +16,7 @@ public class Employee {
 private String employeeName;
 private String userName;
 private String employeePassword;
-private static int ID;
+private int ID;
 private static ArrayList<Order> orders;
 private String admin;
 private String trainiee;
@@ -52,7 +52,7 @@ public String getEmployeePassword() {
 public void setEmployeePassword(String employeePassword) {
 	this.employeePassword = employeePassword;
 }
-public static int getID() {   //changed to static
+public int getID() {   //changed to static
 	return ID;
 }
 public void setID(int iD) {
