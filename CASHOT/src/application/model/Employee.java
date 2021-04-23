@@ -16,7 +16,7 @@ public class Employee {
 private String employeeName;
 private String userName;
 private String employeePassword;
-private  int ID;//changed  static
+private static int ID;
 private static ArrayList<Order> orders;
 private String admin;
 private String trainiee;
@@ -52,7 +52,7 @@ public String getEmployeePassword() {
 public void setEmployeePassword(String employeePassword) {
 	this.employeePassword = employeePassword;
 }
-public int getID() {   //changed to static
+public static int getID() {   //changed to static
 	return ID;
 }
 public void setID(int iD) {
@@ -130,49 +130,24 @@ public void add(ArrayList<Employee> employee) {
 		this.cashier = cashier;
 	}
 
-	public static String changeEmployeeStat(int id,String action)throws IOException{
-			String idString=Integer.toString(id);
-			
+	public void changeEmployeeStat(Employee name)throws IOException{
 		
-			BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
+		try{
+			BufferedWriter csvWriter =new BufferedWriter(new FileWriter("data/employees.csv",false));
 
-		    StringBuffer buf = new StringBuffer();
-		    String line;
-		    int count=0;
-		    for(Employee i: CashotSystem.getEmployees()){
-		    while((line = csvReader.readLine()) != null){
-		        if(line.contains(idString)){
-		        	if(action.equals("promoteToAdmin")){
-		        		i.admin="TRUE";
-		        		i.cashier="FALSE";
-		        		i.trainiee="FALSE";
-		        		count++;
-		        	}
-		        	else{
-		        		count++;
-		        		i.trainiee="FALSE";
-		        		i.cashier="TRUE";
-		        	}
-		            String newLine =i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.isAdmin()+","+i.getTrainiee()+","+i.getCashier()+"\n";
-		            buf.append(newLine);
-		        }else{
-		            buf.append(line);
-		            buf.append('\n');
-		        }
-		    }
-		    }
-		    BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
+			for(Employee i: CashotSystem.getEmployees()){
 
-		    String output = buf.toString();
-		    csvWriter.write(output);
+				if(i.getEmployeeName().equals(name)){
+					i.trainiee="False";
+					i.cashier="True";
+				}
 
-		    csvReader.close();
-		    csvWriter.close();
-		    
-			if(count == 0)
-				return "FALSE";
+				csvWriter.write(i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.admin+","+i.getTrainiee()+","+i.getCashier());
+			}
+			csvWriter.close();
 			
-			return "TRUE";
-		    		
+		}catch(IOException e){
+				e.printStackTrace();
+			}
 }
 }
