@@ -54,7 +54,7 @@ public class TrainingController implements EventHandler {
 	
 	Button trainingButtons[][];
 	
-	ArrayList<Item> itemsInOrder;
+	static ArrayList<Item> itemsInOrder;
 	
 	@FXML private AnchorPane content;
 	CashotSystem system;
@@ -67,7 +67,7 @@ public class TrainingController implements EventHandler {
 		
 		trainingButtons = new Button[6][4];
 		buttonToMatrix();
-		System.out.println(button00);
+		//System.out.println(button00);
 
 		system.getItemsInButtons("training");
 		system.newOrder("training");
@@ -106,6 +106,10 @@ public class TrainingController implements EventHandler {
 				}
 			}
 		}
+	}
+	public void loadTrainingRingUpCustomer(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/TrainingRingUpCustomer.fxml"));
+		content.getChildren().setAll(pane);
 	}
 	
 	public void loadMain(Event event) throws IOException {
@@ -185,7 +189,7 @@ public class TrainingController implements EventHandler {
 
 	public void setButton(Item item) {
 		Button button = trainingButtons[item.getRow()][item.getColumn()];
-		System.out.println(button);
+		//System.out.println(button);
 		double price = item.getPrice();
 		String moneyString = CashotSystem.dblToMoneyString((price));
 		
