@@ -5,7 +5,7 @@
     -fx-opacity: 0;
 }
 
-#itemButtons {
+#cashierItemButtons {
     -fx-background-color:
         linear-gradient(#f0ff35, #a9ff00);
     -fx-background-radius: 6, 5;
@@ -13,6 +13,53 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
     -fx-text-fill: #395306;
 }
+
+#cashierItemButtons:hover {
+	-fx-background-color:
+        linear-gradient(#bdc928, #7ab802);
+}
+
+#trainingItemButtons {
+    -fx-background-color:
+        linear-gradient(#35ffda, #35daff);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+
+#trainingItemButtons:hover {
+	-fx-background-color:
+        linear-gradient(#2ac9ac, #27a5c2);
+}
+
+#adminItemButtons {
+    -fx-background-color:
+        linear-gradient(#fa84f2, #fc3df0);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+
+#adminItemButtons:hover {
+	-fx-background-color:
+        linear-gradient(#b34fac, #a31a9a);
+}
+
+#editItemsAndEmployeeButtons{
+	-fx-background-color:
+        linear-gradient(#ffd863, #ffc61c);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+#editItemsAndEmployeeButtons:hover{
+	-fx-background-color:
+        linear-gradient(#c7a84a, #c49816);
+}
+
 
 #adminButton {
 	-fx-background-color: linear-gradient(#ff5400, #be1d00);
