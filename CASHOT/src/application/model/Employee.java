@@ -16,7 +16,7 @@ public class Employee {
 private String employeeName;
 private String userName;
 private String employeePassword;
-private static int ID;
+private  int ID;
 private static ArrayList<Order> orders;
 private String admin;
 private String trainiee;
