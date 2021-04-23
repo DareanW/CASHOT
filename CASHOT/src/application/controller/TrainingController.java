@@ -141,6 +141,24 @@ public class TrainingController implements EventHandler {
 		content.getChildren().setAll(pane);		
 	}
 	
+	public void loadAdminister(Event event) throws IOException {
+		try {
+			if (system.getSignedIn().isAdmin().equals("TRUE")){
+				bypassAdminLogin(event);
+			}
+			else {
+				loadAdminLogin(event);
+			}
+		} catch(Exception e) {
+			loadAdminLogin(event);
+		}
+	}
+	
+	public void bypassAdminLogin (Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
+		content.getChildren().setAll(pane);
+	}
+	
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);

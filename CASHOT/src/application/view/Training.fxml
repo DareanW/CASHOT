@@ -42,10 +42,12 @@
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="trainingItemButtons" fx:id="button20" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="trainingItemButtons" fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="trainingItemButtons" fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="trainingItemButtons" fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+
+		                        <Button fx:id="button20" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
+		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
+		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
+		                        <Button fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
+
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
@@ -90,7 +92,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-		                  <Button id="adminButton" layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminLogin" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
+		                  <Button id="adminButton" layoutX="67.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="73.0" prefWidth="143.0" text="ADMIN">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
