@@ -161,6 +161,10 @@ public final class CashotSystem {
 		itemMatrix[item.getRow()][item.getColumn()] = item;;
 	}
 	
+	public void removeItem(Item item){
+		itemMatrix[item.getRow()][item.getColumn()] = null;;
+	}
+	
 	public void getItemsInButtons(String mode) {
 		if (mode.equals("cashier")){
 			for (int i = 0; i < 6; i++){
