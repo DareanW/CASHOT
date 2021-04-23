@@ -103,6 +103,7 @@ public final class CashotSystem {
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
+			//System.out.println(data[0]+" "+data[1]+" "+data[2]+" "+data[3]+" "+data[4]+ " "+data[5]+" "+data[6]);
 			Employee tempEmployee = new Employee(data[0], data[1], data[2], Integer.parseInt(data[3]), data[4],data[5],data[6]);
 			addEmployee(tempEmployee);
 			
@@ -250,6 +251,33 @@ public static void newEmployee(Employee employee) throws IOException{
 
 }
 
+
+	public static  String callEmployeeMethods(int id,String actionWanted ) throws IOException{//alex added this on friday
+		
+		if(actionWanted.equals("completeTraining")){
+			String temp=Employee.changeEmployeeStat(id,actionWanted);
+			if(temp == "FALSE")
+				return "FALSE";
+			return "TRUE";
+		}
+		
+		if(actionWanted.equals("promoteToAdmin")){
+			System.out.println("entered first promoteToAdmin\n");
+			String temp=Employee.changeEmployeeStat(id,actionWanted);
+			if(temp == "FALSE")
+				return "FALSE";
+			return "TRUE";
+		}
+		
+		
+		return "FALSE";
+		
+	}
+
+
+
+
+
 public void setController(RingUpCustomerController ringUpCustomerController) {
 	this.ringUpCustomerController = ringUpCustomerController;
 	
@@ -299,4 +327,5 @@ public void editItemsCsv(Item item, String name) throws IOException{
 	
 	
 }
+
 }

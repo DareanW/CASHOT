@@ -16,7 +16,9 @@ public class Employee {
 private String employeeName;
 private String userName;
 private String employeePassword;
-private int ID;
+ 
+private  int ID;
+
 private static ArrayList<Order> orders;
 private String admin;
 private String trainiee;
@@ -130,24 +132,49 @@ public void add(ArrayList<Employee> employee) {
 		this.cashier = cashier;
 	}
 
-	public void changeEmployeeStat(Employee name)throws IOException{
-		
-		try{
-			BufferedWriter csvWriter =new BufferedWriter(new FileWriter("data/employees.csv",false));
-
-			for(Employee i: CashotSystem.getEmployees()){
-
-				if(i.getEmployeeName().equals(name)){
-					i.trainiee="False";
-					i.cashier="True";
-				}
-
-				csvWriter.write(i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.admin+","+i.getTrainiee()+","+i.getCashier());
-			}
-			csvWriter.close();
+	public static String changeEmployeeStat(int id,String action)throws IOException{
+			String idString=Integer.toString(id);
 			
-		}catch(IOException e){
-				e.printStackTrace();
-			}
+		
+			BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
+
+		    StringBuffer buf = new StringBuffer();
+		    String line;
+		    int count=0;
+		    for(Employee i: CashotSystem.getEmployees()){
+		    while((line = csvReader.readLine()) != null){
+		        if(line.contains(idString)){
+		        	if(action.equals("promoteToAdmin")){
+		        		i.admin="TRUE";
+		        		i.cashier="FALSE";
+		        		i.trainiee="FALSE";
+		        		count++;
+		        	}
+		        	else{
+		        		count++;
+		        		i.trainiee="FALSE";
+		        		i.cashier="TRUE";
+		        	}
+		            String newLine =i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.isAdmin()+","+i.getTrainiee()+","+i.getCashier()+"\n";
+		            buf.append(newLine);
+		        }else{
+		            buf.append(line);
+		            buf.append('\n');
+		        }
+		    }
+		    }
+		    BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
+
+		    String output = buf.toString();
+		    csvWriter.write(output);
+
+		    csvReader.close();
+		    csvWriter.close();
+		    
+			if(count == 0)
+				return "FALSE";
+			
+			return "TRUE";
+		    		
 }
 }
