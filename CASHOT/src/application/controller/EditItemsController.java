@@ -62,30 +62,36 @@ public class EditItemsController implements EventHandler {
 	public void addItem(Event event){
 		
 		try{
-		String name = addName.getText();
-		double price = Double.parseDouble(addPrice.getText());
-		int row = Integer.parseInt(addRow.getText());
-		int column = Integer.parseInt(addColumn.getText());
-		boolean wasMatched = false;
-		
-		Item temp = new Item(name, price, row, column);
-		
-		for (Item items : system.getItems()){
-			if(items.getName() == temp.getName()){
-				wasMatched = true;
-				resultOutput.setText("This name already exists.");
-				break;
+			String name = addName.getText();
+//			double price = Double.parseDouble(addPrice.getText());
+			String priceString = addPrice.getText();
+			priceString = priceString.replace("$", "");
+			priceString = priceString.replace(",", "");
+			
+			double price = Double.parseDouble(priceString);
+			
+			int row = Integer.parseInt(addRow.getText());
+			int column = Integer.parseInt(addColumn.getText());
+			boolean wasMatched = false;
+			
+			Item temp = new Item(name, price, row, column);
+			
+			for (Item items : system.getItems()){
+				if(items.getName() == temp.getName()){
+					wasMatched = true;
+					resultOutput.setText("This name already exists.");
+					break;
+				}
+				//System.out.println(items);
+				if((items.getRow() == temp.getRow()) && (items.getColumn() == temp.getColumn())){
+					wasMatched = true;
+					resultOutput.setText("There is an item already in this position.");
+					break;
+				}
 			}
-			//System.out.println(items);
-			if((items.getRow() == temp.getRow()) && (items.getColumn() == temp.getColumn())){
-				wasMatched = true;
-				resultOutput.setText("There is an item already in this position.");
-				break;
-			}
-		}
-		if(!wasMatched){
-			system.addItem(temp);
-			system.updateItemsCsv(temp);
+			if(!wasMatched){
+				system.addItem(temp);
+				system.updateItemsCsv(temp);
 		}
 		//System.out.println("Bob yo or sup dog");
 		}catch(Exception e) {
