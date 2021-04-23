@@ -28,16 +28,6 @@ public class MainController implements EventHandler {
 		system.loadItems();
 		system.loadEmployees();
 		
-		
-		// REMOVE THIS LATER. I'M LAZY AND TIRED OF SIGNING IN EVERY TIME
-		for(Employee employee: system.getEmployees()){
-			//System.out.println("test2");
-			if(employee.getUserName().equals("admin") && employee.getEmployeePassword().equals("admin") && employee.isAdmin().equals("TRUE")){
-				system.setSignedIn(employee);
-				break;
-			}
-		}
-		
 	}
 	
 
@@ -56,20 +46,22 @@ public class MainController implements EventHandler {
 
 	@Override
 
-	public void handle(Event event) {
+	public void handle(Event event) {/*
+String userName = adminUsrName.getText();
+String password = adminUsrPw.getText();*/
 
 
 	}
 	
 	public void loadCashier(Event event) throws IOException {
 		try {
-			if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
-				bypassEmployeeLogin(event);
+			if (system.getSignedIn() != null){
+				byPassEmployeeLogin(event);
 			}
 			else {
 				loadEmployeeLogin(event);
 			}
-		} catch(Exception e) {
+		} catch(Error e) {
 			loadEmployeeLogin(event);
 		}
 	}
@@ -79,7 +71,7 @@ public class MainController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 
-	public void bypassEmployeeLogin(Event event) throws IOException {
+	public void byPassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);		
 	}
@@ -90,28 +82,9 @@ public class MainController implements EventHandler {
 	}
 	
 	public void loadAdminister(Event event) throws IOException {
-		try {
-			if (system.getSignedIn().isAdmin().equals("TRUE")){
-				bypassAdminLogin(event);
-			}
-			else {
-				loadAdminLogin(event);
-			}
-		} catch(Exception e) {
-			loadAdminLogin(event);
-		}
-	}
-	
-	public void bypassAdminLogin (Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
-	public void loadAdminLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
-		content.getChildren().setAll(pane);
-	}
-	
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
@@ -119,6 +92,11 @@ public class MainController implements EventHandler {
 	
 	
 	
+	public void loadAdminLogin(Event event) throws IOException {
+		
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
+	}
 	
 //	public void addEmployeeFromAdmin(Event event) throws IOException{
 //		int ID = 

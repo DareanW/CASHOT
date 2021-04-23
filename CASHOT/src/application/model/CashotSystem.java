@@ -14,16 +14,16 @@ import application.controller.CashierLoginController;
 import application.controller.EditItemsController;
 import application.controller.MainController;
 import application.controller.TrainingController;
-import application.controller.TrainingRingUpCustomerController;
+import application.controller.ViewDeleteEmployeesController;
 import application.controller.addEmployeeFromAdminController;
-import application.controller.RingUpCustomerController;
+
 
 public final class CashotSystem {
 	
 	private int ID;
 	private String admin;
 //	private ArrayList<Receipt> receipt;
-	public static ArrayList<Employee> employees;
+	private static ArrayList<Employee> employees;
 	Item [][] itemMatrix = new Item[6][4];
 	
 	private Employee signedIn;
@@ -35,15 +35,14 @@ public final class CashotSystem {
 	private AdminLoginController aLController;
 	private CashierLoginController cLController;
 	private addEmployeeFromAdminController aEFAController;
-	private RingUpCustomerController ringUpCustomerController;
-	private TrainingRingUpCustomerController trainingRingUpCustomerController;
+	private ViewDeleteEmployeesController vdeController;
 
 	private EditItemsController EIController;
 
 	
 	private final static CashotSystem INSTANCE = new CashotSystem();
 	
-	public static Order order;
+	private Order order;
 	
 	private CashotSystem(){
 		employees = new ArrayList<Employee>();
@@ -63,9 +62,7 @@ public final class CashotSystem {
 	public void setController(addEmployeeFromAdminController controller){
 		this.aEFAController = controller;
 	}
-	public void setController(TrainingRingUpCustomerController controller){
-		this.trainingRingUpCustomerController = controller;
-	}
+	
 	public void setController(CashierController controller){
 		this.cController = controller;
 	}
@@ -78,23 +75,22 @@ public final class CashotSystem {
 		this.aController = controller;
 	}
 	
-
+	public void setController(ViewDeleteEmployeesController controller){
+		this.vdeController = controller;
+	}
 	
-	public void newOrder(String mode) {
-		
-		if (mode.equals("cashier")){
-			order = new Order(signedIn);
-			signedIn.addOrder(order);			
-		}
-		if (mode.equals("training")){
-			order = new Order();
-		}
+	public void newOrder() {
+		order = new Order(signedIn);
+//		System.out.println(order);
+//		System.out.println(signedIn);
+		signedIn.addOrder(order);
 		
 	}
 	
 	public void ringUp() throws IOException {
-		Receipt.printReceipt(order, order.getEmployee());
+		Receipt.printReceipt(order, signedIn);
 	}
+	
 	
 	public void loadEmployees() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, 
@@ -146,7 +142,7 @@ public final class CashotSystem {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
 		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
 			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
@@ -160,47 +156,34 @@ public final class CashotSystem {
 	}
 	
 	public void addItem(Item item){
-		itemMatrix[item.getRow()][item.getColumn()] = item;;
+		itemMatrix[item.getRow()][item.getColumn()] = item;
+//		cController.setButton(item);
+//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+//		controller.testMethod();
+//		System.out.print(item.getRow());
+//		System.out.println(item.getColumn() + " ");
+//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
 	}
 	
-	public void removeItem(Item item){
-		itemMatrix[item.getRow()][item.getColumn()] = null;;
+	public void getItemsInButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (itemMatrix[i][j] != null){
+					cController.setButton(itemMatrix[i][j]);
+				}
+			}
+		}
+		cController.hideUnimplementedButtons();
 	}
 	
-	public void getItemsInButtons(String mode) {
-		if (mode.equals("cashier")){
-			for (int i = 0; i < 6; i++){
-				for (int j = 0; j < 4; j++){
-					if (itemMatrix[i][j] != null){
-						cController.setButton(itemMatrix[i][j]);
-					}
-				}
-			}
-			cController.hideUnimplementedButtons();
-		}
-		
-		else if (mode.equals("admin")){
-			for (int i = 0; i < 6; i++){
-				for (int j = 0; j < 4; j++){
-					if (itemMatrix[i][j] != null){
-						aController.setButton(itemMatrix[i][j]);
-					}
+	public void getItemsInAdminButtons() {
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if (itemMatrix[i][j] != null){
+					aController.setButton(itemMatrix[i][j]);
 				}
 			}
 		}
-		
-		else if (mode.equals("training")){
-			for (int i = 0; i < 6; i++){
-				for (int j = 0; j < 4; j++){
-					if (itemMatrix[i][j] != null){
-						tController.setButton(itemMatrix[i][j]);
-					}
-				}
-			}
-			tController.hideUnimplementedButtons();
-
-		}
-		
 	}
 
 	public ArrayList<Item> addItemToOrder(int i, int j) {
@@ -217,15 +200,10 @@ public final class CashotSystem {
 		signedIn = employee;
 	}
 	
-	
 	public Employee getSignedIn(){
 		return signedIn;
 	}
 	
-	public void logOut(){
-		signedIn = null;
-	}
-
 	public static String dblToMoneyString(double price){
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
@@ -249,84 +227,4 @@ public static void newEmployee(Employee employee) throws IOException{
 	writer.close();
 
 }
-
-
-
-	public static  String callEmployeeMethods(int id,String actionWanted ) throws IOException{//alex added this on friday
-		
-		if(actionWanted.equals("completeTraining")){
-			String temp=Employee.changeEmployeeStat(id,actionWanted);
-			if(temp == "FALSE")
-				return "FALSE";
-			return "TRUE";
-		}
-		
-		if(actionWanted.equals("promoteToAdmin")){
-			System.out.println("entered first promoteToAdmin\n");
-			String temp=Employee.changeEmployeeStat(id,actionWanted);
-			if(temp == "FALSE")
-				return "FALSE";
-			return "TRUE";
-		}
-		
-		
-		return "FALSE";
-		
-	}
-
-
-
-
-
-public void setController(RingUpCustomerController ringUpCustomerController) {
-	this.ringUpCustomerController = ringUpCustomerController;
-	
-}
-
-public ArrayList<Item> getItems() {
-	ArrayList<Item> items = new ArrayList<Item>();
-	
-	for (int i = 0; i < 6; i++){
-		for (int j = 0; j < 4; j++){
-			if(itemMatrix[i][j] != null){
-				items.add(itemMatrix[i][j]);
-			}
-		}
-	}
-	return items;
-}
-
-public void updateItemsCsv(Item item) throws IOException{
-	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",true));
-	csvWriter.write("\n"+item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
-	csvWriter.close();
-}
-
-public void editItemsCsv(Item item, String name) throws IOException{
-	BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
-	
-	StringBuffer buf = new StringBuffer();
-	String line;
-	
-	while((line = csvReader.readLine()) != null){
-		if(line.contains(name)){
-			String newLine = item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn()+"\n";
-			buf.append(newLine);
-		}else{
-			buf.append(line);
-			buf.append('\n');
-		}
-	}
-	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
-	
-	String output = buf.toString();
-	csvWriter.write(output);
-	
-	csvReader.close();
-	csvWriter.close();
-	
-	
-}
-
-
 }

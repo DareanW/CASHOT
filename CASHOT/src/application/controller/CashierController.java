@@ -55,10 +55,10 @@ public class CashierController implements EventHandler {
 	
 	Button cashierButtons[][];
 	
-	static ArrayList<Item> itemsInOrder;
+	ArrayList<Item> itemsInOrder;
 	
 	@FXML private AnchorPane content;
-	static CashotSystem system;
+	CashotSystem system;
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -78,9 +78,9 @@ public class CashierController implements EventHandler {
 //			e.printStackTrace();
 //		}
 		
-		system.getItemsInButtons("cashier");
+		system.getItemsInButtons();
 		
-		system.newOrder("cashier");
+		system.newOrder();
 		itemsInOrder = new ArrayList<Item>();
 		
 		receiptNames.addEventFilter(ScrollEvent.ANY, (x) -> {
@@ -90,14 +90,10 @@ public class CashierController implements EventHandler {
 		receiptPrices.addEventFilter(ScrollEvent.ANY, (x) -> {
 			receiptNames.setScrollTop(receiptPrices.getScrollTop());
 		});
-		
-		
 	}
 
 	@Override
 	public void handle(Event event) {
-		//System.out.println(cashierButtons[1][0]);
-		//System.out.println(event.getSource());
 		for (int i = 0; i < 6; i++){
 			for (int j = 0; j < 4; j++){
 				if (cashierButtons[i][j] == event.getSource()){
@@ -149,43 +145,11 @@ public class CashierController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadAdminister(Event event) throws IOException {
-		try {
-			if (system.getSignedIn().isAdmin().equals("TRUE")){
-				bypassAdminLogin(event);
-			}
-			else {
-				loadAdminLogin(event);
-			}
-		} catch(Exception e) {
-			loadAdminLogin(event);
-		}
-	}
-	
-	public void bypassAdminLogin (Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
-		content.getChildren().setAll(pane);
-	}
-	
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
-
-	public void logOut(Event event) throws IOException {
-		system.logOut();
-		loadMain(event);
-	}
-	
-
-	public void loadRingUpCustomer(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/ringUpCustomer.fxml"));
-		content.getChildren().setAll(pane);
-	}
-	
-	
-
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}
@@ -220,7 +184,7 @@ public class CashierController implements EventHandler {
 	
 	public void ringUpOrder() throws IOException{
 		system.ringUp();
-		system.newOrder("cashier");
+		system.newOrder();
 		receiptNames.setText("");
 		receiptPrices.setText("");
 		receiptTotal.setText("");

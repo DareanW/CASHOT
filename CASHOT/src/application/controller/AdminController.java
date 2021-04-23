@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.text.NumberFormat;
 
 import application.model.CashotSystem;
-import application.model.Employee;
 import application.model.Item;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -51,10 +50,7 @@ public class AdminController implements EventHandler {
 	Button adminButtons[][];
 	
 	@FXML private AnchorPane content;
-	@FXML TextArea adminTextArea;
-	
 	CashotSystem system;
-	String str = "";
 	
 	public void initialize( ) throws IOException{
 		//Load items ?
@@ -67,16 +63,7 @@ public class AdminController implements EventHandler {
 		adminButtons = new Button[6][4];
 		buttonToMatrix();
 		
-		system.getItemsInButtons("admin");
-		
-		String line = "";
-		
-		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
-		while ((line = reader.readLine()) != null) {
-		    str += line + "\n";
-		}
-		reader.close();
-		adminTextArea.setText(str);
+		system.getItemsInAdminButtons();
 		
 //		try {
 //			loadItems();
@@ -106,24 +93,13 @@ public class AdminController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 	
-	public void loadCashier(Event event) throws IOException {
-
-		if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
-			bypassEmployeeLogin(event);
-		}	
-	}
-
-	public void bypassEmployeeLogin(Event event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
-		content.getChildren().setAll(pane);		
+	public void loadCashierLogin(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
+		content.getChildren().setAll(pane);
 	}
 	
 	//work in progress
 	public void loadEmployees(Event event){
-		for(Employee employee: CashotSystem.getEmployees()){
-			str += "\nID: " + employee.getID() + " - Name: " + employee.getEmployeeName() + " - Username: " + employee.getUserName();
-		}
-		adminTextArea.setText(str);
 		
 	}
 	
@@ -134,11 +110,6 @@ public class AdminController implements EventHandler {
 	
 	public void addEmployees(Event event){
 		
-	}
-	
-	public void logOut(Event event) throws IOException {
-		system.logOut();
-		loadMain(event);
 	}
 	
 	public void editItems(Event event) throws IOException{
