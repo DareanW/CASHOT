@@ -43,7 +43,7 @@
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-<<<
+
 		                        <Button fx:id="button20" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
 		                        <Button fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
 		                        <Button fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" id="trainingItemButtons"/>
