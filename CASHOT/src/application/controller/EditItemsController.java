@@ -119,12 +119,14 @@ public class EditItemsController implements EventHandler {
 			for (Item items : system.getItems()){
 				if(items.getName().equals(name)){
 					wasMatched = true;
+					system.removeItem(items);
 				}
 			}
 			if(wasMatched){
 				system.addItem(temp);
 				system.editItemsCsv(temp, name);
 				resultOutput.setText(name + " has been successfully updated to the contents of " + newName);
+				system.loadItems();
 			}
 			//System.out.println("Bob yo or sup dog");
 			}catch(Exception e) {
