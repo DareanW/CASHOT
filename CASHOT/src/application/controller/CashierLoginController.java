@@ -35,8 +35,6 @@ CashotSystem system = CashotSystem.getInstance();
 		//Load items ?
 		system.setController(this);
 		
-		system.getEmployees();
-		
 
 }
 	public void loadMain(Event event) throws IOException {
@@ -56,7 +54,7 @@ CashotSystem system = CashotSystem.getInstance();
 		inputPW = cashierPassword.getText();
 		for(Employee employee: system.getEmployees()){
 			//System.out.println("test2");
-			if(employee.getUserName().equals(inputUN) && employee.getEmployeePassword().equals(inputPW) && employee.getCashier().equals("TRUE")){
+			if(employee.getUserName().equals(inputUN) && employee.getEmployeePassword().equals(inputPW) && (employee.getCashier().equals("TRUE") || employee.isAdmin().equals("TRUE"))){
 				try {
 					system.setSignedIn(employee);
 					loadCashier(event);

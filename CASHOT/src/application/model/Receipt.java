@@ -1,5 +1,6 @@
 package application.model;
 
+import javafx.scene.media.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,10 +11,14 @@ import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 
+import application.controller.RingUpCustomerController;
+import application.controller.TrainingRingUpCustomerController;
 import application.model.Employee;
 
 public class Receipt{
 
+   
+	
 	/*
 	public String toString(){
 		String receiptTicket = "";
@@ -23,7 +28,50 @@ public class Receipt{
 		return receiptTicket;
 	}*/
 	
+	public static void TraineePrintReceipt(Order order, String Trainee){
+	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
+	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
+		LocalDateTime dateTime = Order.getCurrTimeDate();
+		int year = dateTime.getYear();
+		int month = dateTime.getMonthValue();
+		int day = dateTime.getDayOfMonth();
+		
+		String str = String.format("\n=================================\n\n");
+		 str += String.format("%27s \n \n", order.getCurrTimeDate().toString());
+		str += String.format("%15s %10s \n \n", 10000000, "Trainee");
+										
+		str += String.format("%28s \n", "________________________");
+		
+		for (Item item: order.getItems()){
+			str += String.format("%15s  %5s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
+		}
+		
+		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
+		
+		str += String.format("\n %15s  %5s", "Total:", moneyString);
+		
+		str += String.format("\n %15s  $%5s", "Total + tax:", String.format("%.02f", (TrainingRingUpCustomerController.total)));
+		
+		str += String.format("\n %15s  $%5s", "Customer paid:", String.format("%.02f", (TrainingRingUpCustomerController.customerPaid)));
+		
+		if(TrainingRingUpCustomerController.moneyToCalculate != 0.00)
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (TrainingRingUpCustomerController.moneyToCalculate)*-1.00)));
+		else
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (TrainingRingUpCustomerController.moneyToCalculate))));
+			
+		//rWriter.write("\n\n=================================\n\n");
+		str += String.format("\n\n=================================\n\n\n");
+		
+		
+		System.out.println(str);		
+	}
+	
 	public static void printReceipt(Order order, Employee employee)throws IOException {
+		//String ChaChing = "data/ChaChing.wav";
+	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
+	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
 		LocalDateTime dateTime = Order.getCurrTimeDate();
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
@@ -52,12 +100,21 @@ public class Receipt{
 		str += String.format("%28s \n", "________________________");
 		
 		for (Item item: order.getItems()){
-			str += String.format("%15s %7s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
+			str += String.format("%15s  %5s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
 		}
 		
 		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
 		
-		str += String.format("\n\n %15s %5s", "Total:", moneyString);
+		str += String.format("\n %15s  %5s", "Total:", moneyString);
+		
+		str += String.format("\n %15s  $%5s", "Total + tax:", String.format("%.02f", (RingUpCustomerController.total)));
+		
+		str += String.format("\n %15s  $%5s", "Customer paid:", String.format("%.02f", (RingUpCustomerController.customerPaid)));
+		
+		if(RingUpCustomerController.moneyToCalculate != 0.00)
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (RingUpCustomerController.moneyToCalculate)*-1.00)));
+		else
+		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (RingUpCustomerController.moneyToCalculate))));
 			
 		//rWriter.write("\n\n=================================\n\n");
 		str += String.format("\n\n=================================\n\n\n");

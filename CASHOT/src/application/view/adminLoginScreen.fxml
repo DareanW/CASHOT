@@ -19,11 +19,13 @@
 		               </font>
 		            </Label>
 		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
-                  <VBox layoutX="249.0" layoutY="245.0" prefHeight="147.0" prefWidth="274.0" spacing="10.0">
+                  <VBox alignment="CENTER" layoutX="263.0" layoutY="310.0" prefHeight="181.0" prefWidth="274.0" spacing="10.0">
                      <children>
-                        <TextField fx:id="adminUsrName" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Username: admin" />
-                        <TextField fx:id="adminUsrPw" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Password: admin" />
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                        <Label text="Username (Example: admin)" textAlignment="CENTER" />
+                        <TextField fx:id="adminUsrName" prefHeight="41.0" prefWidth="274.0" />
+                        <Label text="Password (Example: admin)" />
+                        <PasswordField fx:id="adminUsrPw" />
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="274.0" spacing="50.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="25.0" prefWidth="80.0" text="Go Back" />
                               <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="80.0" text="Login" />
