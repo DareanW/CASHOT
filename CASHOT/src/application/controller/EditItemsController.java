@@ -92,7 +92,8 @@ public class EditItemsController implements EventHandler {
 			if(!wasMatched){
 				system.addItem(temp);
 				system.updateItemsCsv(temp);
-		}
+				resultOutput.setText(name + " has been added!");
+			}
 		//System.out.println("Bob yo or sup dog");
 		}catch(Exception e) {
 			resultOutput.setText("You need to enter all fields with information.");
@@ -105,24 +106,56 @@ public class EditItemsController implements EventHandler {
 	
 	public void editItem(Event event){
 		
+		String newName = "";
+		double newPrice = 0;
+		int newRow = 0;
+		int newColumn = 0;
+		
 		try{
 			String name = editCurrName.getText();
-			String newName = editNewName.getText();
-			double newPrice = Double.parseDouble(editNewPrice.getText());
-			int newRow = Integer.parseInt(editNewRow.getText());
-			int newColumn = Integer.parseInt(editNewColumn.getText());
+			
 			boolean wasMatched = false;
 			
-			Item temp = new Item(newName, newPrice, newRow, newColumn);
+			//Item temp = new Item(newName, newPrice, newRow, newColumn);
 			
 			for (Item items : system.getItems()){
 				if(items.getName().equals(name)){
 					wasMatched = true;
+					system.removeItem(items);
+					
+					if(editNewPrice.getText().isEmpty()){
+						newPrice = items.getPrice();
+					}else{
+						newPrice = Double.parseDouble(editNewPrice.getText());
+					}
+					
+					if(editNewName.getText().isEmpty()){
+						newName = items.getName();
+					}else{
+						newName = editNewName.getText();
+					}
+					
+					if(editNewRow.getText().isEmpty())
+						newRow = items.getRow();
+					}else{
+						newRow = Integer.parseInt(editNewRow.getText());
+					}
+				
+					if(editNewColumn.getText().isEmpty()){
+						newColumn = items.getColumn();
+					}else{
+						newColumn = Integer.parseInt(editNewColumn.getText());
+					}
+					
 				}
-			}
-			if(!wasMatched){
+			
+			Item temp = new Item(newName, newPrice, newRow, newColumn);
+			
+			if(wasMatched){
 				system.addItem(temp);
 				system.editItemsCsv(temp, name);
+				resultOutput.setText(name + " has been successfully updated to the contents of " + newName);
+				system.loadItems();
 			}
 			//System.out.println("Bob yo or sup dog");
 			}catch(Exception e) {
