@@ -75,7 +75,7 @@ public class AdminController implements EventHandler {
 
 	@Override
 	public void handle(Event event) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
@@ -101,6 +101,11 @@ public class AdminController implements EventHandler {
 	//work in progress
 	public void loadEmployees(Event event){
 		
+	}
+	
+	public void loadEditEmpScreen(Event event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/editEmployees.fxml"));
+		content.getChildren().setAll(pane);
 	}
 	
 	public void loadAdminister(Event event) throws IOException {
