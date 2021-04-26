@@ -19,11 +19,14 @@
 		               </font>
 		            </Label>
 		            <Label layoutX="744.0" layoutY="776.0" text="Cashot" />
-                  <VBox layoutX="249.0" layoutY="245.0" prefHeight="279.0" prefWidth="274.0" spacing="10.0">
+                  <VBox alignment="CENTER" layoutX="249.0" layoutY="245.0" prefHeight="279.0" prefWidth="274.0" spacing="10.0">
                      <children>
-                        <TextField fx:id="employeeName" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Employee Name" />
-                        <TextField fx:id="addUsrName" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Username:" />
-                        <TextField fx:id="addUsrPw" focusTraversable="false" prefHeight="41.0" prefWidth="274.0" promptText="Password:" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Employee Name" textAlignment="CENTER" />
+                        <TextField fx:id="employeeName" prefHeight="41.0" prefWidth="274.0" promptText="Employee Name" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Username" textAlignment="CENTER" />
+                        <TextField fx:id="addUsrName" prefHeight="41.0" prefWidth="274.0" promptText="Username:" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Password" textAlignment="CENTER" />
+                        <TextField fx:id="addUsrPw" prefHeight="41.0" prefWidth="274.0" promptText="Password:" />
                         <HBox alignment="CENTER" prefHeight="0.0" prefWidth="274.0" spacing="50.0" />
                         <Pane prefHeight="85.0" prefWidth="274.0">
                            <children>

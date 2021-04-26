@@ -29,9 +29,12 @@ public class Receipt{
 	}*/
 	
 	public static void TraineePrintReceipt(Order order, String Trainee){
+		try{
 	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
 	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
+		} catch(Exception e){}
+		
 		LocalDateTime dateTime = Order.getCurrTimeDate();
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
@@ -69,9 +72,11 @@ public class Receipt{
 	
 	public static void printReceipt(Order order, Employee employee)throws IOException {
 		//String ChaChing = "data/ChaChing.wav";
-	    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
-	    MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
+		try{
+		    Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
+		    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+			mediaPlayer.play();
+			} catch(Exception e){}
 		LocalDateTime dateTime = Order.getCurrTimeDate();
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();

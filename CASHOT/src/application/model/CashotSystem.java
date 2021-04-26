@@ -99,7 +99,7 @@ public final class CashotSystem {
 	public void loadEmployees() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID, boolean Admin, 
 		String row;
-		
+		try{
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
@@ -110,7 +110,19 @@ public final class CashotSystem {
 		}
 		
 		csvReader.close();
+		
+	}catch(Exception e){
+		BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
+		Employee tempEmployee = new Employee("Employee", "employee", "password", Employee.hashNum("employee"), "FALSE", "FALSE", "TRUE");
+		csvWriter.write("Employee," + "employee," + "password," + String.valueOf(Employee.hashNum("Employee")) + ",FALSE" + ",FALSE," + "TRUE"+"\n");
+		addEmployee(tempEmployee);
+		//System.out.println("test");
+		tempEmployee = new Employee("Admin", "admin", "admin", Employee.hashNum("Admin"), "TRUE", "FALSE", "FALSE");
+		csvWriter.write("Admin," + "admin," + "admin," + String.valueOf(Employee.hashNum("Admin")) + ",TRUE" + ",FALSE," + "FALSE"+"\n");
+		addEmployee(tempEmployee);
+		csvWriter.close();
 	}
+		}
 	
 	public static void addEmployee(Employee employee) {
 		employees.add(employee);
@@ -146,7 +158,7 @@ public final class CashotSystem {
 	public void loadItems() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
-		
+		try{
 		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
@@ -156,7 +168,11 @@ public final class CashotSystem {
 		}
 		
 		csvReader.close();
-		
+		}catch(Exception e){
+			 BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
+			 csvWriter.write("");
+			 csvWriter.close();
+		}
 //		cController.hideUnimplementedButtons();
 	}
 	

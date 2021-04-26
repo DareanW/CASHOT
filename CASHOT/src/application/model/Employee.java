@@ -134,13 +134,13 @@ public void add(ArrayList<Employee> employee) {
 
 	public static String changeEmployeeStat(int id,String action)throws IOException{
 			String idString=Integer.toString(id);
-			
-		
+			  int count=0;
+		try{
 			BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
 
 		    StringBuffer buf = new StringBuffer();
 		    String line;
-		    int count=0;
+		  
 		    for(Employee i: CashotSystem.getEmployees()){
 		    while((line = csvReader.readLine()) != null){
 		        if(line.contains(idString)){
@@ -161,8 +161,9 @@ public void add(ArrayList<Employee> employee) {
 		            buf.append(line);
 		            buf.append('\n');
 		        }
+		    
 		    }
-		    }
+		   
 		    BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
 
 		    String output = buf.toString();
@@ -170,11 +171,13 @@ public void add(ArrayList<Employee> employee) {
 
 		    csvReader.close();
 		    csvWriter.close();
-		    
+		    }
+		    }catch(Exception e){}
 			if(count == 0)
 				return "FALSE";
 			
 			return "TRUE";
-		    		
+		    
+
 }
 }
