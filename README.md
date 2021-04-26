@@ -1,10 +1,10 @@
 # 3443-002-Team-Project
 # Payhem by CASHOT
 By
-__grl167 Darean Wilde (Team Leader)__\
-__fww704 Jacob Shawver__\
-__hug180 Majerus Sims__\
-__tvh991 Alexander Delgado__\
+__grl167 Darean Wilde (Team Leader) (@Ean173)__\
+__fww704 Jacob Shawver (Yarlow)__\
+__hug180 Majerus Sims (hug180)__\
+__tvh991 Alexander Delgado (Ad200023)__\
 \
 How to clone the GitHub repository on the UTSA VDI (and ensure everything is compatible):\
 1: Log Into UTSA VDI\

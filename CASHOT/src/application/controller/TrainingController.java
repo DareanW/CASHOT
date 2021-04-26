@@ -71,7 +71,7 @@ public class TrainingController implements EventHandler {
 
 		system.getItemsInButtons("training");
 		system.newOrder("training");
-
+		itemsInOrder = new ArrayList<Item>();
 		
 	}
 

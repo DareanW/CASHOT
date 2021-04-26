@@ -100,8 +100,19 @@ public class EditItemsController implements EventHandler {
 		}
 	}
 	
-	public void deleteItem(Event event){
+	public void deleteItem(Event event) throws IOException{
+		String itemName = deleteName.getText();
 		
+		Item itemToRemove = system.getSingleItem(itemName);
+		
+		if (itemToRemove != null){
+			system.deleteItemCSV(itemName);
+			system.removeItem(itemToRemove);
+			system.loadItems();
+			resultOutput.setText(itemName + " has been successfully removed");
+		} else {
+			resultOutput.setText("Item \"" + itemName + "\" not found");
+		}
 	}
 	
 	public void editItem(Event event){
@@ -167,4 +178,5 @@ public class EditItemsController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
+	
 }

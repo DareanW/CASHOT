@@ -30,14 +30,15 @@ public class MainController implements EventHandler {
 		
 		
 		// REMOVE THIS LATER. I'M LAZY AND TIRED OF SIGNING IN EVERY TIME
-		for(Employee employee: system.getEmployees()){
-			//System.out.println("test2");
+	/*	for(Employee employee: system.getEmployees()){
+			System.out.println("test2");
 			if(employee.getUserName().equals("admin") && employee.getEmployeePassword().equals("admin") && employee.isAdmin().equals("TRUE")){
 				system.setSignedIn(employee);
+				System.out.println(employee);
 				break;
 			}
 		}
-		
+		*/
 	}
 	
 
