@@ -44,16 +44,16 @@ public class Receipt{
 		str += String.format("%28s \n", "________________________");
 		
 		for (Item item: order.getItems()){
-			str += String.format("%15s  %5s \n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
+			str += String.format(" %15s  %5s\n", item.getName(), CashotSystem.dblToMoneyString(item.getPrice()));
 		}
 		
 		String moneyString = CashotSystem.dblToMoneyString(order.getTotal());
 		
 		str += String.format("\n %15s  %5s", "Total:", moneyString);
 		
-		str += String.format("\n %15s  $%5s", "Total + tax:", String.format("%.02f", (TrainingRingUpCustomerController.total)));
+		str += String.format("\n %15s  %5s", "Total + tax:", String.format("$%.02f", (TrainingRingUpCustomerController.total)));
 		
-		str += String.format("\n %15s  $%5s", "Customer paid:", String.format("%.02f", (TrainingRingUpCustomerController.customerPaid)));
+		str += String.format("\n %15s  %5s", "Customer paid:", String.format("$%.02f", (TrainingRingUpCustomerController.customerPaid)));
 		
 		if(TrainingRingUpCustomerController.moneyToCalculate != 0.00)
 		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (TrainingRingUpCustomerController.moneyToCalculate)*-1.00)));
@@ -61,7 +61,7 @@ public class Receipt{
 		str += String.format("\n\n %15s change.", String.format("$%s", String.format("%.02f", (TrainingRingUpCustomerController.moneyToCalculate))));
 			
 		//rWriter.write("\n\n=================================\n\n");
-		str += String.format("\n\n=================================\n\n\n");
+		str += String.format("\n\nThank you, and have a great day!\n\n=================================\n\n\n");
 		
 		
 		System.out.println(str);		
