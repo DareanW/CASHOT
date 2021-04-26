@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
+
+
 import application.controller.AdminController;
 import application.controller.AdminLoginController;
 import application.controller.CashierController;
@@ -114,7 +116,25 @@ public final class CashotSystem {
 	public static void addEmployee(Employee employee) {
 		employees.add(employee);
 	}
-	
+	public void removeEmployee(Employee employee){// who let the dogs out
+		employees.remove(employee);
+	}
+	public void updateEmployeeInfo(int id,String actionWanted){// who, who who, who?
+		//Iterator i= employees.iterator();
+		int count = 0;
+		while(employees.size() > count){
+			if(id == employees.get(count).getID() && actionWanted.equals("promoteToAdmin")){
+				employees.get(count).setAdmin("TRUE");
+				employees.get(count).setCashier("FALSE");
+				employees.get(count).setTrainiee("FALSE");
+			}
+			else if(id == employees.get(count).getID() && actionWanted.equals("completeTraining")){
+				employees.get(count).setAdmin("FALSE");
+				employees.get(count).setCashier("TRUE");
+				employees.get(count).setTrainiee("FALSE");
+			}
+		}
+	}
 	
 	public static ArrayList<Employee> getEmployees() {
 		return employees;
@@ -262,12 +282,21 @@ public static void newEmployee(Employee employee) throws IOException{
 		}
 		
 		if(actionWanted.equals("promoteToAdmin")){
-			System.out.println("entered first promoteToAdmin\n");
+			//System.out.println("entered first promoteToAdmin\n");
 			String temp=Employee.changeEmployeeStat(id,actionWanted);
 			if(temp == "FALSE")
 				return "FALSE";
 			return "TRUE";
 		}
+		
+		if(actionWanted.equals("remove")){
+			//System.out.println("entered remove if\n");
+			String temp=Employee.removeEmployFromFile(id);
+			if(temp == "FALSE")
+				return "FALSE";
+			return "TRUE";
+		}
+		
 		
 		
 		return "FALSE";

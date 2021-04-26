@@ -46,8 +46,21 @@ public class EditEmployees implements EventHandler {
 		
 	}
 	@FXML 
-	public void removeEmployee(ActionEvent e){
-		
+	public void removeEmployee(ActionEvent e) throws IOException{
+		int id=Integer.parseInt(userInput.getText());
+		Employee temp;
+		for(Employee i: CashotSystem.getEmployees()){
+			if(i.getID()==id){
+				temp=i;//maybe write the name of employee removed to the screen
+				system.removeEmployee(i);
+				break;
+			}
+		}
+		String result =CashotSystem.callEmployeeMethods(id, "remove");
+		if(result == "FALSE")
+			textArea.setText("Employee not found\n");
+		else
+			textArea.setText("Employee: "+id+ " sucessfully removed");
 		
 	}
 	
@@ -75,6 +88,19 @@ public class EditEmployees implements EventHandler {
 	@FXML
 	public void viewEmployees(ActionEvent e){
 		
+		String temp="";
+		for(Employee i: CashotSystem.getEmployees()){
+			if(i.isAdmin().equals("TRUE")){
+				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Administrator\n\n");
+			}
+			else if(i.getTrainiee().equals("TRUE"))
+				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Training\n\n");
+			
+			else if(i.getCashier().equals("TRUE"))
+				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Cashier\n\n");
+		}
+		textArea.setText(temp);
+
 	}
 	
 	
