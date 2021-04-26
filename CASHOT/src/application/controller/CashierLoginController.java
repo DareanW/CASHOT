@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -24,6 +25,7 @@ import javafx.scene.control.TextField;
 public class CashierLoginController implements EventHandler{
 	@FXML TextField cashierUsername;
 	@FXML TextField cashierPassword;
+	@FXML Label logInIncorrect;
 	@FXML Button btnLogin;
 	String inputUN;
 	String inputPW;
@@ -46,18 +48,28 @@ CashotSystem system = CashotSystem.getInstance();
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
+	public void setTextToBlank(Event event){
+	//key.KEY_PRESSED;
+	logInIncorrect.setText("");
+	//System.out.println("Test");
+}
 
 	@Override
 	public void handle(Event event) {
 		//System.out.println("test1");
 		inputUN = cashierUsername.getText();
+		boolean loggedIn = false;
 		inputPW = cashierPassword.getText();
+		logInIncorrect.setText("");
+		//logInIncorrect.setVisible(false);
 		for(Employee employee: system.getEmployees()){
 			//System.out.println("test2");
 			if(employee.getUserName().equals(inputUN) && employee.getEmployeePassword().equals(inputPW) && (employee.getCashier().equals("TRUE") || employee.isAdmin().equals("TRUE"))){
 				try {
 					system.setSignedIn(employee);
 					loadCashier(event);
+					//logInIncorrect.setText("");
+					loggedIn = true;
 				} catch (IOException e) {
 					
 					e.printStackTrace();
@@ -65,6 +77,10 @@ CashotSystem system = CashotSystem.getInstance();
 				break;
 			}
 		}
-		
+		if(loggedIn == false){
+			//System.out.println("test");
+			logInIncorrect.setText("Incorrect login information. Please try again.");
+		}
+			
 	}
 }
