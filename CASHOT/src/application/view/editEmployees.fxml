@@ -28,16 +28,16 @@
                   </Label>
                </children>
             </StackPane>
-            <Pane prefHeight="257.0" prefWidth="800.0">
+            <Pane prefHeight="377.0" prefWidth="800.0">
                <children>
-                  <VBox layoutX="210.0" prefHeight="257.0" prefWidth="391.0" spacing="10.0">
+                  <VBox layoutX="210.0" prefHeight="377.0" prefWidth="391.0" spacing="10.0">
                      <children>
                         <TextField fx:id="userInput" promptText="ex: 99999999" />
                         <HBox prefHeight="63.0" prefWidth="391.0" spacing="10.0">
                            <children>
                               <StackPane prefHeight="78.0" prefWidth="153.0">
                                  <children>
-                                    <Button fx:id="removeBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Remove " />
+                                    <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="116.0" text="Remove " />
                                  </children>
                               </StackPane>
                               <StackPane layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="153.0">
@@ -52,7 +52,7 @@
                               </StackPane>
                            </children>
                         </HBox>
-                        <TextArea fx:id="textArea" prefHeight="85.0" prefWidth="391.0" />
+                        <TextArea fx:id="textArea" prefHeight="286.0" prefWidth="391.0" />
                         <HBox layoutX="10.0" layoutY="115.0" prefHeight="63.0" prefWidth="391.0" spacing="10.0">
                            <children>
                               <StackPane prefHeight="78.0" prefWidth="153.0">
@@ -63,7 +63,7 @@
                               <StackPane layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="153.0" />
                               <StackPane layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="153.0">
                                  <children>
-                                    <Button fx:id="viewBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="View" />
+                                    <Button fx:id="viewBtn" mnemonicParsing="false" onAction="#viewEmployees" prefHeight="25.0" prefWidth="116.0" text="View" />
                                  </children>
                               </StackPane>
                            </children>
