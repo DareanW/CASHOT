@@ -20,15 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-/**
- * The CashierController class controls the cashier's screen. This 
- * 
- * @author Darean Wilde grl167 63678621
- * @author Jacob Shawver fww704 36242636
- * @author Majerus Sims hug180 79595196
- * @author Alexander Delgado tvh991 79595706
- *
- */
+
 
 public class CashierController implements EventHandler {
 

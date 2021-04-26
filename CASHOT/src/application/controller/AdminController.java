@@ -70,17 +70,14 @@ public class AdminController implements EventHandler {
 		system.getItemsInButtons("admin");
 		
 		String line = "";
-		try{
-			BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
-			reader.close();
-		while ((line = reader.readLine()) != null) 
+		
+		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
+		while ((line = reader.readLine()) != null) {
 		    str += line + "\n";
-		
 		}
-		catch(Exception e){
-	}
-		
+		reader.close();
 		adminTextArea.setText(str);
+		
 //		try {
 //			loadItems();
 //		} catch (Error e) {
