@@ -278,54 +278,124 @@ public static void newEmployee(Employee employee) throws IOException{
 
 
 
-public void setController(RingUpCustomerController ringUpCustomerController) {
-	this.ringUpCustomerController = ringUpCustomerController;
+	public void setController(RingUpCustomerController ringUpCustomerController) {
+		this.ringUpCustomerController = ringUpCustomerController;
+		
+	}
 	
-}
-
-public ArrayList<Item> getItems() {
-	ArrayList<Item> items = new ArrayList<Item>();
-	
-	for (int i = 0; i < 6; i++){
-		for (int j = 0; j < 4; j++){
-			if(itemMatrix[i][j] != null){
-				items.add(itemMatrix[i][j]);
+	public ArrayList<Item> getItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		
+		for (int i = 0; i < 6; i++){
+			for (int j = 0; j < 4; j++){
+				if(itemMatrix[i][j] != null){
+					items.add(itemMatrix[i][j]);
+				}
 			}
 		}
+		return items;
 	}
-	return items;
-}
-
-public void updateItemsCsv(Item item) throws IOException{
-	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",true));
-	csvWriter.write("\n"+item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn());
-	csvWriter.close();
-}
-
-public void editItemsCsv(Item item, String name) throws IOException{
-	BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
 	
-	StringBuffer buf = new StringBuffer();
-	String line;
+	public boolean searchItems(String itemName) {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items = getItems();
+		for(Item item: items) {
+			if (item.getName().equals(itemName)){
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
 	
-	while((line = csvReader.readLine()) != null){
-		if(line.contains(name)){
-			String newLine = item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn()+"\n";
-			buf.append(newLine);
-		}else{
+	public Item getSingleItem(String itemName) {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items = getItems();
+		for(Item item: items) {
+			if (item.getName().equals(itemName)){
+				return item;
+			}
+		}
+		return null;
+		
+	}
+	
+	
+	public void updateItemsCsv(Item item) throws IOException{
+		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
+		
+		StringBuffer buf = new StringBuffer();
+		String line;
+		
+		while((line = csvReader.readLine()) != null){
 			buf.append(line);
 			buf.append('\n');
 		}
+		
+		String newItemLine = item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn();
+		buf.append(newItemLine);
+		
+		BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
+		
+		String output = buf.toString();
+		csvWriter.write(output);
+		
+		csvReader.close();
+		csvWriter.close();
+		
+		
 	}
-	BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
 	
-	String output = buf.toString();
-	csvWriter.write(output);
-	
-	csvReader.close();
-	csvWriter.close();
-	
-	
-}
+	public void editItemsCsv(Item item, String name) throws IOException{
+		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
+		
+		StringBuffer buf = new StringBuffer();
+		String line;
+		
+		while((line = csvReader.readLine()) != null){
+			if(line.contains(name)){
+				String newLine = item.getName()+","+item.getPrice()+","+item.getRow()+","+item.getColumn()+"\n";
+				buf.append(newLine);
+			}else{
+				buf.append(line);
+				buf.append('\n');
+			}
+		}
+		BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
+		
+		String output = buf.toString();
+		csvWriter.write(output);
+		
+		csvReader.close();
+		csvWriter.close();
+		
+		
+	}
+
+	public void deleteItemCSV(String itemName) throws IOException {
+		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
+		
+		StringBuffer buf = new StringBuffer();
+		String line;
+		
+		while((line = csvReader.readLine()) != null){
+			if(!line.contains(itemName)){
+				buf.append(line);
+				buf.append('\n');
+			}else{
+				// nothing
+			}
+		}
+		
+		BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
+		
+		String output = buf.toString();
+		csvWriter.write(output);
+		
+		csvReader.close();
+		csvWriter.close();
+		
+	}
 
 }
