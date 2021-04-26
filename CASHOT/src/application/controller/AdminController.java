@@ -70,12 +70,13 @@ public class AdminController implements EventHandler {
 		system.getItemsInButtons("admin");
 		
 		String line = "";
-		
+		try{
 		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
 		while ((line = reader.readLine()) != null) {
 		    str += line + "\n";
 		}
 		reader.close();
+		}catch(Exception e){}
 		adminTextArea.setText(str);
 		
 //		try {
@@ -158,7 +159,7 @@ public class AdminController implements EventHandler {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
 		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
 			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
