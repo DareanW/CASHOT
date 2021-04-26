@@ -19,8 +19,15 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-
-
+/**
+ * The CashierController class controls the cashier's screen. This initializes all of the FXML buttons onto a matrix, makes an items ArrayList and a System instance.
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
 
 public class CashierController implements EventHandler {
 
@@ -60,6 +67,11 @@ public class CashierController implements EventHandler {
 	@FXML private AnchorPane content;
 	static CashotSystem system;
 	
+	
+	/**
+	 * The initialize method creates the system instances, the button matrix, and receipt instances need to operate.
+	 * @throws IOException
+	 */
 	public void initialize( ) throws IOException{
 		//Load items ?
 		system = CashotSystem.getInstance();
@@ -93,7 +105,10 @@ public class CashierController implements EventHandler {
 		
 		
 	}
-
+/**
+ * The handle function happens when the item is about to be rung up. This gets the items array list, creates 
+ * @param event is what the buttons do when pressed. They add an item to the order.
+ */
 	@Override
 	public void handle(Event event) {
 		//System.out.println(cashierButtons[1][0]);
@@ -138,17 +153,29 @@ public class CashierController implements EventHandler {
 //	}
 	
 	
-	
+	/**
+	 * loadMain changes the screen to main.fxml.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+	/**
+	 * loadTraining changes the screen to Training.fxml.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+	/**
+	 * loadAdminisrer changes the screen to administor.fxml or adminLoginScreen.fxml by either checking to see if the logged in, thus bypassing the login screen, or making the user log in to use Admin. 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminister(Event event) throws IOException {
 		try {
 			if (system.getSignedIn().isAdmin().equals("TRUE")){
@@ -161,24 +188,40 @@ public class CashierController implements EventHandler {
 			loadAdminLogin(event);
 		}
 	}
-	
+	/**
+	 * Called by loadAdminister, this makes the screen immediately change to administor.fxml.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassAdminLogin (Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+	/**
+	 * Called by loadAdminister, if the user does not meet the criteria for a skip login screen, this page appears.
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 	
-
+/**
+ * Logs out the user when called.
+ * @param event
+ * @throws IOException
+ */
 	public void logOut(Event event) throws IOException {
 		system.logOut();
 		loadMain(event);
 	}
 	
-
+/**
+ * loadRingUpCustomer changes the screen to Training.fxml.
+ * @param event
+ * @throws IOException
+ */
 	public void loadRingUpCustomer(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/ringUpCustomer.fxml"));
 		content.getChildren().setAll(pane);
@@ -189,12 +232,15 @@ public class CashierController implements EventHandler {
 //	public void loadItems() throws IOException{
 //		system.loadItems();
 //	}
-	
+	/**
+	 * loadItems loads up all of the items in items.csv.
+	 * @throws IOException
+	 */
 	public void loadItems() throws IOException {
 		//String employeeName, String userName, String employeePassword, int ID
 		String row;
 		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/test.csv") );
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
 			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
@@ -205,7 +251,10 @@ public class CashierController implements EventHandler {
 		
 		hideUnimplementedButtons();
 	}
-	
+	/**
+	 * addItem gets an item that has been pressed by the user to the ArrayList.
+	 * @param item
+	 */
 	public void addItem(Item item){
 //		itemMatrix[item.getRow()][item.getColumn()] = item;
 //		controller.setButton(item);
@@ -217,7 +266,10 @@ public class CashierController implements EventHandler {
 		button.setText(item.getName() + "\n" + moneyString);
 		
 	}
-	
+	/**
+	 * ringUpOrder changes the screen to the ring up order page, then ends this order.
+	 * @throws IOException
+	 */
 	public void ringUpOrder() throws IOException{
 		system.ringUp();
 		system.newOrder("cashier");
@@ -225,7 +277,9 @@ public class CashierController implements EventHandler {
 		receiptPrices.setText("");
 		receiptTotal.setText("");
 	}
-	
+	/**
+	 * Hides any buttons not in use.
+	 */
 	public void hideUnimplementedButtons() {
 		for (int i = 0; i < 6; i++){
 			for (int j = 0; j < 4; j++){
@@ -237,7 +291,9 @@ public class CashierController implements EventHandler {
 		}
 	}
 		
-	
+	/**
+	 * Places each button onto a place on a 2x2 array.
+	 */
 	public void buttonToMatrix(){
 		cashierButtons[0][0] = button00;
 		cashierButtons[0][1] = button01;
@@ -265,7 +321,10 @@ public class CashierController implements EventHandler {
 		cashierButtons[5][3] = button53;
 				
 	}
-
+/**
+ * shows a single button to the item's data passed in.
+ * @param item
+ */
 	public void setButton(Item item) {
 		Button button = cashierButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();

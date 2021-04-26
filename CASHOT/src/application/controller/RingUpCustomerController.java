@@ -24,7 +24,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
-
+/**
+ * The controller for ringing customers up. This screen is called to track how much money the customer is paying, checking to see if the customer paid enough, then printing a receipt.
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
 
 public class RingUpCustomerController implements EventHandler {
 
@@ -72,6 +80,10 @@ public class RingUpCustomerController implements EventHandler {
 	public static double total = 0.00;
 	public static double customerPaid = 0.00;
 	
+	/**
+	 * Initializes the class.
+	 * @throws IOException
+	 */
 	public void initialize( ) throws IOException{
 		//Load items ?
 		system = CashotSystem.getInstance();
