@@ -184,64 +184,59 @@ public void add(ArrayList<Employee> employee) {
 
 		    csvReader.close();
 		    csvWriter.close();
-
-		    
+		    }
+		    }catch(Exception e){}//try 
 			if(count == 0)// meaning no employee with that ID was found so let the user know
 				return "FALSE";
 			
 			return "TRUE";
 		    		
-}
-	public static String removeEmployFromFile(int id)throws IOException{
-		String idString=Integer.toString(id);
-		
-		BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
-		
-	    StringBuffer buf = new StringBuffer();
-	    String line;
-	    int count=0;
-	    try{
-	    for(Employee i: CashotSystem.getEmployees()){
-	    	while((line = csvReader.readLine()) != null){
-	    		String []temp=line.split(",");
-	    		if(!line.contains(idString)){	
-	    			i.employeeName=temp[0];
-    				i.userName=temp[1];
-    				i.employeePassword=temp[2];
-    				i.ID=Integer.parseInt(temp[3]);
-	    			i.admin=temp[4];
-    				i.cashier=temp[6];
-    				i.trainiee=temp[5];
-	    			
-	    			String newLine =i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.isAdmin()+","+i.getTrainiee()+","+i.getCashier()+"\n";
-	    			buf.append(newLine);
-	    			count++;
-	    		}
-	    }
-	    }//for loop
-	    BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
-
-	    String output = buf.toString();
-	    csvWriter.write(output);
-
-	    csvReader.close();
-	    csvWriter.close();
-	    
-		if(count == 0)// meaning no employee with that ID was found so let the user know
-			return "FALSE";
-		
-		return "TRUE";
-	    		
-}
-
-		    }
-		    }catch(Exception e){}
-			if(count == 0)
-				return "FALSE";
-			
-			return "TRUE";
+		    
+	
 		    
 
+}
+	public static String removeEmployFromFile(int id)throws IOException{
+	String idString=Integer.toString(id);
+	
+	BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
+	
+    StringBuffer buf = new StringBuffer();
+    String line;
+    int count=0;
+    try{
+    for(Employee i: CashotSystem.getEmployees()){
+    	while((line = csvReader.readLine()) != null){
+    		String []temp=line.split(",");
+    		if(!line.contains(idString)){	
+    			i.employeeName=temp[0];
+				i.userName=temp[1];
+				i.employeePassword=temp[2];
+				i.ID=Integer.parseInt(temp[3]);
+    			i.admin=temp[4];
+				i.cashier=temp[6];
+				i.trainiee=temp[5];
+    			
+    			String newLine =i.getEmployeeName()+","+i.getUserName()+","+i.getEmployeePassword()+","+i.getID()+","+i.isAdmin()+","+i.getTrainiee()+","+i.getCashier()+"\n";
+    			buf.append(newLine);
+    			count++;
+    		}
+    }
+    }//for loop
+    BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/employees.csv",false));
 
+    String output = buf.toString();
+    csvWriter.write(output);
+
+    csvReader.close();
+    csvWriter.close();
+    
+    }catch(Exception e){}
+	if(count == 0)// meaning no employee with that ID was found so let the user know
+		return "FALSE";
+	
+	return "TRUE";
+    		
 }
-}
+
+	    }
