@@ -1,7 +1,7 @@
 # 3443-002-Team-Project
 # Payhem by CASHOT
 By
-__grl167 Darean Wilde (Team Leader) (@Ean173)__\
+__grl167 Darean Wilde (Team Leader) (Ean173)__\
 __fww704 Jacob Shawver (Yarlow)__\
 __hug180 Majerus Sims (hug180)__\
 __tvh991 Alexander Delgado (Ad200023)__\
