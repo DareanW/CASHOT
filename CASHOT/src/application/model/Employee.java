@@ -184,6 +184,7 @@ public void add(ArrayList<Employee> employee) {
 
 		    csvReader.close();
 		    csvWriter.close();
+		    //System.out.println("test");
 		    }
 		    }catch(Exception e){}//try 
 			if(count == 0)// meaning no employee with that ID was found so let the user know
