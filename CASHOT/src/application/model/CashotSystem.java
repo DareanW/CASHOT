@@ -4,6 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
@@ -188,6 +191,16 @@ public final class CashotSystem {
 		
 		csvReader.close();
 		}catch(Exception e){
+			  try {
+
+				    Path path = Paths.get("data");
+
+				    //java.nio.file.Files;
+				    Files.createDirectories(path);
+				  } catch (IOException IO) {
+				    System.err.println("Failed to create directory!" + e.getMessage());
+				  }
+			
 			 BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv",false));
 			 csvWriter.write("");
 			 csvWriter.close();
