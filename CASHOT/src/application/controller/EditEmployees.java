@@ -1,6 +1,9 @@
 package application.controller;
 
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import application.model.CashotSystem;
@@ -66,29 +69,48 @@ public class EditEmployees implements EventHandler {
 	
 	@FXML 
 	public void completeTraining(ActionEvent e) throws IOException{
-		int id=Integer.parseInt(userInput.getText());
-		String result =CashotSystem.callEmployeeMethods(id,"completeTraining");
-		if(result == "FALSE")
-			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: "+id+ " sucessfully promoted to cashier");
+		int id;
+		try{
+		id = Integer.parseInt(userInput.getText());
+		String result = CashotSystem.callEmployeeMethods(id,"completeTraining");
+		if(result == "TRUE")
+			textArea.setText("Employee "+id+ " sucessfully promoted to Cashier");
 		
+	}catch(Exception exception){
+		textArea.setText("Employee not found\n");
+	}
 	}
 
 	@FXML
 	public void promoteToAdmin(ActionEvent e) throws IOException{
-		int id=Integer.parseInt(userInput.getText());
+		int id;
+		try{
+		id = Integer.parseInt(userInput.getText());
 		String result = CashotSystem.callEmployeeMethods(id,"promoteToAdmin");
-		if(result == "FALSE")
-			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: "+id+ " sucessfully promoted to Admin");
-	}
+		if(result == "TRUE")
+			textArea.setText("Employee "+id+ " sucessfully promoted to Admin");
 	
+	}catch(Exception exception){
+		textArea.setText("Employee not found\n");
+	}
+	}
 	@FXML
-	public void viewEmployees(ActionEvent e){
+	public void viewEmployees(ActionEvent e) throws IOException{
 		
 		String temp="";
+				String row;
+		BufferedReader csvReader = new BufferedReader( new FileReader("data/employees.csv") );
+		while ((row = csvReader.readLine()) != null) {
+			String[] data = row.split(",");
+			temp += "Name: " + data[0] + "\nID: " + data[3] + "\nCurrent work status:";
+			if(data[4].equals("TRUE"))
+			temp+=" Administrator\n\n";
+			else if(data[6].equals("TRUE"))
+				temp+=" Cashier\n\n";
+			else 
+				temp+= " Trainee\n\n";
+		}
+		/*
 		for(Employee i: CashotSystem.getEmployees()){
 			if(i.isAdmin().equals("TRUE")){
 				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Administrator\n\n");
@@ -98,7 +120,7 @@ public class EditEmployees implements EventHandler {
 			
 			else if(i.getCashier().equals("TRUE"))
 				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Cashier\n\n");
-		}
+		}*/
 		textArea.setText(temp);
 
 	}

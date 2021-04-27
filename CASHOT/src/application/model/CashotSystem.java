@@ -288,7 +288,7 @@ public static void newEmployee(Employee employee) throws IOException{
 
 
 
-	public static  String callEmployeeMethods(int id,String actionWanted ) throws IOException{//alex added this on friday
+	public static String callEmployeeMethods(int id,String actionWanted ) throws IOException{//alex added this on friday
 		
 		if(actionWanted.equals("completeTraining")){
 			String temp=Employee.changeEmployeeStat(id,actionWanted);
