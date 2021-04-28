@@ -36,10 +36,18 @@ public class Receipt {
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
 		int day = dateTime.getDayOfMonth();
+		int hour = dateTime.getHour();
+		int minute = dateTime.getMinute();
+		int second = dateTime.getSecond();
+
+		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
+				(hour + ":" + minute + ":" + second));
+		// String formatTime = String.format("%20s",);
 
 		String str = String.format("\n=================================\n\n");
-		str += String.format("%27s \n \n", Order.getCurrTimeDate().toString());
-		str += String.format("%15s %10s \n \n", 10000000, "Trainee");
+		str += formatDate;
+		// str += String.format("\n%s\n", formatTime);
+		str += String.format("\n%15s %10s \n", "00000000", "Trainee");
 
 		str += String.format("%28s \n", "________________________");
 
@@ -82,6 +90,9 @@ public class Receipt {
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
 		int day = dateTime.getDayOfMonth();
+		int hour = dateTime.getHour();
+		int minute = dateTime.getMinute();
+		int second = dateTime.getSecond();
 
 		Path path = Paths.get("Receipts", String.valueOf(year), String.valueOf(month), String.valueOf(day));
 
@@ -100,9 +111,15 @@ public class Receipt {
 		// + "receipts.csv");
 
 		FileWriter rWriter = new FileWriter(recFile);
+
+		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
+				(hour + ":" + minute + ":" + second));
+		// String formatTime = String.format("%20s",);
+
 		String str = String.format("\n=================================\n\n");
-		str += String.format("%27s \n \n", Order.getCurrTimeDate().toString());
-		str += String.format("%15s %10s \n \n", employee.getID(), employee.getEmployeeName());
+		str += formatDate;
+
+		str += String.format("\n%15s %10s \n", employee.getID(), employee.getEmployeeName());
 
 		str += String.format("%28s \n", "________________________");
 
