@@ -13,6 +13,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * This is the controller for the training page. Like the CashierController, it
+ * logs the trainee's inputs for items being purchased and calculates them.
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
 public class TrainingController implements EventHandler {
 
 	@FXML
@@ -79,6 +89,11 @@ public class TrainingController implements EventHandler {
 	private AnchorPane content;
 	CashotSystem system;
 
+	/**
+	 * Starts a new order with the trainee instead of an established employee
+	 * 
+	 * @throws IOException
+	 */
 	public void initialize() throws IOException {
 		// Load items ?
 		system = CashotSystem.getInstance();
@@ -95,6 +110,13 @@ public class TrainingController implements EventHandler {
 
 	}
 
+	/**
+	 * 
+	 * Handle sets the local names to blank, addes items to the buttons and
+	 * initializes the order.
+	 * 
+	 * @param event
+	 */
 	@Override
 	public void handle(Event event) {
 		for (int i = 0; i < 6; i++) {
@@ -130,16 +152,34 @@ public class TrainingController implements EventHandler {
 		}
 	}
 
+	/**
+	 * loads the training ring up customer screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadTrainingRingUpCustomer(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/TrainingRingUpCustomer.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Loads the main screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * loads the Cashier screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadCashier(Event event) throws IOException {
 		try {
 			if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")) {
@@ -152,16 +192,35 @@ public class TrainingController implements EventHandler {
 		}
 	}
 
+	/**
+	 * Loads the employee login screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Passes the employee login screen if called.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Loads the Administer screen. If the user is already an administrator,
+	 * they do not need to log in again.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminister(Event event) throws IOException {
 		try {
 			if (system.getSignedIn().isAdmin().equals("TRUE")) {
@@ -174,16 +233,31 @@ public class TrainingController implements EventHandler {
 		}
 	}
 
+	/**
+	 * Passes the admin login screen if called.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Loads the admin screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Hides buttons that are not in use.
+	 */
 	public void hideUnimplementedButtons() {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 4; j++) {
@@ -195,6 +269,9 @@ public class TrainingController implements EventHandler {
 		}
 	}
 
+	/**
+	 * sets all of the buttons to a 2-dimentional array.
+	 */
 	public void buttonToMatrix() {
 
 		trainingButtons[0][0] = button00;
@@ -224,6 +301,11 @@ public class TrainingController implements EventHandler {
 
 	}
 
+	/**
+	 * Sets the button to the item passed in.
+	 * 
+	 * @param item
+	 */
 	public void setButton(Item item) {
 		Button button = trainingButtons[item.getRow()][item.getColumn()];
 		// System.out.println(button);

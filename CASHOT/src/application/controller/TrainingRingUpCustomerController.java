@@ -14,6 +14,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * Like the controller for the cashier, this page lets the trainee practice
+ * paying for items on the cash register.
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
 public class TrainingRingUpCustomerController implements EventHandler {
 
 	@FXML
@@ -88,6 +98,12 @@ public class TrainingRingUpCustomerController implements EventHandler {
 	public static double total = 0.00;
 	public static double customerPaid = 0.00;
 
+	/**
+	 * Initializes the screen. Also sets the items to be shown, and gets the
+	 * prices from the previous Trainee screen.
+	 * 
+	 * @throws IOException
+	 */
 	public void initialize() throws IOException {
 		// Load items ?
 		system = CashotSystem.getInstance();
@@ -144,6 +160,11 @@ public class TrainingRingUpCustomerController implements EventHandler {
 
 	}
 
+	/**
+	 * Handle. Currently does nothing.
+	 * 
+	 * @param event
+	 */
 	@Override
 	public void handle(Event event) {
 		// for (int i = 0; i < 6; i++){
@@ -209,12 +230,24 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		 * 
 		 * }
 		 */
+	/**
+	 * Loads the training controller.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadTrainingController(Event event) throws IOException {
 		total = 0.00;
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+	/**
+	 * Rings up the order. If the customer did not pay enough money, the
+	 * register says more money is needed. Otherwise, print the receipt.
+	 * 
+	 * @throws IOException
+	 */
 	public void ringUpOrder() throws IOException {
 		// CashierController.system.ringUp();
 		// CashierController.system.newOrder();
@@ -232,6 +265,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 
 	}
 
+	/**
+	 * Hides buttons not in use.
+	 */
 	public void hideUnimplementedButtons() {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 4; j++) {
@@ -243,6 +279,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		}
 	}
 
+	/**
+	 * Adds 1 cent to the global variable for calculations.
+	 */
 	public void add1() {
 		customerPaid -= 0.01;
 		moneyToCalculate += 0.01;
@@ -252,6 +291,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 5 cents to the global variable for calculations.
+	 */
 	public void add5() {
 		customerPaid -= 0.05;
 		moneyToCalculate += 0.05;
@@ -261,6 +303,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 10 cents to the global variable for calculations.
+	 */
 	public void add10() {
 		customerPaid -= 0.10;
 		moneyToCalculate += 0.10;
@@ -270,6 +315,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 25 cents to the global variable for calculations.
+	 */
 	public void add25() {
 		customerPaid -= 0.25;
 		moneyToCalculate += 0.25;
@@ -279,6 +327,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 50 cents to the global variable for calculations.
+	 */
 	public void add50() {
 		customerPaid -= 0.50;
 		moneyToCalculate += 0.50;
@@ -288,6 +339,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds one dollar to the global variable for calculations.
+	 */
 	public void add100() {
 		customerPaid -= 1.00;
 		moneyToCalculate += 1.00;
@@ -297,6 +351,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 2 dollars to the global variable for calculations.
+	 */
 	public void add200() {
 		customerPaid -= 2.00;
 		moneyToCalculate += 2.00;
@@ -306,6 +363,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 5 dollars to the global variable for calculations.
+	 */
 	public void add500() {
 		customerPaid -= 5.00;
 		moneyToCalculate += 5.00;
@@ -315,6 +375,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 10 dollars to the global variable for calculations.
+	 */
 	public void add1000() {
 		customerPaid -= 10.00;
 		moneyToCalculate += 10.00;
@@ -324,6 +387,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 20 dollars to the global variable for calculations.
+	 */
 	public void add2000() {
 		customerPaid -= 20.00;
 		moneyToCalculate += 20.00;
@@ -333,6 +399,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 50 dollars to the global variable for calculations.
+	 */
 	public void add5000() {
 		customerPaid -= 50.00;
 		moneyToCalculate += 50.00;
@@ -342,6 +411,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Adds 100 dollars to the global variable for calculations.
+	 */
 	public void add10000() {
 		customerPaid -= 100.00;
 		moneyToCalculate += 100.00;
@@ -351,6 +423,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 1 cent from the global variable for calculations.
+	 */
 	public void minus1() {
 		customerPaid += 0.01;
 		moneyToCalculate -= 0.01;
@@ -360,6 +435,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 5 cents from the global variable for calculations.
+	 */
 	public void minus5() {
 		customerPaid += 0.05;
 		moneyToCalculate -= 0.05;
@@ -369,6 +447,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 10 cents from the global variable for calculations.
+	 */
 	public void minus10() {
 		customerPaid += 0.10;
 		moneyToCalculate -= 0.10;
@@ -378,6 +459,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 25 cents from the global variable for calculations.
+	 */
 	public void minus25() {
 		customerPaid += 0.25;
 		moneyToCalculate -= 0.25;
@@ -387,6 +471,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 50 cents from the global variable for calculations.
+	 */
 	public void minus50() {
 		customerPaid += 0.50;
 		moneyToCalculate -= 0.50;
@@ -396,6 +483,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 1 dollar from the global variable for calculations.
+	 */
 	public void minus100() {
 
 		customerPaid += 1.00;
@@ -406,6 +496,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 2 dollars from the global variable for calculations.
+	 */
 	public void minus200() {
 		customerPaid += 2.00;
 		moneyToCalculate -= 2.00;
@@ -415,6 +508,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 5 dollars from the global variable for calculations.
+	 */
 	public void minus500() {
 		customerPaid += 5.00;
 		moneyToCalculate -= 5.00;
@@ -424,6 +520,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 10 dollars from the global variable for calculations.
+	 */
 	public void minus1000() {
 		customerPaid += 10.00;
 		moneyToCalculate -= 10.00;
@@ -433,6 +532,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 20 dollars from the global variable for calculations.
+	 */
 	public void minus2000() {
 		customerPaid += 20.00;
 		moneyToCalculate -= 20.00;
@@ -442,6 +544,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 50 dollars from the global variable for calculations.
+	 */
 	public void minus5000() {
 		customerPaid += 50.00;
 		moneyToCalculate -= 50.00;
@@ -451,6 +556,9 @@ public class TrainingRingUpCustomerController implements EventHandler {
 		receiptTotal.setText("$" + String.format("%.02f", moneyToCalculate));
 	}
 
+	/**
+	 * Subtracts 100 dollars from the global variable for calculations.
+	 */
 	public void minus10000() {
 		customerPaid += 100.00;
 		moneyToCalculate -= 100.00;

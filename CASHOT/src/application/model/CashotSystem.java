@@ -208,11 +208,12 @@ public final class CashotSystem {
 			} catch (IOException IO) {
 				System.err.println("Failed to create directory!" + e.getMessage());
 			}
-try{
-			BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv", false));
-			csvWriter.write("");
-			csvWriter.close();
-}catch(Exception e2){}
+			try {
+				BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv", false));
+				csvWriter.write("");
+				csvWriter.close();
+			} catch (Exception e2) {
+			}
 		}
 		// cController.hideUnimplementedButtons();
 	}
