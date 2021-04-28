@@ -13,14 +13,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+
 /**
- *  The EditEmployees controller is the controller for the editEmployees.fxml and will update it when date changes
- *  Allows admin to remove,view, or promote employees
+ * The EditEmployees controller is the controller for the editEmployees.fxml and
+ * will update it when date changes Allows admin to remove,view, or promote
+ * employees
  * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
  * @author Majerus Sims hug180 79595196
- * @author Alexander Delgado tvh991 79595706 
+ * @author Alexander Delgado tvh991 79595706
  */
 public class EditEmployees implements EventHandler {
 
@@ -44,15 +46,18 @@ public class EditEmployees implements EventHandler {
 	CashotSystem system;
 
 	/**
-	 * initialize will set up eveything the controller will need in order to function
+	 * initialize will set up eveything the controller will need in order to
+	 * function
 	 */
 	public void initialize() throws IOException {
 		system = CashotSystem.getInstance();
 		// system.setController(this);
 
 	}
+
 	/**
 	 * loadAdminister will launch the adminstor.fxml view
+	 * 
 	 * @param event
 	 * @throws IOException
 	 */
@@ -68,6 +73,7 @@ public class EditEmployees implements EventHandler {
 
 	/**
 	 * removeEmployee will remove an employee from the system
+	 * 
 	 * @param e
 	 * @throws IOException
 	 */
@@ -90,9 +96,10 @@ public class EditEmployees implements EventHandler {
 			textArea.setText("Employee: " + id + " sucessfully removed");
 
 	}
-	
+
 	/**
 	 * completeTraining will promote a trainiee to a cashier
+	 * 
 	 * @param e
 	 * @throws IOException
 	 */
@@ -106,8 +113,10 @@ public class EditEmployees implements EventHandler {
 			textArea.setText("Employee: " + id + " sucessfully promoted to cashier");
 
 	}
+
 	/**
 	 * promoteToAdmin will promote a cashier to an admin
+	 * 
 	 * @param e
 	 * @throws IOException
 	 */
@@ -120,8 +129,10 @@ public class EditEmployees implements EventHandler {
 		else
 			textArea.setText("Employee: " + id + " sucessfully promoted to Admin");
 	}
+
 	/**
 	 * viewEmployees will populate the textField with all current employees
+	 * 
 	 * @param e
 	 */
 	@FXML

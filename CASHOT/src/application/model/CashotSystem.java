@@ -18,13 +18,15 @@ import application.controller.TrainingController;
 import application.controller.TrainingRingUpCustomerController;
 import application.controller.addEmployeeFromAdminController;
 import application.controller.RingUpCustomerController;
+
 /**
- *  CashotSystem class serves as our cental hub and contains all controllers, and methods to update our employees and items
- *  
+ * CashotSystem class serves as our cental hub and contains all controllers, and
+ * methods to update our employees and items
+ * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
  * @author Majerus Sims hug180 79595196
- * @author Alexander Delgado tvh991 79595706 
+ * @author Alexander Delgado tvh991 79595706
  *
  */
 public final class CashotSystem {
@@ -52,70 +54,97 @@ public final class CashotSystem {
 	private final static CashotSystem INSTANCE = new CashotSystem();
 
 	public static Order order;
+
 	/**
 	 * CashotSystem method creats new ArrayList of type Employee
 	 */
 	private CashotSystem() {
 		employees = new ArrayList<Employee>();
 	}
+
 	/**
-	 * getInstance returns an INSTANCE of this class 
+	 * getInstance returns an INSTANCE of this class
+	 * 
 	 * @return
 	 */
 	public static CashotSystem getInstance() {
 		return INSTANCE;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(MainController controller) {
 		this.controller = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(EditItemsController controller) {
 		this.EIController = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(addEmployeeFromAdminController controller) {
 		this.aEFAController = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(TrainingRingUpCustomerController controller) {
 		this.trainingRingUpCustomerController = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(CashierController controller) {
 		this.cController = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(TrainingController controller) {
 		this.tController = controller;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param controller
 	 */
 	public void setController(AdminController controller) {
 		this.aController = controller;
 	}
+
 	/**
-	 * newOrder method will create a new order depending on whether the user is a cashier or trainiee
+	 * newOrder method will create a new order depending on whether the user is
+	 * a cashier or trainiee
+	 * 
 	 * @param mode
 	 */
 	public void newOrder(String mode) {
@@ -129,15 +158,20 @@ public final class CashotSystem {
 		}
 
 	}
+
 	/**
-	 * ringUP method will print the recipt 
+	 * ringUP method will print the recipt
+	 * 
 	 * @throws IOException
 	 */
 	public void ringUp() throws IOException {
 		Receipt.printReceipt(order, order.getEmployee());
 	}
+
 	/**
-	 * loadEmployees will read from employees.csv and create new employees from the file
+	 * loadEmployees will read from employees.csv and create new employees from
+	 * the file
+	 * 
 	 * @throws IOException
 	 */
 	public void loadEmployees() throws IOException {
@@ -171,22 +205,28 @@ public final class CashotSystem {
 			csvWriter.close();
 		}
 	}
+
 	/**
 	 * addEmployee method adds an employee object to the Employee arrayList
+	 * 
 	 * @param employee
 	 */
 	public static void addEmployee(Employee employee) {
 		employees.add(employee);
 	}
+
 	/**
 	 * removeEmployee method removes an employee from the Employee arraylist
+	 * 
 	 * @param employee
 	 */
 	public void removeEmployee(Employee employee) {// who let the dogs out
 		employees.remove(employee);
 	}
+
 	/**
 	 * updateEmployeeInfo method will update the employes in the arraylist
+	 * 
 	 * @param id
 	 * @param actionWanted
 	 */
@@ -206,21 +246,27 @@ public final class CashotSystem {
 			}
 		}
 	}
+
 	/**
-	 *get Employees method will return all employees in the the employee arrayList
+	 * get Employees method will return all employees in the the employee
+	 * arrayList
 	 */
 	public static ArrayList<Employee> getEmployees() {
 		return employees;
 	}
+
 	/**
-	 * setter for the employees 
+	 * setter for the employees
+	 * 
 	 * @param employees
 	 */
 	public static void setEmployees(ArrayList<Employee> employees) {
 		CashotSystem.employees = employees;
 	}
+
 	/**
-	 * generateEmployeeString turns Arraylist into a string 
+	 * generateEmployeeString turns Arraylist into a string
+	 * 
 	 * @return
 	 */
 	public static String generateEmployeeString() {
@@ -230,8 +276,11 @@ public final class CashotSystem {
 		}
 		return str;
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param cashierLoginController
 	 * @throws IOException
 	 */
@@ -240,8 +289,11 @@ public final class CashotSystem {
 		loadEmployees();
 
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param adminLoginController
 	 * @throws IOException
 	 */
@@ -249,8 +301,10 @@ public final class CashotSystem {
 		this.aLController = adminLoginController;
 		loadEmployees();
 	}
+
 	/**
 	 * loadItem method will read from items.csv and populate the the itemMatrix
+	 * 
 	 * @throws IOException
 	 */
 	public void loadItems() throws IOException {
@@ -274,24 +328,30 @@ public final class CashotSystem {
 		}
 		// cController.hideUnimplementedButtons();
 	}
+
 	/**
 	 * adds and item to the itemMatrix
+	 * 
 	 * @param item
 	 */
 	public void addItem(Item item) {
 		itemMatrix[item.getRow()][item.getColumn()] = item;
 		;
 	}
+
 	/**
 	 * removes an item from the itemMatrix
+	 * 
 	 * @param item
 	 */
 	public void removeItem(Item item) {
 		itemMatrix[item.getRow()][item.getColumn()] = null;
 		;
 	}
+
 	/**
-	 * grabs all the Items in the buttons 
+	 * grabs all the Items in the buttons
+	 * 
 	 * @param mode
 	 */
 	public void getItemsInButtons(String mode) {
@@ -329,8 +389,10 @@ public final class CashotSystem {
 		}
 
 	}
+
 	/**
-	 * adds an item to the  orderItems arrayList
+	 * adds an item to the orderItems arrayList
+	 * 
 	 * @param i
 	 * @param j
 	 * @return
@@ -339,35 +401,44 @@ public final class CashotSystem {
 		ArrayList<Item> orderItems = order.addItemToOrder(itemMatrix[i][j]);
 		return orderItems;
 	}
+
 	/**
-	 * returns the total for the order 
+	 * returns the total for the order
+	 * 
 	 * @return
 	 */
 	public double getOrderTotal() {
 		return order.total();
 	}
+
 	/**
-	 * signs in the employee 
+	 * signs in the employee
+	 * 
 	 * @param employee
 	 */
 	public void setSignedIn(Employee employee) {
 		signedIn = employee;
 	}
+
 	/**
 	 * returns whether the user is signed in or not
+	 * 
 	 * @return
 	 */
 	public Employee getSignedIn() {
 		return signedIn;
 	}
+
 	/**
 	 * changes the status of the user to not signed in
 	 */
 	public void logOut() {
 		signedIn = null;
 	}
+
 	/**
 	 * returns the price as a string instead of a double
+	 * 
 	 * @param price
 	 * @return
 	 */
@@ -376,6 +447,7 @@ public final class CashotSystem {
 		String moneyString = formatter.format(price);
 		return moneyString;
 	}
+
 	/**
 	 * 
 	 * @param employee
@@ -400,8 +472,10 @@ public final class CashotSystem {
 		writer.close();
 
 	}
+
 	/**
 	 * calls the methods inside the Employee class
+	 * 
 	 * @param id
 	 * @param actionWanted
 	 * @return
@@ -439,16 +513,21 @@ public final class CashotSystem {
 		return "FALSE";
 
 	}
+
 	/**
-	 * setContoller method will allow for scenes to be changed throughout the program
+	 * setContoller method will allow for scenes to be changed throughout the
+	 * program
+	 * 
 	 * @param ringUpCustomerController
 	 */
 	public void setController(RingUpCustomerController ringUpCustomerController) {
 		this.ringUpCustomerController = ringUpCustomerController;
 
 	}
+
 	/**
 	 * gets the Items within the Item Arraylist
+	 * 
 	 * @return
 	 */
 	public ArrayList<Item> getItems() {
@@ -463,8 +542,11 @@ public final class CashotSystem {
 		}
 		return items;
 	}
+
 	/**
-	 * searches for a specific item in the Item arraylist and return true or false if it is found or not 
+	 * searches for a specific item in the Item arraylist and return true or
+	 * false if it is found or not
+	 * 
 	 * @param itemName
 	 * @return
 	 */
@@ -480,8 +562,10 @@ public final class CashotSystem {
 		return false;
 
 	}
+
 	/**
-	 * returns an item from the item arraylist 
+	 * returns an item from the item arraylist
+	 * 
 	 * @param itemName
 	 * @return
 	 */
@@ -496,8 +580,10 @@ public final class CashotSystem {
 		return null;
 
 	}
+
 	/**
 	 * updates an item in the items.csv file
+	 * 
 	 * @param item
 	 * @throws IOException
 	 */
@@ -524,8 +610,10 @@ public final class CashotSystem {
 		csvWriter.close();
 
 	}
+
 	/**
 	 * edits an item in the items.csv file
+	 * 
 	 * @param item
 	 * @param name
 	 * @throws IOException
@@ -555,8 +643,10 @@ public final class CashotSystem {
 		csvWriter.close();
 
 	}
+
 	/**
 	 * deletes an item from the items.csv file if found
+	 * 
 	 * @param itemName
 	 * @throws IOException
 	 */

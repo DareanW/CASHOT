@@ -87,8 +87,10 @@ public class AdminController implements EventHandler {
 
 	CashotSystem system;
 	String str = "";
+
 	/**
-	 * initialize method will set up everything the admin will need 
+	 * initialize method will set up everything the admin will need
+	 * 
 	 * @throws IOException
 	 */
 	public void initialize() throws IOException {
@@ -287,6 +289,7 @@ public class AdminController implements EventHandler {
 
 		// button.setText(item.getName() + "\n" + moneyString);
 	}
+
 	/**
 	 * buttonToMatrix will hold all our buttons
 	 */
@@ -317,8 +320,10 @@ public class AdminController implements EventHandler {
 		adminButtons[5][3] = button53;
 
 	}
+
 	/**
 	 * setButton will change the name of the button with the item specified
+	 * 
 	 * @param item
 	 */
 	public void setButton(Item item) {

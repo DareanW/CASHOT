@@ -7,8 +7,11 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
 /**
- * Employee class represents a Employee object which has an employeeName,userName,employeePassword,ID,admin,trainiee,cashier, and an arrayList. 
+ * Employee class represents a Employee object which has an
+ * employeeName,userName,employeePassword,ID,admin,trainiee,cashier, and an
+ * arrayList.
  * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
@@ -27,8 +30,10 @@ public class Employee {
 	private String admin;
 	private String trainiee;
 	private String cashier;
+
 	/**
 	 * constructor for our employee object
+	 * 
 	 * @param employeeName
 	 * @param userName
 	 * @param employeePassword
@@ -48,85 +53,109 @@ public class Employee {
 		this.trainiee = trainiee;
 		this.cashier = cashier;
 	}
+
 	/**
 	 * returns the name of the employee
+	 * 
 	 * @return
 	 */
 	public String getEmployeeName() {
 		return employeeName;
 	}
+
 	/**
 	 * setter for the employee name
+	 * 
 	 * @param employeeName
 	 */
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;
 	}
+
 	/**
 	 * reutrns the user name of the employee
+	 * 
 	 * @return
 	 */
 	public String getUserName() {
 		return userName;
 	}
+
 	/**
 	 * setter for the userName
+	 * 
 	 * @param userName
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	/**
 	 * returns the password of the employee
+	 * 
 	 * @return
 	 */
 	public String getEmployeePassword() {
 		return employeePassword;
 	}
+
 	/**
 	 * setter for the employeePassword
+	 * 
 	 * @param employeePassword
 	 */
 	public void setEmployeePassword(String employeePassword) {
 		this.employeePassword = employeePassword;
 	}
+
 	/**
 	 * returns the ID of the employee
+	 * 
 	 * @return
 	 */
 	public int getID() { // changed to static
 		return ID;
 	}
+
 	/**
 	 * setter for ID
+	 * 
 	 * @param iD
 	 */
 	public void setID(int iD) {
 		ID = iD;
 	}
+
 	/**
-	 * returns the orders 
+	 * returns the orders
+	 * 
 	 * @return
 	 */
 	public static ArrayList<Order> getOrder() {
 		return orders;
 	}
+
 	/**
 	 * setter for the order
+	 * 
 	 * @param order
 	 */
 	public void setOrder(ArrayList<Order> order) {
 		Employee.orders = order;
 	}
+
 	/**
 	 * adds an order to the Order arraylist
+	 * 
 	 * @param order
 	 */
 	public void addOrder(Order order) {
 		orders.add(order);
 	}
+
 	/**
 	 * returns an 8-digit number for the employee
+	 * 
 	 * @param userName
 	 * @return
 	 */
@@ -159,6 +188,7 @@ public class Employee {
 	public void add(ArrayList<Employee> employee) {
 
 	}
+
 	/**
 	 * returns a string
 	 */
@@ -166,50 +196,65 @@ public class Employee {
 	public String toString() {
 		return this.ID + " " + this.employeeName + " " + this.userName;
 	}
+
 	/**
 	 * returns true or false if user is an admin or not
+	 * 
 	 * @return
 	 */
 	public String isAdmin() {
 		return admin;
 	}
+
 	/**
 	 * setter for the admin
+	 * 
 	 * @param admin
 	 */
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
+
 	/**
-	 * returns true or false if user is traniee or not 
+	 * returns true or false if user is traniee or not
+	 * 
 	 * @return
 	 */
 	public String getTrainiee() {
 		return trainiee;
 	}
+
 	/**
 	 * setter for the trainiee
+	 * 
 	 * @param trainiee
 	 */
 	public void setTrainiee(String trainiee) {
 		this.trainiee = trainiee;
 	}
+
 	/**
 	 * returns true or false if user is a cashier or not
+	 * 
 	 * @return
 	 */
 	public String getCashier() {
 		return cashier;
 	}
+
 	/**
 	 * setter for the cashier
+	 * 
 	 * @param cashier
 	 */
 	public void setCashier(String cashier) {
 		this.cashier = cashier;
 	}
+
 	/**
-	 * changes the employee to a admin or cashier depending on what the admin wants
+	 * changes the employee to a admin or cashier depending on what the admin
+	 * wants
+	 * 
 	 * @param id
 	 * @param action
 	 * @return
@@ -276,8 +321,10 @@ public class Employee {
 		return "TRUE";
 
 	}
+
 	/**
-	 * removes the specifed employees from the file 
+	 * removes the specifed employees from the file
+	 * 
 	 * @param id
 	 * @return
 	 * @throws IOException
