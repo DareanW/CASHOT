@@ -1,0 +1,22 @@
+
+=================================
+
+      4-28-2021   11:36:01
+       44376646      Admin 
+    ________________________ 
+          Apple  $3.99
+    Apple cider  $1.99
+     Applesauce  $0.99
+           Pear  $2.99
+
+          Total:  $9.96
+    Total + tax:  $10.78
+  Customer paid:  $200.00
+
+         $189.22 change.
+
+Thank you, and have a great day!
+
+=================================
+
+
