@@ -38,10 +38,21 @@ public class Receipt {
 		int day = dateTime.getDayOfMonth();
 		int hour = dateTime.getHour();
 		int minute = dateTime.getMinute();
+		//minute = 9;
 		int second = dateTime.getSecond();
+		String newMinute = "", newSecond = "";
+if(minute < 10)
+	newMinute = "0" + minute;
+else
+	newMinute = String.format("%d", minute);
 
+if(second < 10)
+	newSecond = "0" + second;
+else
+	newSecond = String.format("%d", second);
+	//newMinute = minute.toString();
 		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
-				(hour + ":" + minute + ":" + second));
+				(hour + ":" + newMinute + ":" + newSecond));
 		// String formatTime = String.format("%20s",);
 
 		String str = String.format("\n=================================\n\n");
@@ -93,7 +104,16 @@ public class Receipt {
 		int hour = dateTime.getHour();
 		int minute = dateTime.getMinute();
 		int second = dateTime.getSecond();
+		String newMinute = "", newSecond = "";
+if(minute < 10)
+	newMinute = "0" + minute;
+else
+	newMinute = String.format("%d", minute);
 
+if(second < 10)
+	newSecond = "0" + second;
+else
+	newSecond = String.format("%d", second);
 		Path path = Paths.get("Receipts", String.valueOf(year), String.valueOf(month), String.valueOf(day));
 
 		try {
@@ -113,7 +133,7 @@ public class Receipt {
 		FileWriter rWriter = new FileWriter(recFile);
 
 		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
-				(hour + ":" + minute + ":" + second));
+				(hour + ":" + newMinute + ":" + newSecond));
 		// String formatTime = String.format("%20s",);
 
 		String str = String.format("\n=================================\n\n");
