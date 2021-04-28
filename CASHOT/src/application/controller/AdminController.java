@@ -16,6 +16,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 
+
+/**
+ * The AdminController is the controller for the administor.fxml view and will
+ * update it whenever data changes
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
+
+
 public class AdminController implements EventHandler {
 
 	@FXML
@@ -77,6 +90,13 @@ public class AdminController implements EventHandler {
 	CashotSystem system;
 	String str = "";
 
+
+	/**
+	 * initialize method will set up everything the admin will need
+	 * 
+	 * @throws IOException
+	 */
+
 	public void initialize() throws IOException {
 		// Load items ?
 		system = CashotSystem.getInstance();
@@ -113,20 +133,53 @@ public class AdminController implements EventHandler {
 
 	}
 
+
+	/**
+	 * loadMain method will launch the orginal view that user is greeted with
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
+
+	/**
+	 * loadAddEmployee will launch AdminAddEmployee.fxml view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 
 	public void loadAddEmployee(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/AdminAddEmployee.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+
+	/**
+	 * loadTraining will launch Training.fxml view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
+
+	/**
+	 * loadCashier will check if admin or cashier is logged in and if so then it
+	 * will call another method to skip log in screens
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 
 	public void loadCashier(Event event) throws IOException {
 
@@ -135,12 +188,26 @@ public class AdminController implements EventHandler {
 		}
 	}
 
+	/**
+	 * bypassEmployeeLogin will launch the cashier.fxml view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
 
+
+	/**
+	 * loadEmployees will populate the textarea in the view with all employees
+	 * 
+	 * @param event
+	 */
+
 	// work in progress
+
 	public void loadEmployees(Event event) {
 		for (Employee employee : CashotSystem.getEmployees()) {
 			str += "\nID: " + employee.getID() + " - Name: " + employee.getEmployeeName() + " - Username: "
@@ -150,10 +217,26 @@ public class AdminController implements EventHandler {
 
 	}
 
+
+	/**
+	 * loadEditEmpScreen will launch the editEmployees.fxml view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void loadEditEmpScreen(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/editEmployees.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
+
+	/**
+	 * loadAdminister will launch the administor view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
@@ -164,18 +247,47 @@ public class AdminController implements EventHandler {
 
 	}
 
+
+	/**
+	 * logs the current user out of the program and returns them to the main
+	 * view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void logOut(Event event) throws IOException {
 		system.logOut();
 		loadMain(event);
 	}
 
+
+	/**
+	 * editItems will launch the edititems.fxml view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+
 	public void editItems(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/edititems.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
+
 	// public void loadItems() throws IOException{
 	// system.loadItems();
 	// }
+	/**
+	 * loadItems will read from items.csv file
+	 * 
+	 * @throws IOException
+	 */
+
+	// public void loadItems() throws IOException{
+	// system.loadItems();
+	// }
+
 
 	public void loadItems() throws IOException {
 		// String employeeName, String userName, String employeePassword, int ID
@@ -192,6 +304,13 @@ public class AdminController implements EventHandler {
 		csvReader.close();
 	}
 
+
+	/**
+	 * addItem method will add an item to the buttons
+	 * 
+	 * @param item
+	 */
+
 	public void addItem(Item item) {
 		// itemMatrix[item.getRow()][item.getColumn()] = item;
 		// controller.setButton(item);
@@ -203,6 +322,11 @@ public class AdminController implements EventHandler {
 
 		// button.setText(item.getName() + "\n" + moneyString);
 	}
+
+
+	/**
+	 * buttonToMatrix will hold all our buttons
+	 */
 
 	public void buttonToMatrix() {
 		adminButtons[0][0] = button00;
@@ -232,6 +356,11 @@ public class AdminController implements EventHandler {
 
 	}
 
+	/**
+	 * setButton will change the name of the button with the item specified
+	 * 
+	 * @param item
+	 */
 	public void setButton(Item item) {
 		Button button = adminButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();

@@ -36,6 +36,7 @@ public class Receipt {
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
 		int day = dateTime.getDayOfMonth();
+
 		int hour = dateTime.getHour();
 		int minute = dateTime.getMinute();
 		//minute = 9;
@@ -59,6 +60,7 @@ else
 		str += formatDate;
 		// str += String.format("\n%s\n", formatTime);
 		str += String.format("\n%15s %10s \n", "00000000", "Trainee");
+
 
 		str += String.format("%28s \n", "________________________");
 
@@ -101,6 +103,7 @@ else
 		int year = dateTime.getYear();
 		int month = dateTime.getMonthValue();
 		int day = dateTime.getDayOfMonth();
+
 		int hour = dateTime.getHour();
 		int minute = dateTime.getMinute();
 		int second = dateTime.getSecond();
@@ -114,6 +117,7 @@ if(second < 10)
 	newSecond = "0" + second;
 else
 	newSecond = String.format("%d", second);
+
 		Path path = Paths.get("Receipts", String.valueOf(year), String.valueOf(month), String.valueOf(day));
 
 		try {
@@ -132,6 +136,7 @@ else
 
 		FileWriter rWriter = new FileWriter(recFile);
 
+
 		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
 				(hour + ":" + newMinute + ":" + newSecond));
 		// String formatTime = String.format("%20s",);
@@ -140,6 +145,7 @@ else
 		str += formatDate;
 
 		str += String.format("\n%15s %10s \n", employee.getID(), employee.getEmployeeName());
+
 
 		str += String.format("%28s \n", "________________________");
 
