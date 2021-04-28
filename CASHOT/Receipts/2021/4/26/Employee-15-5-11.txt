@@ -1,18 +1,18 @@
 
 =================================
 
-    2021-04-26T14:06:18.890 
+    2021-04-26T15:05:11.871 
  
-       44376646      Admin 
+       62456896   Employee 
  
     ________________________ 
           Apple  $3.99
 
           Total:  $3.99
     Total + tax:  $4.32
-  Customer paid:  $100.00
+  Customer paid:  $5.00
 
-          $95.68 change.
+           $0.68 change.
 
 Thank you, and have a great day!
 

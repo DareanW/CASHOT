@@ -1,5 +1,9 @@
 package application.controller;
 
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 import java.io.IOException;
 
 import application.model.CashotSystem;
@@ -45,15 +49,18 @@ public class EditEmployees implements EventHandler {
 	private AnchorPane content;
 	CashotSystem system;
 
+
 	/**
 	 * initialize will set up eveything the controller will need in order to
 	 * function
 	 */
+
 	public void initialize() throws IOException {
 		system = CashotSystem.getInstance();
 		// system.setController(this);
 
 	}
+
 
 	/**
 	 * loadAdminister will launch the adminstor.fxml view
@@ -61,6 +68,7 @@ public class EditEmployees implements EventHandler {
 	 * @param event
 	 * @throws IOException
 	 */
+
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
@@ -71,12 +79,14 @@ public class EditEmployees implements EventHandler {
 
 	}
 
+
 	/**
 	 * removeEmployee will remove an employee from the system
 	 * 
 	 * @param e
 	 * @throws IOException
 	 */
+
 	@FXML
 	public void removeEmployee(ActionEvent e) throws IOException {
 		int id = Integer.parseInt(userInput.getText());
@@ -97,20 +107,27 @@ public class EditEmployees implements EventHandler {
 
 	}
 
+
 	/**
 	 * completeTraining will promote a trainiee to a cashier
 	 * 
 	 * @param e
 	 * @throws IOException
 	 */
+	
+
 	@FXML
 	public void completeTraining(ActionEvent e) throws IOException {
-		int id = Integer.parseInt(userInput.getText());
-		String result = CashotSystem.callEmployeeMethods(id, "completeTraining");
-		if (result == "FALSE")
+		int id;
+		try {
+			id = Integer.parseInt(userInput.getText());
+			String result = CashotSystem.callEmployeeMethods(id, "completeTraining");
+			if (result == "TRUE")
+				textArea.setText("Employee " + id + " sucessfully changed to Cashier");
+
+		} catch (Exception exception) {
 			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: " + id + " sucessfully promoted to cashier");
+		}
 
 	}
 
@@ -122,35 +139,53 @@ public class EditEmployees implements EventHandler {
 	 */
 	@FXML
 	public void promoteToAdmin(ActionEvent e) throws IOException {
-		int id = Integer.parseInt(userInput.getText());
-		String result = CashotSystem.callEmployeeMethods(id, "promoteToAdmin");
-		if (result == "FALSE")
-			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: " + id + " sucessfully promoted to Admin");
-	}
 
-	/**
+		int id;
+		try {
+			id = Integer.parseInt(userInput.getText());
+			String result = CashotSystem.callEmployeeMethods(id, "promoteToAdmin");
+			if (result == "TRUE")
+				textArea.setText("Employee " + id + " sucessfully changed to Admin");
+
+		} catch (Exception exception) {
+			textArea.setText("Employee not found\n");
+		}
+	}
+/**
 	 * viewEmployees will populate the textField with all current employees
 	 * 
 	 * @param e
 	 */
 	@FXML
-	public void viewEmployees(ActionEvent e) {
+	public void viewEmployees(ActionEvent e) throws IOException {
 
 		String temp = "";
-		for (Employee i : CashotSystem.getEmployees()) {
-			if (i.isAdmin().equals("TRUE")) {
-				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
-						+ "Current Work Status: Administrator\n\n");
-			} else if (i.getTrainiee().equals("TRUE"))
-				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
-						+ "Current Work Status: Training\n\n");
+		String row;
+		BufferedReader csvReader = new BufferedReader(new FileReader("data/employees.csv"));
+		while ((row = csvReader.readLine()) != null) {
+			String[] data = row.split(",");
+			temp += "Name: " + data[0] + "\nID: " + data[3] + "\nCurrent work status:";
+			if (data[4].equals("TRUE"))
+				temp += " Administrator\n\n";
+			else if (data[6].equals("TRUE"))
+				temp += " Cashier\n\n";
+			else
+				temp += " Trainee\n\n";
 
-			else if (i.getCashier().equals("TRUE"))
-				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
-						+ "Current Work Status: Cashier\n\n");
 		}
+		/*
+		 * for(Employee i: CashotSystem.getEmployees()){
+		 * if(i.isAdmin().equals("TRUE")){ temp+=("Name: "
+		 * +i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+
+		 * "Current Work Status: Administrator\n\n"); } else
+		 * if(i.getTrainiee().equals("TRUE")) temp+=("Name: "
+		 * +i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+
+		 * "Current Work Status: Training\n\n");
+		 * 
+		 * else if(i.getCashier().equals("TRUE")) temp+=("Name: "
+		 * +i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+
+		 * "Current Work Status: Cashier\n\n"); }
+		 */
 		textArea.setText(temp);
 
 	}

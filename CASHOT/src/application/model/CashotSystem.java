@@ -5,6 +5,9 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
@@ -55,98 +58,118 @@ public final class CashotSystem {
 
 	public static Order order;
 
+
 	/**
 	 * CashotSystem method creats new ArrayList of type Employee
 	 */
+
 	private CashotSystem() {
 		employees = new ArrayList<Employee>();
 	}
+
 
 	/**
 	 * getInstance returns an INSTANCE of this class
 	 * 
 	 * @return
 	 */
+
 	public static CashotSystem getInstance() {
 		return INSTANCE;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(MainController controller) {
 		this.controller = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(EditItemsController controller) {
 		this.EIController = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(addEmployeeFromAdminController controller) {
 		this.aEFAController = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(TrainingRingUpCustomerController controller) {
 		this.trainingRingUpCustomerController = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(CashierController controller) {
 		this.cController = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(TrainingController controller) {
 		this.tController = controller;
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
 	 * 
 	 * @param controller
 	 */
+
 	public void setController(AdminController controller) {
 		this.aController = controller;
 	}
 
+<
 	/**
 	 * newOrder method will create a new order depending on whether the user is
 	 * a cashier or trainiee
 	 * 
 	 * @param mode
 	 */
+
 	public void newOrder(String mode) {
 
 		if (mode.equals("cashier")) {
@@ -159,14 +182,17 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * ringUP method will print the recipt
 	 * 
 	 * @throws IOException
 	 */
+
 	public void ringUp() throws IOException {
 		Receipt.printReceipt(order, order.getEmployee());
 	}
+
 
 	/**
 	 * loadEmployees will read from employees.csv and create new employees from
@@ -174,6 +200,7 @@ public final class CashotSystem {
 	 * 
 	 * @throws IOException
 	 */
+
 	public void loadEmployees() throws IOException {
 		// String employeeName, String userName, String employeePassword, int
 		// ID, boolean Admin,
@@ -196,33 +223,40 @@ public final class CashotSystem {
 					"FALSE", "FALSE", "TRUE");
 			csvWriter.write("Employee," + "employee," + "password," + String.valueOf(Employee.hashNum("Employee"))
 					+ ",FALSE" + ",FALSE," + "TRUE" + "\n");
+
 			addEmployee(tempEmployee);
 			// System.out.println("test");
 			tempEmployee = new Employee("Admin", "admin", "admin", Employee.hashNum("Admin"), "TRUE", "FALSE", "FALSE");
 			csvWriter.write("Admin," + "admin," + "admin," + String.valueOf(Employee.hashNum("Admin")) + ",TRUE"
 					+ ",FALSE," + "FALSE" + "\n");
 			addEmployee(tempEmployee);
+
 			csvWriter.close();
 		}
 	}
+
 
 	/**
 	 * addEmployee method adds an employee object to the Employee arrayList
 	 * 
 	 * @param employee
 	 */
+
 	public static void addEmployee(Employee employee) {
 		employees.add(employee);
 	}
+
 
 	/**
 	 * removeEmployee method removes an employee from the Employee arraylist
 	 * 
 	 * @param employee
 	 */
+
 	public void removeEmployee(Employee employee) {// who let the dogs out
 		employees.remove(employee);
 	}
+
 
 	/**
 	 * updateEmployeeInfo method will update the employes in the arraylist
@@ -230,6 +264,7 @@ public final class CashotSystem {
 	 * @param id
 	 * @param actionWanted
 	 */
+
 	public void updateEmployeeInfo(int id, String actionWanted) {// who, who
 																	// who, who?
 		// Iterator i= employees.iterator();
@@ -247,10 +282,12 @@ public final class CashotSystem {
 		}
 	}
 
+
 	/**
 	 * get Employees method will return all employees in the the employee
 	 * arrayList
 	 */
+
 	public static ArrayList<Employee> getEmployees() {
 		return employees;
 	}
@@ -264,11 +301,13 @@ public final class CashotSystem {
 		CashotSystem.employees = employees;
 	}
 
+
 	/**
 	 * generateEmployeeString turns Arraylist into a string
 	 * 
 	 * @return
 	 */
+
 	public static String generateEmployeeString() {
 		String str = "";
 		for (Employee employee : employees) {
@@ -290,6 +329,7 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -297,16 +337,19 @@ public final class CashotSystem {
 	 * @param adminLoginController
 	 * @throws IOException
 	 */
+
 	public void setController(AdminLoginController adminLoginController) throws IOException {
 		this.aLController = adminLoginController;
 		loadEmployees();
 	}
+
 
 	/**
 	 * loadItem method will read from items.csv and populate the the itemMatrix
 	 * 
 	 * @throws IOException
 	 */
+
 	public void loadItems() throws IOException {
 		// String employeeName, String userName, String employeePassword, int ID
 		String row;
@@ -322,38 +365,58 @@ public final class CashotSystem {
 
 			csvReader.close();
 		} catch (Exception e) {
-			BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv", false));
-			csvWriter.write("");
-			csvWriter.close();
+
+			try {
+
+				Path path = Paths.get("data");
+
+				// java.nio.file.Files;
+				Files.createDirectories(path);
+			} catch (IOException IO) {
+				System.err.println("Failed to create directory!" + e.getMessage());
+			}
+			try {
+				BufferedWriter csvWriter = new BufferedWriter(new FileWriter("data/items.csv", false));
+				csvWriter.write("");
+				csvWriter.close();
+			} catch (Exception e2) {
+			}
+
 		}
 		// cController.hideUnimplementedButtons();
 	}
 
+<
 	/**
 	 * adds and item to the itemMatrix
 	 * 
 	 * @param item
 	 */
+
 	public void addItem(Item item) {
 		itemMatrix[item.getRow()][item.getColumn()] = item;
 		;
 	}
+
 
 	/**
 	 * removes an item from the itemMatrix
 	 * 
 	 * @param item
 	 */
+
 	public void removeItem(Item item) {
 		itemMatrix[item.getRow()][item.getColumn()] = null;
 		;
 	}
+
 
 	/**
 	 * grabs all the Items in the buttons
 	 * 
 	 * @param mode
 	 */
+
 	public void getItemsInButtons(String mode) {
 		if (mode.equals("cashier")) {
 			for (int i = 0; i < 6; i++) {
@@ -402,39 +465,48 @@ public final class CashotSystem {
 		return orderItems;
 	}
 
+
 	/**
 	 * returns the total for the order
 	 * 
 	 * @return
 	 */
+
 	public double getOrderTotal() {
 		return order.total();
 	}
+
 
 	/**
 	 * signs in the employee
 	 * 
 	 * @param employee
 	 */
+
 	public void setSignedIn(Employee employee) {
 		signedIn = employee;
 	}
+
 
 	/**
 	 * returns whether the user is signed in or not
 	 * 
 	 * @return
 	 */
+
 	public Employee getSignedIn() {
 		return signedIn;
 	}
 
+
 	/**
 	 * changes the status of the user to not signed in
 	 */
+
 	public void logOut() {
 		signedIn = null;
 	}
+
 
 	/**
 	 * returns the price as a string instead of a double
@@ -442,17 +514,20 @@ public final class CashotSystem {
 	 * @param price
 	 * @return
 	 */
+
 	public static String dblToMoneyString(double price) {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
 		return moneyString;
 	}
 
+
 	/**
 	 * 
 	 * @param employee
 	 * @throws IOException
 	 */
+
 	public static void newEmployee(Employee employee) throws IOException {
 		for (Employee tempEmployee : getEmployees()) {
 			if (tempEmployee.getUserName().equals(employee))
@@ -473,6 +548,7 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * calls the methods inside the Employee class
 	 * 
@@ -481,6 +557,7 @@ public final class CashotSystem {
 	 * @return
 	 * @throws IOException
 	 */
+
 	public static String callEmployeeMethods(int id, String actionWanted) throws IOException {// alex
 																								// added
 																								// this
@@ -525,11 +602,13 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * gets the Items within the Item Arraylist
 	 * 
 	 * @return
 	 */
+
 	public ArrayList<Item> getItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
 
@@ -543,6 +622,7 @@ public final class CashotSystem {
 		return items;
 	}
 
+
 	/**
 	 * searches for a specific item in the Item arraylist and return true or
 	 * false if it is found or not
@@ -550,6 +630,7 @@ public final class CashotSystem {
 	 * @param itemName
 	 * @return
 	 */
+
 	public boolean searchItems(String itemName) {
 		ArrayList<Item> items = new ArrayList<Item>();
 		items = getItems();
@@ -563,12 +644,14 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * returns an item from the item arraylist
 	 * 
 	 * @param itemName
 	 * @return
 	 */
+
 	public Item getSingleItem(String itemName) {
 		ArrayList<Item> items = new ArrayList<Item>();
 		items = getItems();
@@ -581,12 +664,14 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * updates an item in the items.csv file
 	 * 
 	 * @param item
 	 * @throws IOException
 	 */
+
 	public void updateItemsCsv(Item item) throws IOException {
 		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
 
@@ -611,6 +696,7 @@ public final class CashotSystem {
 
 	}
 
+
 	/**
 	 * edits an item in the items.csv file
 	 * 
@@ -618,6 +704,7 @@ public final class CashotSystem {
 	 * @param name
 	 * @throws IOException
 	 */
+
 	public void editItemsCsv(Item item, String name) throws IOException {
 		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
 
