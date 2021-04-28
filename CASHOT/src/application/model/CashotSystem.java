@@ -162,7 +162,7 @@ public final class CashotSystem {
 		this.aController = controller;
 	}
 
-<
+
 	/**
 	 * newOrder method will create a new order depending on whether the user is
 	 * a cashier or trainiee
@@ -386,7 +386,7 @@ public final class CashotSystem {
 		// cController.hideUnimplementedButtons();
 	}
 
-<
+
 	/**
 	 * adds and item to the itemMatrix
 	 * 
