@@ -33,7 +33,10 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <Label fx:id="logInIncorrect" layoutX="300.0" layoutY="477.0" prefHeight="64.0" prefWidth="173.0" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="logInIncorrect" layoutX="300.0" layoutY="477.0" prefHeight="64.0" prefWidth="173.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
 		         </children>
 		      </Pane>
 		   </children>
