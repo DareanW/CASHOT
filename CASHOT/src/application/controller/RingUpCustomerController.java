@@ -100,7 +100,7 @@ public class RingUpCustomerController implements EventHandler {
 	public static double customerPaid = 0.00;
 
 	/**
-	 * Initializes the class.
+	 * Initializes the class. This also starts up a new order, formats it, then places it onto a global String.
 	 * 
 	 * @throws IOException
 	 */

@@ -20,52 +20,124 @@
 		               <children>
 		                  <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="cashierItemButtons" fx:id="button00" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" textAlignment="CENTER" />
-		                        <Button id="cashierItemButtons" fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button00" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
 
-		                        <Button id="cashierItemButtons" fx:id="button10" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button10" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="cashierItemButtons" fx:id="button20" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button20" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="cashierItemButtons" fx:id="button30" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button30" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="cashierItemButtons" fx:id="button40" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button40" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 		                     </children>
 		                  </HBox>
 		                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
 		                     <children>
-		                        <Button id="cashierItemButtons" fx:id="button50" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
-		                        <Button id="cashierItemButtons" fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="" />
+		                        <Button id="cashierItemButtons" fx:id="button50" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+		                        <Button id="cashierItemButtons" fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="109.0" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
 		                     </children>
 		                  </HBox>
 		               </children>
@@ -93,7 +165,7 @@
 		                        <Font size="14.0" />
 		                     </font>
 		                  </Label>
-		                  <TextArea fx:id="receiptTotal" prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
+		                  <TextArea fx:id="receiptTotal" editable="false" prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" />
 		               </children>
 		            </HBox>
                   <HBox layoutX="58.0" layoutY="50.0" prefHeight="71.0" prefWidth="200.0">
@@ -131,8 +203,8 @@
 
                         <HBox prefHeight="464.0" prefWidth="292.0">
                            <children>
-                              <TextArea id="disableScrollBar" fx:id="receiptNames" prefHeight="457.0" prefWidth="208.0" />
-                              <TextArea fx:id="receiptPrices" prefHeight="457.0" prefWidth="90.0" />
+                              <TextArea id="disableScrollBar" fx:id="receiptNames" editable="false" prefHeight="457.0" prefWidth="208.0" />
+                              <TextArea fx:id="receiptPrices" editable="false" prefHeight="457.0" prefWidth="90.0" />
                            </children>
                         </HBox>
 

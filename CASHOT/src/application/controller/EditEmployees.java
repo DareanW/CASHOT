@@ -80,7 +80,7 @@ public class EditEmployees implements EventHandler {
 			id = Integer.parseInt(userInput.getText());
 			String result = CashotSystem.callEmployeeMethods(id, "completeTraining");
 			if (result == "TRUE")
-				textArea.setText("Employee " + id + " sucessfully promoted to Cashier");
+				textArea.setText("Employee " + id + " sucessfully changed to Cashier");
 
 		} catch (Exception exception) {
 			textArea.setText("Employee not found\n");
@@ -94,7 +94,7 @@ public class EditEmployees implements EventHandler {
 			id = Integer.parseInt(userInput.getText());
 			String result = CashotSystem.callEmployeeMethods(id, "promoteToAdmin");
 			if (result == "TRUE")
-				textArea.setText("Employee " + id + " sucessfully promoted to Admin");
+				textArea.setText("Employee " + id + " sucessfully changed to Admin");
 
 		} catch (Exception exception) {
 			textArea.setText("Employee not found\n");

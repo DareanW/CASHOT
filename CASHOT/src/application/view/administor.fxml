@@ -16,57 +16,131 @@
 		   <children>
 		      <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #e82e15;">
                <children>
-                  <TextArea fx:id="adminTextArea" layoutX="45.0" layoutY="215.0" prefHeight="518.0" prefWidth="306.0" />
-                  <TextArea editable="false" layoutX="45.0" layoutY="167.0" prefHeight="35.0" prefWidth="306.0" text="Sales History" wrapText="true" />
-                  <TextField layoutX="45.0" layoutY="95.0" prefHeight="64.0" prefWidth="306.0" promptText="Find: " />
+                  <TextArea fx:id="adminTextArea" editable="false" layoutX="45.0" layoutY="161.0" prefHeight="572.0" prefWidth="306.0" wrapText="true">
+                     <font>
+                        <Font size="12.0" />
+                     </font></TextArea>
+                  <TextArea editable="false" layoutX="45.0" layoutY="103.0" prefHeight="35.0" prefWidth="306.0" text="Sales History" wrapText="true" />
                   <VBox layoutX="374.0" layoutY="189.0" prefHeight="542.0" prefWidth="395.0" spacing="5.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button00" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button00" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button01" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button02" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button03" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button10" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button10" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button11" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button12" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button13" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button20" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button20" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button21" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button22" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button23" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button30" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button30" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button31" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button32" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button33" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="115.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button40" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button40" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button41" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button42" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button43" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0" spacing="5.0">
                            <children>
-                              <Button id="adminItemButtons" fx:id="button50" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
-                              <Button id="adminItemButtons" fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" text="Button" />
+                              <Button id="adminItemButtons" fx:id="button50" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button51" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button52" layoutX="119.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button id="adminItemButtons" fx:id="button53" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                      </children>
