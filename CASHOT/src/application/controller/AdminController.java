@@ -12,177 +12,199 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-
-
-
 
 public class AdminController implements EventHandler {
-	
-	@FXML Button button00;
-	@FXML Button button01;
-	@FXML Button button02;
-	@FXML Button button03;
-	@FXML Button button10;
-	@FXML Button button11;
-	@FXML Button button12;
-	@FXML Button button13;
-	@FXML Button button20;
-	@FXML Button button21;
-	@FXML Button button22;
-	@FXML Button button23;
-	@FXML Button button30;
-	@FXML Button button31;
-	@FXML Button button32;
-	@FXML Button button33;
-	@FXML Button button40;
-	@FXML Button button41;
-	@FXML Button button42;
-	@FXML Button button43;
-	@FXML Button button50;
-	@FXML Button button51;
-	@FXML Button button52;
-	@FXML Button button53;
-	
+
+	@FXML
+	Button button00;
+	@FXML
+	Button button01;
+	@FXML
+	Button button02;
+	@FXML
+	Button button03;
+	@FXML
+	Button button10;
+	@FXML
+	Button button11;
+	@FXML
+	Button button12;
+	@FXML
+	Button button13;
+	@FXML
+	Button button20;
+	@FXML
+	Button button21;
+	@FXML
+	Button button22;
+	@FXML
+	Button button23;
+	@FXML
+	Button button30;
+	@FXML
+	Button button31;
+	@FXML
+	Button button32;
+	@FXML
+	Button button33;
+	@FXML
+	Button button40;
+	@FXML
+	Button button41;
+	@FXML
+	Button button42;
+	@FXML
+	Button button43;
+	@FXML
+	Button button50;
+	@FXML
+	Button button51;
+	@FXML
+	Button button52;
+	@FXML
+	Button button53;
+
 	Button adminButtons[][];
-	
-	@FXML private AnchorPane content;
-	@FXML TextArea adminTextArea;
-	
+
+	@FXML
+	private AnchorPane content;
+	@FXML
+	TextArea adminTextArea;
+
 	CashotSystem system;
 	String str = "";
-	
-	public void initialize( ) throws IOException{
-		//Load items ?
+
+	public void initialize() throws IOException {
+		// Load items ?
 		system = CashotSystem.getInstance();
 		system.setController(this);
-		
+
 		system.loadEmployees();
-		
-		
+
 		adminButtons = new Button[6][4];
 		buttonToMatrix();
-		
+
 		system.getItemsInButtons("admin");
-		
+
 		String line = "";
-		try{
-		BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
-		while ((line = reader.readLine()) != null) {
-		    str += line + "\n";
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("Receipts/ReceiptLog.txt"));
+			while ((line = reader.readLine()) != null) {
+				str += line + "\n";
+			}
+			reader.close();
+		} catch (Exception e) {
 		}
-		reader.close();
-		}catch(Exception e){}
 		adminTextArea.setText(str);
-		
-//		try {
-//			loadItems();
-//		} catch (Error e) {
-//			e.printStackTrace();
-//		}
-		
+
+		// try {
+		// loadItems();
+		// } catch (Error e) {
+		// e.printStackTrace();
+		// }
+
 	}
 
 	@Override
 	public void handle(Event event) {
-		
-		
+
 	}
-	
+
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
 	public void loadAddEmployee(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/AdminAddEmployee.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+
 	public void loadCashier(Event event) throws IOException {
 
-		if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")){
+		if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")) {
 			bypassEmployeeLogin(event);
-		}	
+		}
 	}
 
 	public void bypassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
-		content.getChildren().setAll(pane);		
+		content.getChildren().setAll(pane);
 	}
-	
-	//work in progress
-	public void loadEmployees(Event event){
-		for(Employee employee: CashotSystem.getEmployees()){
-			str += "\nID: " + employee.getID() + " - Name: " + employee.getEmployeeName() + " - Username: " + employee.getUserName();
+
+	// work in progress
+	public void loadEmployees(Event event) {
+		for (Employee employee : CashotSystem.getEmployees()) {
+			str += "\nID: " + employee.getID() + " - Name: " + employee.getEmployeeName() + " - Username: "
+					+ employee.getUserName();
 		}
 		adminTextArea.setText(str);
-		
+
 	}
-	
+
 	public void loadEditEmpScreen(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/editEmployees.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
+
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
-	
-	public void addEmployees(Event event){
-		
+
+	public void addEmployees(Event event) {
+
 	}
-	
+
 	public void logOut(Event event) throws IOException {
 		system.logOut();
 		loadMain(event);
 	}
-	
-	public void editItems(Event event) throws IOException{
+
+	public void editItems(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/edititems.fxml"));
 		content.getChildren().setAll(pane);
 	}
-//	public void loadItems() throws IOException{
-//		system.loadItems();
-//	}
-	
+	// public void loadItems() throws IOException{
+	// system.loadItems();
+	// }
+
 	public void loadItems() throws IOException {
-		//String employeeName, String userName, String employeePassword, int ID
+		// String employeeName, String userName, String employeePassword, int ID
 		String row;
-		
-		BufferedReader csvReader = new BufferedReader( new FileReader("data/items.csv") );
+
+		BufferedReader csvReader = new BufferedReader(new FileReader("data/items.csv"));
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
-			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]));
+			Item tempItem = new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]),
+					Integer.parseInt(data[3]));
 			addItem(tempItem);
-			
+
 		}
 		csvReader.close();
 	}
-	
-	public void addItem(Item item){
-//		itemMatrix[item.getRow()][item.getColumn()] = item;
-//		controller.setButton(item);
-//		System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
+
+	public void addItem(Item item) {
+		// itemMatrix[item.getRow()][item.getColumn()] = item;
+		// controller.setButton(item);
+		// System.out.println(itemMatrix[item.getRow()][item.getColumn()]);
 		Button button = adminButtons[item.getRow()][item.getColumn()];
 		double price = item.getPrice();
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
-		
-		//button.setText(item.getName() + "\n" + moneyString);
+
+		// button.setText(item.getName() + "\n" + moneyString);
 	}
-		
-	
-	public void buttonToMatrix(){
+
+	public void buttonToMatrix() {
 		adminButtons[0][0] = button00;
 		adminButtons[0][1] = button01;
 		adminButtons[0][2] = button02;
@@ -207,7 +229,7 @@ public class AdminController implements EventHandler {
 		adminButtons[5][1] = button51;
 		adminButtons[5][2] = button52;
 		adminButtons[5][3] = button53;
-				
+
 	}
 
 	public void setButton(Item item) {
@@ -216,7 +238,7 @@ public class AdminController implements EventHandler {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		String moneyString = formatter.format(price);
 		button.setText(item.getName() + "\n" + moneyString);
-		
+
 	}
 
 }
