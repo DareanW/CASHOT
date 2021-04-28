@@ -1,6 +1,5 @@
 package application.controller;
 
-
 import java.io.IOException;
 
 import application.model.CashotSystem;
@@ -14,94 +13,135 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-
+/**
+ *  The EditEmployees controller is the controller for the editEmployees.fxml and will update it when date changes
+ *  Allows admin to remove,view, or promote employees
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706 
+ */
 public class EditEmployees implements EventHandler {
 
-	@FXML Button removeBtn; // for remove button
-	@FXML Button viewBtn; // for view button
-	@FXML Button btnCT;// for complete training button 
-	@FXML Button adminBtn; // for promote to admin button
-	@FXML Button backBtn; // for back button
-	
-	@FXML private TextArea textArea;
-	@FXML private TextField userInput;
-	@FXML private AnchorPane content;
+	@FXML
+	Button removeBtn; // for remove button
+	@FXML
+	Button viewBtn; // for view button
+	@FXML
+	Button btnCT;// for complete training button
+	@FXML
+	Button adminBtn; // for promote to admin button
+	@FXML
+	Button backBtn; // for back button
+
+	@FXML
+	private TextArea textArea;
+	@FXML
+	private TextField userInput;
+	@FXML
+	private AnchorPane content;
 	CashotSystem system;
-	
-	public void initialize( ) throws IOException{
+
+	/**
+	 * initialize will set up eveything the controller will need in order to function
+	 */
+	public void initialize() throws IOException {
 		system = CashotSystem.getInstance();
-		//system.setController(this);
-		
+		// system.setController(this);
+
 	}
-	
-	
+	/**
+	 * loadAdminister will launch the adminstor.fxml view
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
+
 	@Override
 	public void handle(Event e) {
-		
-		
+
 	}
-	@FXML 
-	public void removeEmployee(ActionEvent e) throws IOException{
-		int id=Integer.parseInt(userInput.getText());
+
+	/**
+	 * removeEmployee will remove an employee from the system
+	 * @param e
+	 * @throws IOException
+	 */
+	@FXML
+	public void removeEmployee(ActionEvent e) throws IOException {
+		int id = Integer.parseInt(userInput.getText());
 		Employee temp;
-		for(Employee i: CashotSystem.getEmployees()){
-			if(i.getID()==id){
-				temp=i;//maybe write the name of employee removed to the screen
+		for (Employee i : CashotSystem.getEmployees()) {
+			if (i.getID() == id) {
+				temp = i;// maybe write the name of employee removed to the
+							// screen
 				system.removeEmployee(i);
 				break;
 			}
 		}
-		String result =CashotSystem.callEmployeeMethods(id, "remove");
-		if(result == "FALSE")
+		String result = CashotSystem.callEmployeeMethods(id, "remove");
+		if (result == "FALSE")
 			textArea.setText("Employee not found\n");
 		else
-			textArea.setText("Employee: "+id+ " sucessfully removed");
-		
-	}
-	
-	@FXML 
-	public void completeTraining(ActionEvent e) throws IOException{
-		int id=Integer.parseInt(userInput.getText());
-		String result =CashotSystem.callEmployeeMethods(id,"completeTraining");
-		if(result == "FALSE")
-			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: "+id+ " sucessfully promoted to cashier");
-		
-	}
+			textArea.setText("Employee: " + id + " sucessfully removed");
 
-	@FXML
-	public void promoteToAdmin(ActionEvent e) throws IOException{
-		int id=Integer.parseInt(userInput.getText());
-		String result = CashotSystem.callEmployeeMethods(id,"promoteToAdmin");
-		if(result == "FALSE")
-			textArea.setText("Employee not found\n");
-		else
-			textArea.setText("Employee: "+id+ " sucessfully promoted to Admin");
 	}
 	
+	/**
+	 * completeTraining will promote a trainiee to a cashier
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
-	public void viewEmployees(ActionEvent e){
-		
-		String temp="";
-		for(Employee i: CashotSystem.getEmployees()){
-			if(i.isAdmin().equals("TRUE")){
-				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Administrator\n\n");
-			}
-			else if(i.getTrainiee().equals("TRUE"))
-				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Training\n\n");
-			
-			else if(i.getCashier().equals("TRUE"))
-				temp+=("Name: "+i.getEmployeeName()+"\n"+"ID: "+i.getID()+"\n"+"Current Work Status: Cashier\n\n");
+	public void completeTraining(ActionEvent e) throws IOException {
+		int id = Integer.parseInt(userInput.getText());
+		String result = CashotSystem.callEmployeeMethods(id, "completeTraining");
+		if (result == "FALSE")
+			textArea.setText("Employee not found\n");
+		else
+			textArea.setText("Employee: " + id + " sucessfully promoted to cashier");
+
+	}
+	/**
+	 * promoteToAdmin will promote a cashier to an admin
+	 * @param e
+	 * @throws IOException
+	 */
+	@FXML
+	public void promoteToAdmin(ActionEvent e) throws IOException {
+		int id = Integer.parseInt(userInput.getText());
+		String result = CashotSystem.callEmployeeMethods(id, "promoteToAdmin");
+		if (result == "FALSE")
+			textArea.setText("Employee not found\n");
+		else
+			textArea.setText("Employee: " + id + " sucessfully promoted to Admin");
+	}
+	/**
+	 * viewEmployees will populate the textField with all current employees
+	 * @param e
+	 */
+	@FXML
+	public void viewEmployees(ActionEvent e) {
+
+		String temp = "";
+		for (Employee i : CashotSystem.getEmployees()) {
+			if (i.isAdmin().equals("TRUE")) {
+				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
+						+ "Current Work Status: Administrator\n\n");
+			} else if (i.getTrainiee().equals("TRUE"))
+				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
+						+ "Current Work Status: Training\n\n");
+
+			else if (i.getCashier().equals("TRUE"))
+				temp += ("Name: " + i.getEmployeeName() + "\n" + "ID: " + i.getID() + "\n"
+						+ "Current Work Status: Cashier\n\n");
 		}
 		textArea.setText(temp);
 
 	}
-	
-	
+
 }
