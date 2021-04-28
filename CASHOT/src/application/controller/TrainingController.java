@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 
-
 /**
  * This is the controller for the training page. Like the CashierController, it
  * logs the trainee's inputs for items being purchased and calculates them.
@@ -91,7 +90,6 @@ public class TrainingController implements EventHandler {
 	private AnchorPane content;
 	CashotSystem system;
 
-
 	/**
 	 * Starts a new order with the trainee instead of an established employee
 	 * 
@@ -156,7 +154,6 @@ public class TrainingController implements EventHandler {
 		}
 	}
 
-
 	/**
 	 * loads the training ring up customer screen.
 	 * 
@@ -169,7 +166,6 @@ public class TrainingController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 
-
 	/**
 	 * Loads the main screen.
 	 * 
@@ -181,7 +177,6 @@ public class TrainingController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
-
 
 	/**
 	 * loads the Cashier screen.
@@ -201,7 +196,6 @@ public class TrainingController implements EventHandler {
 			loadEmployeeLogin(event);
 		}
 	}
-
 
 	/**
 	 * Loads the employee login screen.
@@ -224,7 +218,6 @@ public class TrainingController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
-
 
 	/**
 	 * Loads the Administer screen. If the user is already an administrator,
@@ -256,14 +249,13 @@ public class TrainingController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 
-
 	/**
 	 * Loads the admin screen.
 	 * 
 	 * @param event
 	 * @throws IOException
 	 */
- 
+
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
@@ -282,7 +274,6 @@ public class TrainingController implements EventHandler {
 			}
 		}
 	}
-
 
 	/**
 	 * sets all of the buttons to a 2-dimentional array.

@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
 
-
 /**
  * The AdminLoginController is the controller for the adminLoginScreen.fxml and
  * will update it whenever data changes
@@ -22,7 +21,6 @@ import javafx.scene.control.TextField;
  * @author Majerus Sims hug180 79595196
  * @author Alexander Delgado tvh991 79595706
  */
-
 
 public class AdminLoginController implements EventHandler {
 	@FXML
@@ -48,7 +46,6 @@ public class AdminLoginController implements EventHandler {
 
 	}
 
-
 	/**
 	 * loadMain method will launch the orginal view that user is greeted with
 	 * 
@@ -60,7 +57,6 @@ public class AdminLoginController implements EventHandler {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
-
 
 	/**
 	 * loadAdminisister method will load the administor view when the user logs
@@ -74,7 +70,6 @@ public class AdminLoginController implements EventHandler {
 		content.getChildren().setAll(pane);
 	}
 
-
 	/**
 	 * setTextToBlank will clear the textfields in the view
 	 * 
@@ -86,7 +81,6 @@ public class AdminLoginController implements EventHandler {
 		logInIncorrect.setText("");
 		// System.out.println("Test");
 	}
-
 
 	/**
 	 * handle method will check what the user inputs on the login screen If the

@@ -1,6 +1,5 @@
 package application.controller;
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -49,7 +48,6 @@ public class EditEmployees implements EventHandler {
 	private AnchorPane content;
 	CashotSystem system;
 
-
 	/**
 	 * initialize will set up eveything the controller will need in order to
 	 * function
@@ -60,7 +58,6 @@ public class EditEmployees implements EventHandler {
 		// system.setController(this);
 
 	}
-
 
 	/**
 	 * loadAdminister will launch the adminstor.fxml view
@@ -78,7 +75,6 @@ public class EditEmployees implements EventHandler {
 	public void handle(Event e) {
 
 	}
-
 
 	/**
 	 * removeEmployee will remove an employee from the system
@@ -107,14 +103,12 @@ public class EditEmployees implements EventHandler {
 
 	}
 
-
 	/**
 	 * completeTraining will promote a trainiee to a cashier
 	 * 
 	 * @param e
 	 * @throws IOException
 	 */
-	
 
 	@FXML
 	public void completeTraining(ActionEvent e) throws IOException {
@@ -151,7 +145,8 @@ public class EditEmployees implements EventHandler {
 			textArea.setText("Employee not found\n");
 		}
 	}
-/**
+
+	/**
 	 * viewEmployees will populate the textField with all current employees
 	 * 
 	 * @param e

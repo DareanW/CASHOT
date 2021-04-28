@@ -39,19 +39,19 @@ public class Receipt {
 
 		int hour = dateTime.getHour();
 		int minute = dateTime.getMinute();
-		//minute = 9;
+		// minute = 9;
 		int second = dateTime.getSecond();
 		String newMinute = "", newSecond = "";
-if(minute < 10)
-	newMinute = "0" + minute;
-else
-	newMinute = String.format("%d", minute);
+		if (minute < 10)
+			newMinute = "0" + minute;
+		else
+			newMinute = String.format("%d", minute);
 
-if(second < 10)
-	newSecond = "0" + second;
-else
-	newSecond = String.format("%d", second);
-	//newMinute = minute.toString();
+		if (second < 10)
+			newSecond = "0" + second;
+		else
+			newSecond = String.format("%d", second);
+		// newMinute = minute.toString();
 		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
 				(hour + ":" + newMinute + ":" + newSecond));
 		// String formatTime = String.format("%20s",);
@@ -60,7 +60,6 @@ else
 		str += formatDate;
 		// str += String.format("\n%s\n", formatTime);
 		str += String.format("\n%15s %10s \n", "00000000", "Trainee");
-
 
 		str += String.format("%28s \n", "________________________");
 
@@ -108,15 +107,15 @@ else
 		int minute = dateTime.getMinute();
 		int second = dateTime.getSecond();
 		String newMinute = "", newSecond = "";
-if(minute < 10)
-	newMinute = "0" + minute;
-else
-	newMinute = String.format("%d", minute);
+		if (minute < 10)
+			newMinute = "0" + minute;
+		else
+			newMinute = String.format("%d", minute);
 
-if(second < 10)
-	newSecond = "0" + second;
-else
-	newSecond = String.format("%d", second);
+		if (second < 10)
+			newSecond = "0" + second;
+		else
+			newSecond = String.format("%d", second);
 
 		Path path = Paths.get("Receipts", String.valueOf(year), String.valueOf(month), String.valueOf(day));
 
@@ -136,7 +135,6 @@ else
 
 		FileWriter rWriter = new FileWriter(recFile);
 
-
 		String formatDate = String.format("%15s %10s", (month + "-" + day + "-" + year),
 				(hour + ":" + newMinute + ":" + newSecond));
 		// String formatTime = String.format("%20s",);
@@ -145,7 +143,6 @@ else
 		str += formatDate;
 
 		str += String.format("\n%15s %10s \n", employee.getID(), employee.getEmployeeName());
-
 
 		str += String.format("%28s \n", "________________________");
 

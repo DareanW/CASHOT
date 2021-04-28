@@ -58,7 +58,6 @@ public final class CashotSystem {
 
 	public static Order order;
 
-
 	/**
 	 * CashotSystem method creats new ArrayList of type Employee
 	 */
@@ -66,7 +65,6 @@ public final class CashotSystem {
 	private CashotSystem() {
 		employees = new ArrayList<Employee>();
 	}
-
 
 	/**
 	 * getInstance returns an INSTANCE of this class
@@ -77,7 +75,6 @@ public final class CashotSystem {
 	public static CashotSystem getInstance() {
 		return INSTANCE;
 	}
-
 
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
@@ -90,7 +87,6 @@ public final class CashotSystem {
 		this.controller = controller;
 	}
 
-
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -101,7 +97,6 @@ public final class CashotSystem {
 	public void setController(EditItemsController controller) {
 		this.EIController = controller;
 	}
-
 
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
@@ -114,7 +109,6 @@ public final class CashotSystem {
 		this.aEFAController = controller;
 	}
 
-
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -125,7 +119,6 @@ public final class CashotSystem {
 	public void setController(TrainingRingUpCustomerController controller) {
 		this.trainingRingUpCustomerController = controller;
 	}
-
 
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
@@ -138,7 +131,6 @@ public final class CashotSystem {
 		this.cController = controller;
 	}
 
-
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -150,7 +142,6 @@ public final class CashotSystem {
 		this.tController = controller;
 	}
 
-
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -161,7 +152,6 @@ public final class CashotSystem {
 	public void setController(AdminController controller) {
 		this.aController = controller;
 	}
-
 
 	/**
 	 * newOrder method will create a new order depending on whether the user is
@@ -182,7 +172,6 @@ public final class CashotSystem {
 
 	}
 
-
 	/**
 	 * ringUP method will print the recipt
 	 * 
@@ -192,7 +181,6 @@ public final class CashotSystem {
 	public void ringUp() throws IOException {
 		Receipt.printReceipt(order, order.getEmployee());
 	}
-
 
 	/**
 	 * loadEmployees will read from employees.csv and create new employees from
@@ -235,7 +223,6 @@ public final class CashotSystem {
 		}
 	}
 
-
 	/**
 	 * addEmployee method adds an employee object to the Employee arrayList
 	 * 
@@ -246,7 +233,6 @@ public final class CashotSystem {
 		employees.add(employee);
 	}
 
-
 	/**
 	 * removeEmployee method removes an employee from the Employee arraylist
 	 * 
@@ -256,7 +242,6 @@ public final class CashotSystem {
 	public void removeEmployee(Employee employee) {// who let the dogs out
 		employees.remove(employee);
 	}
-
 
 	/**
 	 * updateEmployeeInfo method will update the employes in the arraylist
@@ -282,7 +267,6 @@ public final class CashotSystem {
 		}
 	}
 
-
 	/**
 	 * get Employees method will return all employees in the the employee
 	 * arrayList
@@ -300,7 +284,6 @@ public final class CashotSystem {
 	public static void setEmployees(ArrayList<Employee> employees) {
 		CashotSystem.employees = employees;
 	}
-
 
 	/**
 	 * generateEmployeeString turns Arraylist into a string
@@ -329,7 +312,6 @@ public final class CashotSystem {
 
 	}
 
-
 	/**
 	 * setContoller method will allow for scenes to be changed throughout the
 	 * program
@@ -342,7 +324,6 @@ public final class CashotSystem {
 		this.aLController = adminLoginController;
 		loadEmployees();
 	}
-
 
 	/**
 	 * loadItem method will read from items.csv and populate the the itemMatrix
@@ -386,7 +367,6 @@ public final class CashotSystem {
 		// cController.hideUnimplementedButtons();
 	}
 
-
 	/**
 	 * adds and item to the itemMatrix
 	 * 
@@ -398,7 +378,6 @@ public final class CashotSystem {
 		;
 	}
 
-
 	/**
 	 * removes an item from the itemMatrix
 	 * 
@@ -409,7 +388,6 @@ public final class CashotSystem {
 		itemMatrix[item.getRow()][item.getColumn()] = null;
 		;
 	}
-
 
 	/**
 	 * grabs all the Items in the buttons
@@ -465,7 +443,6 @@ public final class CashotSystem {
 		return orderItems;
 	}
 
-
 	/**
 	 * returns the total for the order
 	 * 
@@ -475,7 +452,6 @@ public final class CashotSystem {
 	public double getOrderTotal() {
 		return order.total();
 	}
-
 
 	/**
 	 * signs in the employee
@@ -487,7 +463,6 @@ public final class CashotSystem {
 		signedIn = employee;
 	}
 
-
 	/**
 	 * returns whether the user is signed in or not
 	 * 
@@ -498,7 +473,6 @@ public final class CashotSystem {
 		return signedIn;
 	}
 
-
 	/**
 	 * changes the status of the user to not signed in
 	 */
@@ -506,7 +480,6 @@ public final class CashotSystem {
 	public void logOut() {
 		signedIn = null;
 	}
-
 
 	/**
 	 * returns the price as a string instead of a double
@@ -520,7 +493,6 @@ public final class CashotSystem {
 		String moneyString = formatter.format(price);
 		return moneyString;
 	}
-
 
 	/**
 	 * 
@@ -547,7 +519,6 @@ public final class CashotSystem {
 		writer.close();
 
 	}
-
 
 	/**
 	 * calls the methods inside the Employee class
@@ -602,7 +573,6 @@ public final class CashotSystem {
 
 	}
 
-
 	/**
 	 * gets the Items within the Item Arraylist
 	 * 
@@ -621,7 +591,6 @@ public final class CashotSystem {
 		}
 		return items;
 	}
-
 
 	/**
 	 * searches for a specific item in the Item arraylist and return true or
@@ -644,7 +613,6 @@ public final class CashotSystem {
 
 	}
 
-
 	/**
 	 * returns an item from the item arraylist
 	 * 
@@ -663,7 +631,6 @@ public final class CashotSystem {
 		return null;
 
 	}
-
 
 	/**
 	 * updates an item in the items.csv file
@@ -695,7 +662,6 @@ public final class CashotSystem {
 		csvWriter.close();
 
 	}
-
 
 	/**
 	 * edits an item in the items.csv file

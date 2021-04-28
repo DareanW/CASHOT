@@ -24,14 +24,14 @@ public class Employee {
 	private String userName;
 	private String employeePassword;
 
-
 	private int ID;
 
 	private static ArrayList<Order> orders;
 	private String admin;
 	private String trainiee;
 	private String cashier;
-/**
+
+	/**
 	 * constructor for our employee object
 	 * 
 	 * @param employeeName
@@ -53,7 +53,8 @@ public class Employee {
 		this.trainiee = trainiee;
 		this.cashier = cashier;
 	}
-/**
+
+	/**
 	 * returns the name of the employee
 	 * 
 	 * @return
@@ -61,7 +62,8 @@ public class Employee {
 	public String getEmployeeName() {
 		return employeeName;
 	}
-/**
+
+	/**
 	 * setter for the employee name
 	 * 
 	 * @param employeeName
@@ -70,8 +72,7 @@ public class Employee {
 		this.employeeName = employeeName;
 	}
 
-
-  /**
+	/**
 	 * returns the user name of the employee
 	 * 
 	 * @return
@@ -79,7 +80,6 @@ public class Employee {
 	public String getUserName() {
 		return userName;
 	}
-
 
 	/**
 	 * setter for the userName
@@ -90,7 +90,6 @@ public class Employee {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
 
 	/**
 	 * returns the password of the employee
@@ -112,7 +111,6 @@ public class Employee {
 		this.employeePassword = employeePassword;
 	}
 
-
 	/**
 	 * returns the ID of the employee
 	 * 
@@ -122,7 +120,6 @@ public class Employee {
 	public int getID() { // changed to static
 		return ID;
 	}
-
 
 	/**
 	 * setter for ID
@@ -134,8 +131,7 @@ public class Employee {
 		ID = iD;
 	}
 
-
-  /**
+	/**
 	 * returns the orders
 	 * 
 	 * @return
@@ -143,7 +139,8 @@ public class Employee {
 	public static ArrayList<Order> getOrder() {
 		return orders;
 	}
-/**
+
+	/**
 	 * setter for the order
 	 * 
 	 * @param order
@@ -152,8 +149,7 @@ public class Employee {
 		Employee.orders = order;
 	}
 
-
-  /**
+	/**
 	 * adds an order to the Order arraylist
 	 * 
 	 * @param order
@@ -161,7 +157,6 @@ public class Employee {
 	public void addOrder(Order order) {
 		orders.add(order);
 	}
-
 
 	/**
 	 * returns an 8-digit number for the employee
@@ -200,7 +195,6 @@ public class Employee {
 
 	}
 
-
 	/**
 	 * returns a string
 	 */
@@ -219,7 +213,6 @@ public class Employee {
 		return admin;
 	}
 
-
 	/**
 	 * setter for the admin
 	 * 
@@ -229,7 +222,6 @@ public class Employee {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-
 
 	/**
 	 * returns true or false if user is traniee or not
@@ -241,7 +233,6 @@ public class Employee {
 		return trainiee;
 	}
 
-
 	/**
 	 * setter for the trainiee
 	 * 
@@ -251,7 +242,6 @@ public class Employee {
 	public void setTrainiee(String trainiee) {
 		this.trainiee = trainiee;
 	}
-
 
 	/**
 	 * returns true or false if user is a cashier or not
@@ -263,7 +253,6 @@ public class Employee {
 		return cashier;
 	}
 
-
 	/**
 	 * setter for the cashier
 	 * 
@@ -273,7 +262,6 @@ public class Employee {
 	public void setCashier(String cashier) {
 		this.cashier = cashier;
 	}
-
 
 	/**
 	 * changes the employee to a admin or cashier depending on what the admin
@@ -293,7 +281,6 @@ public class Employee {
 
 			StringBuffer buf = new StringBuffer();
 			String line;
-
 
 			for (Employee i : CashotSystem.getEmployees()) {
 				while ((line = csvReader.readLine()) != null) {
@@ -348,7 +335,8 @@ public class Employee {
 		return "TRUE";
 
 	}
-/**
+
+	/**
 	 * removes the specifed employees from the file
 	 * 
 	 * @param id
@@ -376,7 +364,6 @@ public class Employee {
 						i.cashier = temp[6];
 						i.trainiee = temp[5];
 
-
 						String newLine = i.getEmployeeName() + "," + i.getUserName() + "," + i.getEmployeePassword()
 								+ "," + i.getID() + "," + i.isAdmin() + "," + i.getTrainiee() + "," + i.getCashier()
 								+ "\n";
@@ -401,7 +388,6 @@ public class Employee {
 			return "FALSE";
 
 		return "TRUE";
-
 
 	}
 
