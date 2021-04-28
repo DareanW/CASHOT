@@ -37,17 +37,26 @@
                            <children>
                               <StackPane prefHeight="78.0" prefWidth="153.0">
                                  <children>
-                                    <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="116.0" text="Remove " />
+                                    <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="116.0" text="Remove ">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font></Button>
                                  </children>
                               </StackPane>
                               <StackPane layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="153.0">
                                  <children>
-                                    <Button fx:id="btnCT" mnemonicParsing="false" onAction="#completeTraining" prefHeight="25.0" prefWidth="122.0" text="Complete Training " />
+                                    <Button fx:id="btnCT" mnemonicParsing="false" onAction="#completeTraining" prefHeight="25.0" prefWidth="122.0" text="Change to Cashier ">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font></Button>
                                  </children>
                               </StackPane>
                               <StackPane layoutX="10.0" layoutY="10.0" prefHeight="78.0" prefWidth="153.0">
                                  <children>
-                                    <Button fx:id="adminBtn" mnemonicParsing="false" onAction="#promoteToAdmin" prefHeight="25.0" prefWidth="116.0" text="Promote to Admin" />
+                                    <Button fx:id="adminBtn" mnemonicParsing="false" onAction="#promoteToAdmin" prefHeight="25.0" prefWidth="116.0" text="Change to Admin">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font></Button>
                                  </children>
                               </StackPane>
                            </children>

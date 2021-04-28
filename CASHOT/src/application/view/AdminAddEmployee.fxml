@@ -30,10 +30,22 @@
                         <HBox alignment="CENTER" prefHeight="0.0" prefWidth="274.0" spacing="50.0" />
                         <Pane prefHeight="85.0" prefWidth="274.0">
                            <children>
-                              <Button layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="25.0" prefWidth="80.0" text="Go Back" />
-                              <Button fx:id="AddEmployee" layoutX="136.0" layoutY="35.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="124.0" text="Add Employee" />
-                              <CheckBox fx:id="adminStatus" layoutX="-1.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="124.0" text="Admin Status?" />
-                              <CheckBox fx:id="trainee" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="205.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="69.0" text="Trainee?" />
+                              <Button layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#loadAdminister" prefHeight="25.0" prefWidth="80.0" text="Go Back">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <Button fx:id="AddEmployee" layoutX="136.0" layoutY="35.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="124.0" text="Add Employee">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Button>
+                              <CheckBox fx:id="adminStatus" layoutX="-1.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="124.0" text="Admin Status?">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="trainee" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="205.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="69.0" text="Trainee?">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></CheckBox>
                            </children>
                         </Pane>
                      </children>
