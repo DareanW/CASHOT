@@ -22,9 +22,9 @@
                   <VBox alignment="CENTER" layoutX="250.0" layoutY="219.0" prefHeight="181.0" prefWidth="274.0" spacing="10.0">
                      <children>
                         <Label text="Username (Example: employee)" textAlignment="CENTER" />
-                        <TextField fx:id="cashierUsername" onAction="#handle" onKeyPressed="#setTextToBlank" prefHeight="41.0" prefWidth="274.0" />
+                        <TextField fx:id="cashierUsername" onAction="#handle" prefHeight="41.0" prefWidth="274.0" onKeyPressed="#setTextToBlank" />
                         <Label text="Password (Example: password)" />
-                        <PasswordField fx:id="cashierPassword" onAction="#handle" onKeyPressed="#setTextToBlank" />
+                        <PasswordField fx:id="cashierPassword" onAction="#handle" onKeyPressed="#setTextToBlank"/>
                         <HBox alignment="CENTER" prefHeight="68.0" prefWidth="274.0" spacing="50.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#loadMain" prefHeight="25.0" prefWidth="80.0" text="Go Back" />
@@ -33,7 +33,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <Label fx:id="logInIncorrect" layoutX="301.0" layoutY="449.0" prefHeight="64.0" prefWidth="173.0" textAlignment="CENTER" textFill="RED" wrapText="true" />
+                  <Label fx:id="logInIncorrect" layoutX="301.0" layoutY="400.0" prefHeight="64.0" prefWidth="173.0" textAlignment="CENTER" textFill="RED" wrapText="true" />
                </children>
             </Pane>
          </children>

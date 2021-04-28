@@ -116,7 +116,7 @@
 
                         <HBox prefHeight="464.0" prefWidth="292.0">
                            <children>
-                              <TextArea fx:id="moneyToCollect" editable="false" prefHeight="457.0" prefWidth="300.0" wrapText="true" />
+                              <TextArea fx:id="moneyToCollect" editable="false" prefHeight="457.0" prefWidth="300.0" />
                            </children>
                         </HBox>
 
