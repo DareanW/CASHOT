@@ -98,7 +98,10 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#ringUpOrder" prefHeight="54.0" prefWidth="143.0" text="Finish Transaction" />
+                  <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#ringUpOrder" prefHeight="54.0" prefWidth="143.0" text="Finish Transaction">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Button>
                   <VBox layoutX="14.0" layoutY="130.0" prefHeight="520.0" prefWidth="292.0">
                      <children>
                         <HBox prefHeight="71.0" prefWidth="292.0">

@@ -208,7 +208,10 @@
                      </children>
                   </HBox>
 
-                  <Button id="ringUpButton" layoutX="16.0" layoutY="667.0" mnemonicParsing="false" onAction="#loadTrainingRingUpCustomer" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer" />
+                  <Button id="ringUpButton" layoutX="16.0" layoutY="667.0" mnemonicParsing="false" onAction="#loadTrainingRingUpCustomer" prefHeight="54.0" prefWidth="143.0" text="Ring Up Customer">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Button>
 
                   <HBox layoutX="158.0" layoutY="667.0" prefHeight="54.0" prefWidth="180.0">
                      <children>
@@ -217,7 +220,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-	                  	<TextArea fx:id="receiptTotal" editable="false" prefHeight="54.0" prefWidth="100.0" promptText="//Total will go here" wrapText="true" />
+	                  	<TextArea fx:id="receiptTotal" editable="false" prefHeight="54.0" prefWidth="100.0" wrapText="true" />
                      </children>
                   </HBox>
 		         </children>
