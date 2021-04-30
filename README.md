@@ -43,6 +43,10 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 
 # Functionality/Features
 All functionality works so enjoy our application :)\
+Customize register buttons as an admin in order to fit your needs.
+Add, remove, view, and  promote employees as an admin.
 Train new employees with our training mode
+Cashier can ring up a customer and check them out.
+
 
 
