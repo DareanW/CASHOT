@@ -4,7 +4,7 @@ By
 __grl167 Darean Wilde (Team Leader) (Ean173)__\
 __fww704 Jacob Shawver (Yarlow)__\
 __hug180 Majerus Sims (hug180)__\
-__tvh991 Alexander Delgado (Ad200023)__\
+__tvh991 Alexander Delgado (Ad200023)__
 
 # This application works for screens 800x800 pixels or more. This is from Lab 3, where it stated "Remember to ensure your app works on all display sizes. For this lab, you can do this by making your app no larger than 800x800".
 
@@ -39,10 +39,10 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 26: Click on "Window" then " hover over "Perspective" then "Open Perspective". Click "Other"\
 27: Click "Java" and then "Open"\
 28: On very right-hand side, click "Restore"\
-29: Click on "CASHOT" folder then click "Run". Project should run correctly.\
+29: Click on "CASHOT" folder then click "Run". Project should run correctly.
 
 # Functionality/Features
 All functionality works so enjoy our application :)\
-Train new employees with our training mode \
+Train new employees with our training mode
 
 
