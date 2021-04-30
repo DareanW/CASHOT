@@ -85,7 +85,14 @@ public class EditEmployees implements EventHandler {
 
 	@FXML
 	public void removeEmployee(ActionEvent e) throws IOException {
-		int id = Integer.parseInt(userInput.getText());
+		int id;
+		try{
+		id = Integer.parseInt(userInput.getText());
+		}
+		catch(Exception exception){
+		id = 999999999;
+		}
+		if(id!=999999999){
 		Employee temp;
 		for (Employee i : CashotSystem.getEmployees()) {
 			if (i.getID() == id) {
@@ -100,7 +107,9 @@ public class EditEmployees implements EventHandler {
 			textArea.setText("Employee not found\n");
 		else
 			textArea.setText("Employee: " + id + " sucessfully removed");
-
+		}
+		else
+			textArea.setText("Employee not found\n");
 	}
 
 	/**
