@@ -5,7 +5,9 @@ __grl167 Darean Wilde (Team Leader) (Ean173)__\
 __fww704 Jacob Shawver (Yarlow)__\
 __hug180 Majerus Sims (hug180)__\
 __tvh991 Alexander Delgado (Ad200023)__\
-\
+
+# This application works for screens 800x800 pixels or more. This is from Lab 3, where it stated "Remember to ensure your app works on all display sizes. For this lab, you can do this by making your app no larger than 800x800".
+
 How to clone the GitHub repository on the UTSA VDI (and ensure everything is compatible):\
 1: Log Into UTSA VDI\
 2: Open the Eclipse folder and open "eclipse.exe"\
@@ -41,6 +43,6 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 
 # Functionality/Features
 All functionality works so enjoy our application :)\
-Train new employees with our training mode\
+Train new employees with our training mode \
 
 
