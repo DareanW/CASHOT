@@ -38,3 +38,4 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 27: Click "Java" and then "Open"\
 28: On very right-hand side, click "Restore"\
 29: Click on "CASHOT" folder then click "Run". Project should run correctly.
+30: All functionality works so enjoy our application :)
