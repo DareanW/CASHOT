@@ -1,5 +1,13 @@
 package application.controller;
 
+/**
+ * addEmployeFromAdminController will give admin access to add more employees to the register 
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ */
 import java.io.IOException;
 
 import application.model.CashotSystem;
@@ -28,6 +36,12 @@ public class addEmployeeFromAdminController {
 	@FXML
 	private AnchorPane content;
 
+	/**
+	 * addEmployee method will add an employee object to the arraylist
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void addEmployee(Event event) throws IOException {
 		String isAdmin = "FALSE";
 		if (adminStatus.isSelected())
@@ -59,6 +73,12 @@ public class addEmployeeFromAdminController {
 		CashotSystem.newEmployee(newEmployee);
 	}
 
+	/**
+	 * will launch the admin view
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminister(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
