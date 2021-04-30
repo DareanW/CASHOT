@@ -13,6 +13,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * The editItemController is the controller for the editItems.fxml view and will
+ * update it whenever an item is updated, added, or removed.
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
+
 public class EditItemsController implements EventHandler {
 
 	@FXML
@@ -57,6 +68,12 @@ public class EditItemsController implements EventHandler {
 
 	}
 
+	/**
+	 * initialize will set up everything the controller will need in order to
+	 * function
+	 * @throws IOException
+	 */
+	
 	public void initialize() throws IOException {
 		// Load items ?
 		system = CashotSystem.getInstance();
@@ -64,6 +81,11 @@ public class EditItemsController implements EventHandler {
 		system.setController(this);
 	}
 
+	/**
+	 * addItem method will add a new item to the list of available buttons
+	 * 
+	 * @param event
+	 */
 	public void addItem(Event event) {
 
 		try {
@@ -120,6 +142,11 @@ public class EditItemsController implements EventHandler {
 		}
 	}
 
+	/**
+	 * editItem method will edit an inputted items data
+	 * 
+	 * @param event
+	 */
 	public void editItem(Event event) {
 
 		String newName = "";
@@ -179,6 +206,11 @@ public class EditItemsController implements EventHandler {
 		}
 	}
 
+	/**
+	 * loadAdmin method loads the admin screen
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdmin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);

@@ -14,16 +14,25 @@ import application.controller.RingUpCustomerController;
 import application.controller.TrainingRingUpCustomerController;
 import application.model.Employee;
 
+/**
+ * The Receipt class holds information for receipts such as the
+ * date, time, update log, and print of its creation 
+ * 
+ * @author Darean Wilde grl167 63678621
+ * @author Jacob Shawver fww704 36242636
+ * @author Majerus Sims hug180 79595196
+ * @author Alexander Delgado tvh991 79595706
+ *
+ */
 public class Receipt {
 
-	/*
-	 * public String toString(){ String receiptTicket = "";
+	/**
+	 * TraineePrintReceipt method to get the contents of 
+	 * receipt and print it via training option
 	 * 
-	 * receiptTicket=receiptTicket + Employee.getID();
-	 * 
-	 * return receiptTicket; }
+	 * @param order
+	 * @param Trainee
 	 */
-
 	public static void TraineePrintReceipt(Order order, String Trainee) {
 		try {
 			Media sound = new Media(new File("data/ChaChing.wav").toURI().toString());
@@ -90,6 +99,12 @@ public class Receipt {
 		System.out.println(str);
 	}
 
+	/**
+	 * printReceipt method to print the information of a receipt
+	 * @param order
+	 * @param employee
+	 * @throws IOException
+	 */
 	public static void printReceipt(Order order, Employee employee) throws IOException {
 		// String ChaChing = "data/ChaChing.wav";
 		try {
@@ -176,6 +191,11 @@ public class Receipt {
 		rWriter.close();
 	}
 
+	/**
+	 * updateLog method to update the log files with information from each created receipt
+	 * @param str
+	 * @throws IOException
+	 */
 	private static void updateLog(String str) throws IOException {
 		File recLog = new File("Receipts/ReceiptLog.txt");
 

@@ -49,7 +49,7 @@ public class EditEmployees implements EventHandler {
 	CashotSystem system;
 
 	/**
-	 * initialize will set up eveything the controller will need in order to
+	 * initialize will set up everything the controller will need in order to
 	 * function
 	 */
 
