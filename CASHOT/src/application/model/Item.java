@@ -1,7 +1,7 @@
 package application.model;
 
 /**
- * The Item class holds data for the creation of an item and its respective 
+ * The Item class holds data for the creation of an item and its respective
  * name, price, row, and column
  * 
  * @author Darean Wilde grl167 63678621
@@ -18,6 +18,7 @@ public class Item {
 
 	/**
 	 * Constructor for the item
+	 * 
 	 * @param name
 	 * @param price
 	 * @param row
@@ -39,6 +40,7 @@ public class Item {
 
 	/**
 	 * getPrice method returns the price of the item
+	 * 
 	 * @return itemPrice
 	 */
 	public double getPrice() {
@@ -47,6 +49,7 @@ public class Item {
 
 	/**
 	 * getName method returns the name of the item
+	 * 
 	 * @return itemName
 	 */
 	public String getName() {
@@ -55,6 +58,7 @@ public class Item {
 
 	/**
 	 * setPrice method sets the new price of the item
+	 * 
 	 * @param newPrice
 	 */
 	public void setPrice(int newPrice) {
@@ -63,6 +67,7 @@ public class Item {
 
 	/**
 	 * setName method sets the new name of the item
+	 * 
 	 * @param newName
 	 */
 	public void setName(String newName) {
@@ -80,6 +85,7 @@ public class Item {
 
 	/**
 	 * getRow returns the row of the item
+	 * 
 	 * @return row
 	 */
 	public int getRow() {
@@ -88,6 +94,7 @@ public class Item {
 
 	/**
 	 * getColumn returns the column of the item
+	 * 
 	 * @return column
 	 */
 	public int getColumn() {

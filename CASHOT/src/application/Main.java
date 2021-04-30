@@ -24,7 +24,7 @@ public class Main extends Application {
 	/**
 	 * The start class loads the Main.fxml screen to start the program.
 	 * 
-	 * @param Stage
+	 * @param primaryStage
 	 */
 	@Override
 	public void start(Stage primaryStage) {

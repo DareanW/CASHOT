@@ -10,8 +10,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+
 /**
- * The MainController is the first page that the user will see. This will ask them if they want to log into Admin, Cashier or Trainee mode.
+ * The MainController is the first page that the user will see. This will ask
+ * them if they want to log into Admin, Cashier or Trainee mode.
  * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
@@ -24,10 +26,12 @@ public class MainController implements EventHandler {
 
 	@FXML
 	Button cBtn;
-/**
- * Initializes the screen.
- * @throws IOException
- */
+
+	/**
+	 * Initializes the screen.
+	 * 
+	 * @throws IOException
+	 */
 	public void initialize() throws IOException {
 		// Load items ?
 		system.setController(this);
@@ -69,18 +73,22 @@ public class MainController implements EventHandler {
 	private TextArea outputField;
 
 	@Override
-/**
- * handles events. Currently does nothing.
- * @param event
- */
+	/**
+	 * handles events. Currently does nothing.
+	 * 
+	 * @param event
+	 */
 	public void handle(Event event) {
 
 	}
-/**
- * Loads the current cashier. If the cashier is already logged in, skip the login page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the current cashier. If the cashier is already logged in, skip the
+	 * login page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadCashier(Event event) throws IOException {
 		try {
 			if (system.getSignedIn().isAdmin().equals("TRUE") || system.getSignedIn().getCashier().equals("TRUE")) {
@@ -92,38 +100,46 @@ public class MainController implements EventHandler {
 			loadEmployeeLogin(event);
 		}
 	}
-/**
- * Loads the login page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the login page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/employeeLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
-/**
- * Skips the login page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Skips the login page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassEmployeeLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/cashier.fxml"));
 		content.getChildren().setAll(pane);
 	}
-/**
- * Loads the main screen.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the main screen.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadMain(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/main.fxml"));
 		content.getChildren().setAll(pane);
 	}
-/**
- * Loads administer page. If the user is not an admin, loads the login page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads administer page. If the user is not an admin, loads the login page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminister(Event event) throws IOException {
 		try {
 			if (system.getSignedIn().isAdmin().equals("TRUE")) {
@@ -135,29 +151,35 @@ public class MainController implements EventHandler {
 			loadAdminLogin(event);
 		}
 	}
-/**
- * Loads the admin page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the admin page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void bypassAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/administor.fxml"));
 		content.getChildren().setAll(pane);
 	}
-/**
- * Loads the admin login page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the admin login page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadAdminLogin(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/adminLoginScreen.fxml"));
 		content.getChildren().setAll(pane);
 	}
-/**
- * Loads the training page.
- * @param event
- * @throws IOException
- */
+
+	/**
+	 * Loads the training page.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void loadTraining(Event event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/view/Training.fxml"));
 		content.getChildren().setAll(pane);
@@ -170,10 +192,11 @@ public class MainController implements EventHandler {
 	// Integer.parseInt(data[3]), data[4]);
 	// CashotSystem.addEmployee(newEmployee);
 	// }
-/**
- * Loads the viewEmployees page.
- * @param event
- */
+	/**
+	 * Loads the viewEmployees page.
+	 * 
+	 * @param event
+	 */
 	public void viewEmployees(Event event) {
 		String str = CashotSystem.generateEmployeeString();
 		adminTextArea.setText(str);

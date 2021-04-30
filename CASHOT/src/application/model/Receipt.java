@@ -15,8 +15,8 @@ import application.controller.TrainingRingUpCustomerController;
 import application.model.Employee;
 
 /**
- * The Receipt class holds information for receipts such as the
- * date, time, update log, and print of its creation 
+ * The Receipt class holds information for receipts such as the date, time,
+ * update log, and print of its creation
  * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
@@ -27,8 +27,8 @@ import application.model.Employee;
 public class Receipt {
 
 	/**
-	 * TraineePrintReceipt method to get the contents of 
-	 * receipt and print it via training option
+	 * TraineePrintReceipt method to get the contents of receipt and print it
+	 * via training option
 	 * 
 	 * @param order
 	 * @param Trainee
@@ -101,6 +101,7 @@ public class Receipt {
 
 	/**
 	 * printReceipt method to print the information of a receipt
+	 * 
 	 * @param order
 	 * @param employee
 	 * @throws IOException
@@ -192,7 +193,9 @@ public class Receipt {
 	}
 
 	/**
-	 * updateLog method to update the log files with information from each created receipt
+	 * updateLog method to update the log files with information from each
+	 * created receipt
+	 * 
 	 * @param str
 	 * @throws IOException
 	 */

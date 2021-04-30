@@ -4,8 +4,8 @@ import java.time.*;
 import java.util.*;
 
 /**
- * The Order class holds the information for price totals, the employee, 
- * date, time, and IDs
+ * The Order class holds the information for price totals, the employee, date,
+ * time, and IDs
  * 
  * @author Darean Wilde grl167 63678621
  * @author Jacob Shawver fww704 36242636
@@ -24,6 +24,7 @@ public class Order {
 
 	/**
 	 * Order constructor for the order
+	 * 
 	 * @param currTimeDate
 	 * @param employeeName
 	 */
@@ -37,6 +38,7 @@ public class Order {
 
 	/**
 	 * Order constructor to test cashier
+	 * 
 	 * @param employee
 	 */
 	public Order(Employee employee) { // constructor test to get cashier to add
@@ -50,7 +52,7 @@ public class Order {
 	}
 
 	/**
-	 * Order default constructor 
+	 * Order default constructor
 	 */
 	public Order() {
 		Order.currTimeDate = LocalDateTime.now();
@@ -77,6 +79,7 @@ public class Order {
 
 	/**
 	 * getEmployee returns the order of the employee
+	 * 
 	 * @return employee
 	 */
 	public Employee getEmployee() {
@@ -85,6 +88,7 @@ public class Order {
 
 	/**
 	 * total method to get the cost of item/s
+	 * 
 	 * @return cost
 	 */
 	public double total() {
@@ -99,6 +103,7 @@ public class Order {
 
 	/**
 	 * getTotal returns the total of the item costs
+	 * 
 	 * @return total
 	 */
 	public double getTotal() {
@@ -107,6 +112,7 @@ public class Order {
 
 	/**
 	 * setTotal sets the total of the items
+	 * 
 	 * @param total
 	 */
 	public void setTotal(double total) {
@@ -115,6 +121,7 @@ public class Order {
 
 	/**
 	 * addItemToOrder method adds items to an ArrayList
+	 * 
 	 * @param item
 	 * @return
 	 */
@@ -124,7 +131,8 @@ public class Order {
 	}
 
 	/**
-	 * getCurrTimeDate returns the current time and date 
+	 * getCurrTimeDate returns the current time and date
+	 * 
 	 * @return currTimeDate
 	 */
 	public static LocalDateTime getCurrTimeDate() { // changed to static
@@ -133,6 +141,7 @@ public class Order {
 
 	/**
 	 * setCurrTimeDate sets the current time and date
+	 * 
 	 * @param currTimeDate
 	 */
 	public void setCurrTimeDate(LocalDateTime currTimeDate) {
@@ -141,6 +150,7 @@ public class Order {
 
 	/**
 	 * getEmployeeName returns the employee name
+	 * 
 	 * @return getEmployeeName
 	 */
 	public static String getEmployeeName() { // changed to static
@@ -149,6 +159,7 @@ public class Order {
 
 	/**
 	 * setEmployeeName sets the employee name
+	 * 
 	 * @param employeeName
 	 */
 	public void setEmployeeName(String employeeName) {
@@ -157,6 +168,7 @@ public class Order {
 
 	/**
 	 * getItems returns the item/s
+	 * 
 	 * @return items
 	 */
 	public ArrayList<Item> getItems() {
@@ -165,6 +177,7 @@ public class Order {
 
 	/**
 	 * setItems set the items in the ArrayList
+	 * 
 	 * @param items
 	 */
 	public void setItems(ArrayList<Item> items) {

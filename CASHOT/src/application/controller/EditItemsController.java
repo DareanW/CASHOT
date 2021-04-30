@@ -71,9 +71,10 @@ public class EditItemsController implements EventHandler {
 	/**
 	 * initialize will set up everything the controller will need in order to
 	 * function
+	 * 
 	 * @throws IOException
 	 */
-	
+
 	public void initialize() throws IOException {
 		// Load items ?
 		system = CashotSystem.getInstance();
@@ -208,6 +209,7 @@ public class EditItemsController implements EventHandler {
 
 	/**
 	 * loadAdmin method loads the admin screen
+	 * 
 	 * @param event
 	 * @throws IOException
 	 */
