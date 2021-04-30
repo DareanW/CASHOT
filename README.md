@@ -41,6 +41,6 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 
 # Functionality/Features
 All functionality works so enjoy our application :)\
-Train new employees with our training mode \
+Train new employees with our training mode\
 
 
