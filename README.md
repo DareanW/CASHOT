@@ -46,7 +46,7 @@ All functionality works so enjoy our application :)\
 Customize register buttons as an admin in order to fit your needs.\
 Add, remove, view, and  promote employees as an admin.\
 Train new employees with our training mode.\
-Cashier can ring up a customer and check them out.
+Cashier can ring up customers and check them out.
 
 
 
