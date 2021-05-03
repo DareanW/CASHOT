@@ -42,6 +42,9 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 29: Click on "CASHOT" folder. Then expand this folder, expand "srs", expand "application" then right click "Main.java". Hover cursor over "Run As" then click "1 Java Application". Project should run correctly.
 
 Functionality/Features
+
+We wanted to make an all-purpose point-of-sale system so that this software can go wherever you and your business goes. Be it retail, grocery store, supermarket, this software is right for you.
+
 All functionality works so enjoy our application :)
 Customize register buttons as an admin in order to fit your needs.
 Add, remove, view, and promote employees as an admin.
