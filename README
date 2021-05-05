@@ -6,7 +6,8 @@ fww704 Jacob Shawver (Yarlow)
 hug180 Majerus Sims (hug180)
 tvh991 Alexander Delgado (Ad200023)
 
-Using the integrated Github inside of Eclipse made the commits/pulls not show exactly how many commits we actually made. We have made more commits using Eclipse than it might show in Insights. The code still published properly and we were able to build off of the code published, even if the commits don't show.
+Using the integrated Github inside of Eclipse made the commits/pulls not show exactly how many commits we actually made. We have made more commits using Eclipse than it might show in Insights.
+The code still published properly and we were able to build off of the code published, even if the commits don't show.
 
 This application works for screens 800x800 pixels or more. This is from Lab 3, where it stated "Remember to ensure your app works on all display sizes. For this lab, you can do this by making your app no larger than 800x800".
 
