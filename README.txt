@@ -32,6 +32,9 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 18: Follow directions until Eclipse needs to restart. Restart.
 19: An error might come up, "You are not running your eclipse instance with Java8. The JavaFX tooling is disabled because of this." This is fine.
 20: Go to "File" then open "Import"
+
+***Scroll down to "Opening the Project Via .zip" to open the project by downloading it.***
+
 21: Expand "Git" and select "Projects from Git"
 22: Select and open "Clone URI"
 23: Paste in 'https://github.com/Ean173/CASHOT.git' to URI
@@ -42,6 +45,9 @@ How to clone the GitHub repository on the UTSA VDI (and ensure everything is com
 27: Click "Java" and then "Open"
 28: On very right-hand side, click "Restore"
 29: Click on "CASHOT" folder. Then expand this folder, expand "srs", expand "application" then right click "Main.java". Hover cursor over "Run As" then click "1 Java Application". Project should run correctly.
+
+Opening the Project Via .zip
+To open the project by downloading it from GitHub, click the green "Code" dropdown menu, then "Download ZIP". Now extract the file. Once you do this, you can open Eclipse and go to "File" then "Import". Now, expand "General" and select "Existing Projects into Workspace". Now. select the downloaded project folder. Now press "finish". Do not forget to install the software such as JavaFX, listed above.
 
 Opening Javadoc:
 Once the project has successfully been imported into Eclipse, then the existing folder "doc" should be inside the "CASHOT" folder. All of the different Javadoc files can be opened inside Eclipse.
