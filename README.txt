@@ -1,5 +1,5 @@
 3443-002-Team-Project
-Payhem by CASHOT
+Payhem by CASHOT (Cash Original Technologies)
 By
 grl167 Darean Wilde (Team Leader) (Ean173)
 fww704 Jacob Shawver (Yarlow)
